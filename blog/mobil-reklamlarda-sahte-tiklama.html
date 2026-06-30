@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobil Reklamlarda Sahte Tıklama: Riskler ve Çözümler | Sponsorlu Reklam</title>
+<meta name="description" content="Mobil reklamlarda sahte tıklama türleri: yanlışlıkla tıklamalar, in-app fraud ve mobil botnet. Cihaz teklif ayarları ve mobil koruması rehberi.">
+<meta name="keywords" content="mobil reklam sahte tıklama, in-app click fraud, mobil bot trafiği, google ads mobil teklif, yanlışlıkla mobil tıklama">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sponsorlu Reklam">
+<meta name="theme-color" content="#0a2540">
+<link rel="canonical" href="https://sponsorlureklam.com.tr/blog/mobil-reklamlarda-sahte-tiklama.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mobil Reklamlarda Sahte Tıklama: Riskler ve Çözümler">
+<meta property="og:description" content="Mobil reklamlarda sahte tıklama türleri ve korunma yöntemleri. In-app fraud, yanlışlıkla tıklama ve cihaz teklif optimizasyonu.">
+<meta property="og:url" content="https://sponsorlureklam.com.tr/blog/mobil-reklamlarda-sahte-tiklama.html">
+<meta property="og:image" content="https://sponsorlureklam.com.tr/img/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<meta property="article:published_time" content="2026-06-30T12:00:00+03:00">
+<meta property="article:section" content="Sahte Tıklama">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mobil Reklamlarda Sahte Tıklama: Riskler ve Çözümler">
+<meta name="twitter:description" content="In-app fraud ve mobil bot trafiğinden korunma rehberi.">
+<link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-700-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-700-latin-ext.woff2" crossorigin>
+<style id="main-css">
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:optional;src:url(/fonts/inter-400-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:optional;src:url(/fonts/inter-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:optional;src:url(/fonts/inter-500-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:optional;src:url(/fonts/inter-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:optional;src:url(/fonts/inter-600-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:optional;src:url(/fonts/inter-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/inter-700-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/inter-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/playfair-700-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/playfair-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+:root{--navy:#0a2540;--navy-dark:#061a30;--navy-light:#1a3a5c;--gold:#c9a961;--gold-dark:#856221;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-500:#64748b;--gray-700:#334155;--gray-900:#0f172a;--white:#ffffff;--success:#16a34a;--danger:#dc2626;--shadow-sm:0 1px 2px rgba(10,37,64,.06);--shadow:0 4px 12px rgba(10,37,64,.08);--shadow-lg:0 12px 32px rgba(10,37,64,.12);--radius:8px;--radius-lg:12px;--max:1200px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.65;color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--navy);text-decoration:none;transition:color .2s ease;}
+a:hover{color:var(--gold-dark);}
+h1,h2,h3,h4,h5,h6{font-family:"Playfair Display","Georgia","Times New Roman",serif;color:var(--navy);line-height:1.25;font-weight:700;letter-spacing:-.01em;}
+h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem;}
+h2{font-size:clamp(1.6rem,3vw,2.25rem);margin-bottom:.85rem;}
+h3{font-size:1.35rem;margin-bottom:.75rem;}
+p{margin-bottom:1rem;}
+ul,ol{margin:0 0 1rem 1.25rem;}
+li{margin-bottom:.35rem;}
+.container{max-width:var(--max);margin:0 auto;padding:0 1.25rem;}
+.site-header{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;max-width:var(--max);margin:0 auto;gap:1rem;}
+.logo{display:flex;align-items:center;gap:.6rem;}
+.logo-text{font-family:"Playfair Display",Georgia,serif;font-weight:700;color:var(--navy);font-size:1.15rem;line-height:1;}
+.logo-text small{display:block;font-family:"Inter",sans-serif;font-size:.65rem;font-weight:500;color:var(--gold-dark);letter-spacing:.15em;text-transform:uppercase;margin-top:4px;}
+.nav{display:flex;align-items:center;gap:.25rem;}
+.nav a{padding:.5rem .85rem;color:var(--gray-700);font-weight:500;font-size:.95rem;border-radius:6px;transition:all .2s ease;}
+.nav a:hover,.nav a.active{color:var(--navy);background:var(--gray-100);}
+.nav .btn-cta{background:var(--navy);color:var(--white);margin-left:.5rem;}
+.nav .btn-cta:hover{background:var(--navy-dark);color:var(--white);}
+.nav-toggle{display:none;background:none;border:0;padding:.5rem;cursor:pointer;}
+.nav-toggle span{display:block;width:26px;height:3px;background:var(--navy);margin:5px 0;transition:all .25s ease;}
+@media(max-width:900px){.nav-toggle{display:block;}.nav{position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;padding:.5rem;border-bottom:1px solid var(--gray-200);box-shadow:var(--shadow);display:none;}.nav.is-open{display:flex;}.nav a{padding:.85rem 1rem;}.nav .btn-cta{margin:.5rem 0 0;text-align:center;}}
+.btn{display:inline-block;padding:.85rem 1.65rem;border-radius:var(--radius);font-weight:600;font-size:.95rem;border:0;cursor:pointer;transition:all .25s ease;text-align:center;line-height:1.2;}
+.btn-primary{background:var(--gold);color:var(--navy);}
+.btn-primary:hover{background:var(--gold-dark);color:var(--white);transform:translateY(-1px);box-shadow:var(--shadow);}
+.btn-outline{border:2px solid rgba(255,255,255,.5);color:var(--white);}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.1);color:var(--white);}
+.btn-lg{padding:1.05rem 2rem;font-size:1rem;}
+.cta-strip{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);padding:3.5rem 0;text-align:center;}
+.cta-strip h2{color:var(--white);margin-bottom:.75rem;}
+.cta-strip p{color:rgba(255,255,255,.85);font-size:1.1rem;margin-bottom:1.75rem;max-width:620px;margin-left:auto;margin-right:auto;}
+.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);padding:3.5rem 0 3rem;text-align:center;}
+.page-hero h1{color:var(--white);}
+.page-hero p{color:rgba(255,255,255,.85);max-width:700px;margin:0 auto;font-size:1.1rem;}
+.breadcrumb{font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,.85);}
+.breadcrumb a:hover{color:var(--gold);}
+.section{padding:4.5rem 0;}
+.article-meta{color:var(--gray-500);font-size:.9rem;margin-bottom:1.5rem;}
+.article-content{max-width:760px;margin:0 auto;}
+.article-content h2{margin-top:2.25rem;}
+.article-content h3{margin-top:1.85rem;}
+.article-content p{font-size:1.05rem;line-height:1.8;color:var(--gray-700);}
+.article-content ul li,.article-content ol li{font-size:1.05rem;line-height:1.7;}
+.article-content blockquote{border-left:4px solid var(--gold);padding:.75rem 1.25rem;background:var(--gray-50);margin:1.5rem 0;font-style:italic;color:var(--gray-700);}
+.alert{padding:1rem 1.25rem;border-radius:var(--radius);margin:1rem 0;border-left:4px solid;}
+.alert-info{background:#eff6ff;border-color:#2563eb;color:#1e3a8a;}
+.alert-warn{background:#fffbeb;border-color:#f59e0b;color:#78350f;}
+.alert-success{background:#ecfdf5;border-color:var(--success);color:#14532d;}
+.alert strong{display:block;margin-bottom:.25rem;}
+.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.75);padding:3.5rem 0 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr;}}
+.footer-grid h3{color:var(--white);font-family:"Inter",sans-serif;font-size:1rem;margin-bottom:1rem;letter-spacing:.03em;}
+.footer-grid ul{list-style:none;margin:0;padding:0;}
+.footer-grid li{margin-bottom:.55rem;}
+.footer-grid a{color:rgba(255,255,255,.82);font-size:.92rem;}
+.footer-grid a:hover{color:var(--gold);}
+.footer-brand p{font-size:.92rem;line-height:1.7;margin-top:.85rem;}
+.footer-brand .logo-text{color:white;}
+.footer-brand .logo-text small{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.72);}
+.wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:99;transition:transform .25s ease;}
+.wa-float:hover{transform:scale(1.08);color:white;}
+.wa-float svg{width:30px;height:30px;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Mobil Reklamlarda Sahte Tıklama: Riskler ve Çözümler","description":"Mobil reklamlarda sahte tıklama türleri: yanlışlıkla tıklamalar, in-app fraud ve mobil botnet. Cihaz teklif ayarları ve korunma rehberi.","datePublished":"2026-06-30T12:00:00+03:00","dateModified":"2026-06-30T12:00:00+03:00","author":{"@type":"Organization","name":"Sponsorlu Reklam"},"publisher":{"@type":"Organization","name":"Sponsorlu Reklam","logo":{"@type":"ImageObject","url":"https://sponsorlureklam.com.tr/img/logo.png"}},"mainEntityOfPage":"https://sponsorlureklam.com.tr/blog/mobil-reklamlarda-sahte-tiklama.html"}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo" aria-label="Sponsorlu Reklam">
+      <img src="../img/logo.svg" alt="Sponsorlu Reklam logosu" width="38" height="38">
+      <span class="logo-text">Sponsorlu Reklam<small>web &amp; google ads</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../hizmetler.html">Hizmetler</a>
+      <a href="../paketler.html">Paketler</a>
+      <a href="../vaka-calismalari.html">Vakalar</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../sss.html">SSS</a>
+      <a href="../rezervasyon.html">Rezervasyon</a>
+      <a href="../iletisim.html" class="btn-cta">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Anasayfa</a> / <a href="../blog.html">Blog</a> / Mobil Reklamlarda Sahte Tıklama</div>
+    <h1>Mobil Reklamlarda Sahte Tıklama: Riskler ve Çözümler</h1>
+    <p>Yanlışlıkla tıklamalardan in-app bot trafiğine: mobil reklamların kendine özgü click fraud riski ve korunma yöntemleri.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container article-content">
+    <p class="article-meta">30 Haziran 2026 · 9 dk okuma · <a href="../blog.html">← Tüm Yazılar</a></p>
+
+    <p>Dünya genelindeki internet trafiğinin %60'ından fazlası mobil cihazlardan gelir. Google Ads bütçelerinin büyük bölümü de artık mobil reklamlara ayrılmaktadır. Ancak mobil ortam, masaüstüne kıyasla kendine özgü click fraud riskleri taşır. Küçük ekran boyutu yanlışlıkla tıklamaları artırır; uygulama içi reklam ekosistemi ise organize bot trafiğinin verimli çalışabildiği bir ortam yaratır. Bu yazıda mobil reklamlara özgü sahte tıklama türlerini ve bunlara karşı alınabilecek somut önlemleri ele alıyoruz.</p>
+
+    <h2>Mobil Reklamlarda Sahte Tıklamanın Türleri</h2>
+
+    <h3>1. Yanlışlıkla Tıklama (Accidental Clicks)</h3>
+    <p>Teknik olarak "sahte" olmasa da gerçek bir niyet içermeyen bu tıklamalar kampanya verinizi bozar. Küçük mobil ekranlarda kullanıcılar, sayfayı kaydırırken veya uygulama içinde gezinirken yanlışlıkla reklama dokunabilir. İçerik ile reklamın iç içe geçtiği, dokunmatik hedef alanının çok küçük ya da çok büyük tasarlandığı yerlerde yanlışlıkla tıklama oranı artar.</p>
+
+    <p>Yanlışlıkla tıklama kaynaklandığı yere göre iki kategoriye girer:</p>
+    <ul>
+      <li><strong>Görüntülü Ağ (Display):</strong> Mobil web sitelerindeki banner reklamlar özellikle risk altındadır. Sayfanın altına sabitlenen reklamlar, kullanıcı kaydırma yaparken sık dokunulur.</li>
+      <li><strong>Uygulama içi (In-App):</strong> Mobil oyunlarda reklamın üstüne denk gelen "kapat" butonu veya oyun içi eleman ile reklamın birbirine yakın konumlandırılması yanlışlıkla tıklamayı kışkırtır.</li>
+    </ul>
+
+    <h3>2. In-App Click Fraud (Uygulama İçi Sahte Tıklama)</h3>
+    <p>Uygulama geliştirici veya yayıncı, kendi uygulamasında gösterilen reklamlara otomatik tıklatıcılar (botlar) veya ücretli tıklatıcı grupları aracılığıyla tıklama üretir. Bu tür sahteciliğin tespiti zordur çünkü tıklama gerçek bir cihazdan ve gerçek bir uygulamadan gelir; yalnızca tıklama arkasında gerçek bir kullanıcı niyeti yoktur.</p>
+    <p>In-app click fraud özellikle Google'ın AdMob ağı üzerinden yayın yapan küçük, bilinmeyen oyun ve araç uygulamalarında yoğunlaşır. Popüler, köklü uygulamalar bu tür sahteciliğe genellikle başvurmaz çünkü reklam gelirlerinin büyük bölümü zaten organik kullanıcı tabanından gelir.</p>
+
+    <h3>3. Mobil Botnet Trafiği</h3>
+    <p>Gelişmiş saldırılar, gerçek cihazlarda çalışan kötü amaçlı yazılımlar aracılığıyla yürütülür. Bu botnet'ler gerçek akıllı telefonlardan (sahibinden habersiz çalışan arka plan uygulamalarıyla) tıklama üretir; bu nedenle IP adresleri gerçek kullanıcı IP'leriyle aynıdır ve imzaları tespit etmek son derece güçtür. Mobil botnet tıklamaları Google'ın otomatik filtresi tarafından da zaman zaman gözden kaçabilir.</p>
+
+    <h3>4. Tıklama Çiftliği (Click Farm) Faaliyeti</h3>
+    <p>Bölgelerinde reklam gösterilebilen tıklama çiftlikleri, ucuz mobil cihazlarla organize tıklama operasyonları yürütür. Bu kişiler gerçek cihazlardan gerçek bir tarayıcıyla reklamlara tıklar, dolayısıyla davranış verisi gerçek kullanıcıya çok benzer. Farklı oldukları nokta: gezindikleri içerik kümesi son derece dar ve tekrarlayıcıdır, tıklamanın ardından hiçbir zaman dönüşüme geçmezler.</p>
+
+    <h2>Mobil Tıklama Kalitesini Değerlendirme</h2>
+
+    <h3>Cihaz Bazlı Performans Analizi</h3>
+    <p>Google Ads'te <strong>Kampanyalar → Segmentler → Cihaz</strong> yolunu izleyerek masaüstü, tablet ve mobil bazında tıklama, maliyet ve dönüşüm verilerini ayrıştırın. Eğer mobil tıklamalar toplam tıklamaların %70'ini oluşturuyor ama dönüşümlerin yalnızca %20'sini getiriyorsa, mobilden gelen trafiğin kalitesi ciddi biçimde sorgulanmalıdır.</p>
+
+    <h3>Uygulama Yerleşim Raporu</h3>
+    <p>Display ve App kampanyalarında <strong>Görüntülü Ağ → Yerleşimler → Uygulamalar</strong> raporu hangi mobil uygulamaların tıklama ürettiğini gösterir. Bu raporda aşağıdakilere dikkat edin:</p>
+    <ul>
+      <li>Çok sayıda tıklama üreten ama adını tanımadığınız oyun uygulamaları</li>
+      <li>CTR'si %10'u aşan tek bir uygulama</li>
+      <li>Birden fazla sub-app içeren yayıncı hesapları</li>
+      <li>Uygulama başına sıfır dönüşüm ama çok yüksek maliyet</li>
+    </ul>
+
+    <h2>Mobil Sahte Tıklamaya Karşı Alınacak Önlemler</h2>
+
+    <h3>Cihaz Teklif Azaltımı</h3>
+    <p>Mobil dönüşüm oranınız masaüstünden belirgin biçimde düşükse ve analiziniz sahte tıklamayı işaret ediyorsa, mobil için teklif azaltımı uygulayın. <strong>Ayarlar → Cihaz teklif düzenlemeleri</strong> bölümünden mobil için -%20, -%30 veya daha yüksek bir azaltım belirleyebilirsiniz. Bu, mobil maruziyetinizi azaltırken masaüstü trafiğini korur.</p>
+
+    <div class="alert alert-info">
+      <strong>Not</strong>
+      Teklif azaltımını tamamen -%100 yapmak reklamı yalnızca o cihaz türünden kaldırır. Bunu hedeflenen bir karar olarak kullanabilirsiniz; örneğin ürününüz yalnızca masaüstü kullanıcılara hitap ediyorsa ya da mobil dönüşüm oranınız sıfıra yakınsa.
+    </div>
+
+    <h3>Uygulama Kategorisi Hariç Tutma</h3>
+    <p>Display ve App kampanyalarında "Mobil uygulamalar" kategorisini tamamen hariç tutabilirsiniz. Bu, reklamınızın hiçbir mobil oyun veya uygulamada gösterilmemesini sağlar. Eğer ürününüzün mobil uygulama hedeflemesine ihtiyacı yoksa bu seçenek pratik ve etkili bir koruma mekanizmasıdır.</p>
+    <p>Bunu uygulamak için: <strong>Hariç Tutulanlar → Yerleşimler → Mobil Uygulamalar</strong> bölümüne gidin ve "tüm mobil uygulamalar" seçeneğini ekleyin.</p>
+
+    <h3>Performans Max Kampanyalarında Mobil Kontrolü</h3>
+    <p>Performance Max kampanyalarında cihaz bazlı tam kontrol doğrudan sunulmaz. Ancak varlık gruplarınızda (asset groups) mobil uyumlu görseller ve metinler kullanarak ve dönüşüm verilerinizin mobil segmentini takip ederek algoritmanın mobil hedeflemesini optimize edebilirsiniz. Mobil dönüşüm izleme doğruysa algoritma zamanla düşük kaliteli mobil trafiği azaltır.</p>
+
+    <h3>GA4 ile Mobil Oturum Kalitesini İzleme</h3>
+    <p>Google Analytics 4'te cihaz kategorisine göre filtre oluşturun ve mobil oturumların kalitesini ayrıştırın. Mobil oturumlarda ortalama etkileşim süresi, sayfa görüntüleme sayısı ve dönüşüm olaylarına bakın. Mobil oturumların ortalama süresi sıfıra yakınsa ve hiçbiri dönüşüme dönmüyorsa, bu açık bir sinyal olarak değerlendirilebilir.</p>
+
+    <h3>Mobil Açılış Sayfası Kalitesini İyileştirme</h3>
+    <p>Son bir not: tüm mobil tıklamalar sahte değildir. Zaman zaman dönüşüm oranının düşük görünmesinin nedeni landing page'in mobilde iyi çalışmamasıdır. Yanlışlıkla tıklama ve sahte tıklama tespitiyle birlikte mobil sayfanızın hızını, form kullanılabilirliğini ve mobil uyumluluğunu da değerlendirin. Gerçek sorun hangi tarafta olduğunu bulmak doğru teşhisi gerektirir.</p>
+
+    <blockquote>Mobil reklamlarda dönüşüm düşüklüğü her zaman sahte tıklama değildir; ama her sahte tıklama kampanyanızın mobil dönüşüm oranını aşağı çeker.</blockquote>
+
+    <p>Mobil kampanyalarınızın tıklama kalitesini ve dönüşüm verisini analiz etmek için <a href="../rezervasyon.html">ücretsiz görüşme</a> yapabilirsiniz.</p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Mobil kampanyanızı sahte tıklamadan koruyalım</h2>
+    <p>In-app fraud, yanlışlıkla tıklama ve mobil bot trafiğine karşı kapsamlı bir analiz yapıyoruz.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="../rezervasyon.html" class="btn btn-primary btn-lg">Görüşme Rezervasyonu Al</a>
+      <a href="../blog.html" class="btn btn-outline btn-lg">Diğer Yazılar</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="../img/logo.svg" alt="Sponsorlu Reklam logosu" width="38" height="38">
+          <span class="logo-text">Sponsorlu Reklam<small>web &amp; google ads</small></span>
+        </div>
+        <p>Aydın merkezli, Türkiye geneline hizmet veren web tasarım ve Google Ads ajansıyız.</p>
+      </div>
+      <div>
+        <h3>Hizmetlerimiz</h3>
+        <ul>
+          <li><a href="../hizmetler/web-tasarim.html">Web Tasarım</a></li>
+          <li><a href="../hizmetler/google-ads.html">Google Ads Yönetimi</a></li>
+          <li><a href="../paketler.html">Paketler</a></li>
+          <li><a href="../vaka-calismalari.html">Vaka Çalışmaları</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kurumsal</h3>
+        <ul>
+          <li><a href="../hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../sss.html">SSS</a></li>
+          <li><a href="../rezervasyon.html">Online Rezervasyon</a></li>
+          <li><a href="../iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>İletişim</h3>
+        <ul>
+          <li><a href="tel:+905468445576">0546 844 55 76</a></li>
+          <li><a href="mailto:info@sponsorlureklam.com.tr">info@sponsorlureklam.com.tr</a></li>
+          <li>Mimar Sinan Mah. 2341 Sk. No:4, Efeler/Aydın</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year">2026</span> Sponsorlu Reklam. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/905468445576" class="wa-float" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>

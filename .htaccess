@@ -1,0 +1,142 @@
+# Sponsorlu Reklam — .htaccess
+# Güvenlik başlıkları, sıkıştırma, önbellek ve yönlendirme
+
+# ============================================
+# 1. HTTPS yönlendirmesi (HSTS)
+# ============================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # www -> non-www yönlendirme (tercih bu yönde)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+    # /index.html -> /  (canonical tekilleştirme, SEO duplicate önleme)
+    RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+    RewriteRule ^index\.html$ / [R=301,L]
+</IfModule>
+
+# ============================================
+# 2. Güvenlik başlıkları
+# ============================================
+<IfModule mod_headers.c>
+    # HSTS — sadece HTTPS üzerinden eriş
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # Clickjacking koruması
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # MIME type sniffing engelle
+    Header always set X-Content-Type-Options "nosniff"
+
+    # XSS filtresi (eski tarayıcılar)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer politikası
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # İzin politikası — gereksiz API erişimlerini kapat
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+
+    # CSP — gevşek ama makul (formsubmit, google fonts, google maps için izin verir)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://www.google-analytics.com; frame-src https://www.google.com https://www.youtube.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests"
+
+    # Cross-Origin politikaları
+    Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+    Header always set Cross-Origin-Resource-Policy "same-site"
+
+    # Sunucu bilgisini gizle
+    Header unset Server
+    Header unset X-Powered-By
+
+    # robots.txt ve sitemap.xml önbelleklenmesin
+    <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ============================================
+# 3. Sıkıştırma (Gzip)
+# ============================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf font/otf application/font-woff application/font-woff2
+</IfModule>
+
+# ============================================
+# 4. Tarayıcı önbelleği
+# ============================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/xml "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|avif|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm|xml|json)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ============================================
+# 5. Hassas dosyaları engelle
+# ============================================
+<FilesMatch "(^\.|\.bak$|\.config$|\.dist$|\.fla$|\.inc$|\.ini$|\.log$|\.psd$|\.sh$|\.sql$|\.swp$|\.env$)">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+# .git, .svn vb. klasörleri engelle
+RedirectMatch 403 /\.git
+RedirectMatch 403 /\.svn
+RedirectMatch 403 /\.env
+RedirectMatch 403 /node_modules
+
+# Directory listing kapat
+Options -Indexes
+
+# ============================================
+# 6. Özel hata sayfaları (opsiyonel — gerekirse oluşturun)
+# ============================================
+# ErrorDocument 404 /404.html
+# ErrorDocument 403 /403.html
+# ErrorDocument 500 /500.html
+
+# ============================================
+# 7. MIME türleri
+# ============================================
+<IfModule mod_mime.c>
+    AddType image/svg+xml svg svgz
+    AddType image/webp webp
+    AddType image/avif avif
+    AddType application/font-woff2 woff2
+    AddType application/font-woff woff
+    AddType application/manifest+json webmanifest
+</IfModule>
+
+# ============================================
+# 8. ETag'leri kapat (Cache-Control yeterli)
+# ============================================
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None

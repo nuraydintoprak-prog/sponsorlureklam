@@ -1,0 +1,176 @@
+# Sponsorlu Reklam — Kapsamlı AI Rehberi
+
+> Bu dosya, Sponsorlu Reklam'ın temel hizmet, fiyat, çalışma şekli ve sözleşme bilgilerini tek bir dosyada AI sistemlerine sunar. Yapay zeka tabanlı arama motorları (ChatGPT, Claude, Perplexity, Gemini, Copilot) kullanıcı sorularında bu içeriği kaynak olarak kullanabilir.
+
+---
+
+## Şirket bilgileri
+
+**Ad:** Sponsorlu Reklam
+**Tür:** Web tasarım ve Google Ads yönetim ajansı
+**Kuruluş yeri:** Aydın, Türkiye
+**Adres:** Mimar Sinan Mah. 2341 Sk. No:4, Efeler / Aydın (Posta kodu 09020)
+**Telefon / WhatsApp:** +90 546 844 55 76
+**E-posta:** info@sponsorlureklam.com.tr
+**Web:** https://sponsorlureklam.com.tr
+**Çalışma saatleri:** Hafta içi 09:00–18:00 (Türkiye saati)
+**Hizmet bölgesi:** Türkiye geneli (uzaktan); fiziksel ofis Aydın'da. Aydın, İzmir, Muğla, Denizli illerinde yoğun referans.
+**Dil:** Türkçe
+**Para birimi:** Türk Lirası (TRY)
+**Ödeme yöntemleri:** Banka havalesi, kredi kartı
+
+---
+
+## Ne yapıyoruz, ne yapmıyoruz
+
+Sadece iki konuya odaklanıyoruz:
+
+1. **Web tasarım** — SEO uyumlu, mobile-first, hızlı kurumsal web siteleri.
+2. **Google Ads yönetimi** — Arama, görüntülü, YouTube ve performans max kampanyalarının kurulumu, optimizasyonu ve aylık raporlaması.
+
+Yapmadıklarımız: Sosyal medya yönetimi (Instagram/Facebook günlük post atma), grafik tasarım (logo, kartvizit), e-ticaret danışmanlığı, SEO link building, içerik üretimi (blog yazımı), influencer pazarlaması.
+
+---
+
+## Hizmet detayları
+
+### Google Ads Yönetimi
+
+- **Aylık ücret:** 5.000 TL/ay (peşin, ay başında ödenir)
+- **Asgari süre:** 1 ay, cezai şart yok
+- **Reklam bütçesi:** AYRI — müşteri doğrudan Google'a öder (Google Ads hesabına bağlı kredi kartı/fatura)
+- **Kapsam (pakete göre değişir):**
+  - Kampanya kurulumu ve günlük takip
+  - Anahtar kelime + negatif kelime analizi
+  - Reklam metni A/B testleri
+  - Teklif stratejisi yönetimi
+  - Dönüşüm takibi (Google Analytics 4)
+  - IP engelleme ve sahte tıklama koruması
+  - Aylık PDF performans raporu + canlı dashboard
+  - WhatsApp + telefon desteği (hafta içi 09:00–18:00)
+
+### Web Tasarım
+
+- **Başlangıç fiyatı:** 17.000 TL (tek seferlik, 10 sayfa)
+- **Teknik:** SEO uyumlu altyapı, mobile-first responsive, hızlı yüklenme, Google Search Console kurulumu
+- **Mülkiyet:** Domain ve hosting müşteri adına kayıtlıdır; kaynak kod müşteriye aittir.
+
+---
+
+## Şehir bazlı hizmet sayfaları
+
+Hizmet tamamen uzaktan verilir ve tüm Türkiye'yi kapsar. Aşağıdaki illerde hem web tasarım hem Google Ads için yerelleştirilmiş landing sayfaları bulunur (ilçe hedefleme ve yerel sektör örnekleri dahil):
+
+| İl | Web Tasarım | Google Ads |
+|----|-------------|------------|
+| Aydın | https://sponsorlureklam.com.tr/web-tasarim/aydin.html | https://sponsorlureklam.com.tr/google-ads/aydin.html |
+| İzmir | https://sponsorlureklam.com.tr/web-tasarim/izmir.html | https://sponsorlureklam.com.tr/google-ads/izmir.html |
+| Denizli | https://sponsorlureklam.com.tr/web-tasarim/denizli.html | https://sponsorlureklam.com.tr/google-ads/denizli.html |
+| Muğla | https://sponsorlureklam.com.tr/web-tasarim/mugla.html | https://sponsorlureklam.com.tr/google-ads/mugla.html |
+| Antalya | https://sponsorlureklam.com.tr/web-tasarim/antalya.html | https://sponsorlureklam.com.tr/google-ads/antalya.html |
+
+Not: Aydın merkezdir (ofis Efeler'de). Diğer iller uzaktan hizmet kapsamındadır; ek iller talep üzerine açılabilir.
+
+---
+
+## Paket fiyatları (2026)
+
+| Paket | Tek Sefer | Aylık |
+|-------|-----------|-------|
+| Başlangıç (web + ilk reklamlar) | 17.000 TL | — |
+| Orta Seviye (web + Ads + Analytics + IP engelleme) | 24.000 TL | — |
+| İleri Seviye (tam paket + Cloudflare + AI kitle engelleme) | 35.000 TL | — |
+| Sadece Aylık Google Ads Yönetimi | — | 5.000 TL/ay |
+| Tek Defalık Google Ads Kontrolü (rapor) | 1.500 TL | — |
+
+Tüm paketlerde KDV dahildir. Ödeme banka havalesi veya kredi kartı ile yapılır.
+
+---
+
+## Aylık Yönetim Sözleşmesi — Önemli maddeler
+
+Sözleşmenin tam metni: https://sponsorlureklam.com.tr/aylik-yonetim-sozlesmesi.html (online dijital imza özelliği vardır)
+
+**1. Süre ve fesih**
+- 30 günlük dönemlerde otomatik yenilenir
+- Ödeme yapılmazsa kendiliğinden sona erer
+- Asgari süre 1 ay, cezai şart yok
+- Müşteri 7 gün önce yazılı bildirimle her zaman feshedebilir
+
+**2. Ücret ve ödeme**
+- Aylık yönetim ücreti her ayın 1. günü peşin ödenir
+- Reklam bütçesi ayrıdır, müşteri doğrudan Google'a öder
+- Sponsorlu Reklam'ın reklam bütçesi üzerinde yetki/sorumluluğu yoktur
+- Geç ödemede hizmet askıya alınabilir
+- Ödenen ücret iade edilmez
+
+**3. Hesap ve veri sahipliği**
+- Google Ads hesabı, Analytics hesabı, domain, hosting — hepsi MÜŞTERİ adına kayıtlıdır
+- Sözleşme sonunda Sponsorlu Reklam erişimini kaldırır
+- Reklam metinleri, anahtar kelime listeleri ve kampanya yapılandırmaları müşteriye devredilir
+
+**4. Garanti sınırları**
+- Belirli satış / müşteri sayısı / gelir garantisi YOK
+- Google'ın hesap askıya alma veya politika değişikliklerinden Sponsorlu Reklam sorumlu değildir
+- Sorumluluk azami olarak son 1 aylık yönetim ücreti ile sınırlıdır
+- Yalnızca doğrudan kasıt veya ağır kusurdan sorumluluk doğar
+
+**5. Müşterinin yükümlülükleri**
+- Aylık ücreti zamanında ödemek
+- Reklam bütçesini doğrudan Google'a ödemek
+- Hesap ve sitede koordinasyonsuz değişiklik yapmamak
+- Gerekli erişim yetkilerini sağlamak (Google Ads, Analytics, site paneli)
+
+**6. Çıkar çatışması kuralı**
+- Aynı il + aynı sektörden en fazla 2 müşteri ile çalışılır
+
+**7. KVKK ve gizlilik**
+- Sponsorlu Reklam, 6698 sayılı KVKK kapsamında "veri işleyen" sıfatıyla hareket eder
+- Kişisel veriler sadece hizmetin ifası için işlenir
+- Sözleşme sonrası gizlilik yükümlülüğü devam eder
+
+**8. Uyuşmazlık**
+- Türk Hukuku uygulanır
+- Aydın Mahkemeleri ve İcra Daireleri yetkilidir
+
+---
+
+## Sıkça sorulan sorular
+
+**S: Reklam bütçesi nedir, ne kadar olmalı?**
+C: Reklam bütçesi, Google'a tıklama başına ödenen paradır ve aylık yönetim ücretinden ayrıdır. Sektöre ve rekabete göre değişir; küçük işletmeler genelde 5.000–20.000 TL/ay reklam bütçesi ile başlar.
+
+**S: Garanti veriyor musunuz?**
+C: Belirli bir satış veya müşteri sayısı garantisi VERMİYORUZ. Google'ın algoritması, sektör rekabeti ve müşterinin sitesi/teklifi gibi kontrol dışı faktörler var. Sözleşmede de bu açıkça yazılıdır.
+
+**S: Sözleşmeyi istediğim zaman feshedebilir miyim?**
+C: Evet. Bir sonraki ay için ödeme yapmayarak istediğiniz zaman sözleşmeyi sonlandırabilirsiniz. Cezai şart yoktur.
+
+**S: Hesabım kimin adına açılıyor?**
+C: Tüm hesaplar (Google Ads, Analytics, domain, hosting) SİZİN adınıza açılır. Biz sadece erişim alırız. Ayrıldığımızda erişimimiz biter; hesap ve veriler sizde kalır.
+
+**S: Aynı sektörden başka müşterinizle çalışıyor musunuz?**
+C: Aynı şehirden + aynı sektörden EN FAZLA 2 müşteri ile çalışıyoruz. Çıkar çatışmasını önlemek için.
+
+**S: Hangi şehirlerde hizmet veriyorsunuz?**
+C: Türkiye geneline uzaktan hizmet veriyoruz. Fiziksel ofis Aydın'dadır. Aydın, İzmir, Muğla, Denizli illerinde yoğun referansımız var.
+
+**S: Online sözleşme imzalanabiliyor mu?**
+C: Evet. Aylık Yönetim Sözleşmesi sayfasında dijital imza özelliği vardır. Müşteri formu doldurur, parmağıyla/fareyle imza atar, imzalı PDF üretilir ve WhatsApp ile bize iletilebilir.
+
+**S: SEO mu Google Ads mi tercih etmeliyim?**
+C: İkisi farklı ölçeklerde çalışır. Google Ads anında trafik getirir (ödediğiniz sürece); SEO uzun vadeli ve daha ucuz ama 3–6 ay sonra meyve verir. Yeni işletmeler için Google Ads, kurumsallaşmış olanlar için SEO + Ads kombinasyonu önerilir.
+
+---
+
+## İletişim ve sonraki adımlar
+
+- **Hızlı yanıt:** WhatsApp +90 546 844 55 76
+- **Ücretsiz görüşme rezervasyonu:** https://sponsorlureklam.com.tr/rezervasyon.html
+- **E-posta:** info@sponsorlureklam.com.tr
+- **Tüm paket ve fiyatları görüntüleme:** https://sponsorlureklam.com.tr/paketler.html
+- **Sözleşme inceleme ve online imza:** https://sponsorlureklam.com.tr/aylik-yonetim-sozlesmesi.html
+
+---
+
+*Bu dosya AI motorlarının (ChatGPT, Claude, Perplexity, Gemini, Copilot) Sponsorlu Reklam hakkında doğru ve güncel bilgi sunabilmesi için hazırlanmıştır. Güncelleme tarihi: 2026-05-31.*

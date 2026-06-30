@@ -1,0 +1,52 @@
+name: Haftalık AI makale taslağı
+
+# Her Pazartesi 06:00 UTC (Türkiye 09:00) + elle tetikleme.
+# Script bir makale taslağı üretir ve PR açar — yayın için PR'ı incele/merge et.
+# Merge sonrası Netlify/Cloudflare Pages otomatik deploy eder.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Makale konusu (boş bırakılırsa AI yeni konu önerir)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Makale taslağı üret
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/draft-article.js "${{ github.event.inputs.topic }}"
+
+      - name: Pull Request aç
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ai-makale-taslagi
+          delete-branch: true
+          commit-message: "İçerik: yeni AI blog makalesi taslağı"
+          title: "Yeni blog makalesi taslağı (AI) — inceleme bekliyor"
+          body: |
+            Bu PR, zamanlanmış iş tarafından üretilen bir **AI makale taslağıdır**.
+
+            **Yayınlamadan önce kontrol et:**
+            - [ ] İçerik doğru ve marka sesine uygun mu?
+            - [ ] İç linkler çalışıyor mu, uydurma bilgi var mı?
+            - [ ] Başlık/meta description uzunlukları makul mü?
+
+            Onaylıyorsan merge et → Netlify/Cloudflare otomatik deploy eder.
+            Beğenmezsen PR'ı kapat (hiçbir şey yayınlanmaz).
