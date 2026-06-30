@@ -1,0 +1,665 @@
+const fs = require('fs');
+const path = require('path');
+
+const iller = [
+  {
+    slug: 'istanbul',
+    ad: 'İstanbul',
+    tamlama: "İstanbul'da",
+    tamlama2: "İstanbul'un",
+    bolge: 'Marmara',
+    ilceler: ['Kadıköy', 'Beşiktaş', 'Şişli', 'Fatih', 'Ümraniye', 'Maltepe', 'Pendik', 'Bakırköy'],
+    aciklama: "Türkiye'nin iş merkezi İstanbul'da, yüksek rekabetin içinde fark yaratacak kurumsal web siteleri tasarlıyoruz.",
+    pazar: "Boğaz kenti olarak dünyanın her yerinden müşteri çeken İstanbul",
+    sektorler: "fintech startuplardan köklü ticaret şirketlerine, Anadolu yakasının üretim firmalarından Avrupa yakasının lojistik işletmelerine",
+    rekabet: "İstanbul'da rekabetin bu kadar yoğun olduğu bir pazarda",
+    extra_p1: "İstanbul işletmeleri için tasarladığımız sitelerde önceliğimiz hız ve dönüşümdür. Şehrin yoğun dijital trafiğinde kullanıcı sabırsızdır; 3 saniyede açılmayan bir site ziyaretçiyi kaybeder. Bu yüzden görselden önce performansı optimize ediyor, ardından kurumsal kimliğinizi yansıtan tasarımı üzerine inşa ediyoruz.",
+    extra_p2: "İstanbul merkezli işletmeler çoğunlukla iki dilli içerik ihtiyacı duyar. Türkçe ana içeriğin yanı sıra İngilizce versiyonla Google'dan uluslararası ziyaretçi çekme fırsatını kaçırmayın. Çoklu dil altyapısını standart paketlerimizde sunuyoruz.",
+    faq1_s: "İstanbul'dan uzakta olmanıza rağmen nasıl proje yürütülüyor?",
+    faq1_c: "Tüm süreç WhatsApp, e-posta ve dijital dosya paylaşımıyla uzaktan ilerliyor. Yüz yüze görüşme şart değil; İstanbullu müşterilerimizin büyük çoğunluğuyla hiç fiziksel buluşmadan proje teslim ettik.",
+    faq2_s: "İstanbul'da e-ticaret sitesi de yapıyor musunuz?",
+    faq2_c: "Temel kurumsal sitelere odaklanıyoruz. Karmaşık e-ticaret altyapısı yerine, ürün kataloğu ve WhatsApp entegrasyonlu tanıtım siteleri sunuyoruz.",
+    faq3_s: "Kaç günde teslim edilir?",
+    faq3_c: "İçerikler tarafınızdan zamanında sağlandığında çoğu site 2–4 haftada yayına alınır. İstanbul müşterilerimizde ortalama teslim süremiz 18 gündür.",
+    ads_il: 'istanbul',
+    ads_il_ad: 'İstanbul',
+  },
+  {
+    slug: 'ankara',
+    ad: 'Ankara',
+    tamlama: "Ankara'da",
+    tamlama2: "Ankara'nın",
+    bolge: 'İç Anadolu',
+    ilceler: ['Çankaya', 'Keçiören', 'Yenimahalle', 'Mamak', 'Sincan', 'Etimesgut', 'Altındağ', 'Pursaklar'],
+    aciklama: "Türkiye'nin başkenti Ankara'da kurumsal kimliğinizi yansıtan, Google'da üst sıralarda yer alan web siteleri tasarlıyoruz.",
+    pazar: "Kamu kurumları, üniversiteler ve özel sektörün iç içe geçtiği Ankara",
+    sektorler: "savunma sanayi tedarikçilerinden hukuk bürolarına, eğitim kurumlarından sağlık kliniklerine",
+    rekabet: "Ankara'nın kamu odaklı ama giderek büyüyen özel sektör ekosisteminde",
+    extra_p1: "Ankara işletmeleri için hazırladığımız sitelerde kurumsal dil ve güven ön planda. Başkentin iş dünyası güvenilirliğe, referansa ve profesyonelliğe önem verir. Tasarımlarımız bu beklentiyi karşılayacak şekilde kurgulanır.",
+    extra_p2: "Kamu ihalelerine giren firmalar için 'yeterlilik belgesi' ve 'referans projeleri' gibi bölümleri öne çıkaran özel sayfa düzenleri hazırlıyoruz. Bu içerikler Google'da 'Ankara [sektör] firması' aramalarında sizi öne çıkarır.",
+    faq1_s: "Ankara'da kamu sektörüne yönelik site özelleştirmesi yapıyor musunuz?",
+    faq1_c: "Evet. Referans projeleri, sertifikalar, ihale geçmişi gibi bölümleri öne çıkaran kurumsal yapılar kurguluyoruz.",
+    faq2_s: "Sitenin içeriğini siz mi yazıyorsunuz?",
+    faq2_c: "İçerik sizden geliyor; dilbilgisi ve SEO uyum düzenlemesi bizden. Tamamen hazır içerik yazma hizmetimiz şu an mevcut değil.",
+    faq3_s: "Ankara'da aynı sektörde birden fazla müşteriyle çalışıyor musunuz?",
+    faq3_c: "Hayır. Aynı şehir ve sektörde en fazla 2 müşteriyle çalışıyoruz; rakibinizin sitesini de biz yapmıyoruz.",
+    ads_il: 'ankara',
+    ads_il_ad: 'Ankara',
+  },
+  {
+    slug: 'bursa',
+    ad: 'Bursa',
+    tamlama: "Bursa'da",
+    tamlama2: "Bursa'nın",
+    bolge: 'Marmara',
+    ilceler: ['Osmangazi', 'Nilüfer', 'Yıldırım', 'Görükle', 'Kestel', 'Mudanya', 'Gemlik', 'İnegöl'],
+    aciklama: "Bursa'da otomotiv, tekstil ve gıda sektörlerinde faaliyet gösteren işletmeler için SEO uyumlu kurumsal web siteleri tasarlıyoruz.",
+    pazar: "Türkiye'nin sanayileşmiş şehirleri arasında öne çıkan Bursa",
+    sektorler: "otomotiv yan sanayiden tekstil ihracatçılarına, mobilya üreticilerinden gıda işletmelerine",
+    rekabet: "Bursa'nın yoğun sanayi ekosisteminde dijital varlık artık zorunlu hale geldi",
+    extra_p1: "Bursa'nın ihracata yönelik sanayisi için web sitesi tasarlarken iki dil desteği ve teknik ürün kataloğu yerleşimine özellikle dikkat ediyoruz. Yabancı alıcılar sitenizi ilk filtreleme noktası olarak kullanır.",
+    extra_p2: "Nilüfer'in teknoloji şirketlerinden Yıldırım'ın üretim tesislerine, Gemlik'in lojistik firmalarına kadar Bursa'nın her ilçesindeki işletmeyi dijitalde temsil edecek kalitede site yapıyoruz.",
+    faq1_s: "Teknik ürün kataloğu sayfası yapabiliyor musunuz?",
+    faq1_c: "Evet. Fotoğraf, teknik özellik tablosu ve PDF indirme bağlantısından oluşan ürün/hizmet sayfaları tasarlıyoruz.",
+    faq2_s: "Bursa'da yüz yüze görüşme imkânınız var mı?",
+    faq2_c: "Aydın merkezliyiz ve uzaktan çalışıyoruz. Görüşmeler WhatsApp ve video arama üzerinden gerçekleşiyor.",
+    faq3_s: "Sitenin hosting'ini siz mi yönetiyorsunuz?",
+    faq3_c: "İlk yıl domain ve hosting pakete dahil. Sonraki yıllarda yenileme tercihini size bırakıyoruz; yönlendirme yapıyoruz.",
+    ads_il: 'bursa',
+    ads_il_ad: 'Bursa',
+  },
+  {
+    slug: 'adana',
+    ad: 'Adana',
+    tamlama: "Adana'da",
+    tamlama2: "Adana'nın",
+    bolge: 'Akdeniz',
+    ilceler: ['Seyhan', 'Çukurova', 'Yüreğir', 'Sarıçam', 'Ceyhan', 'Kozan', 'İmamoğlu', 'Karataş'],
+    aciklama: "Adana'da tarım, gıda ve lojistik sektörlerindeki işletmeler için güçlü dijital varlık oluşturuyoruz.",
+    pazar: "Türkiye'nin güneyindeki tarım ve ticaret merkezi Adana",
+    sektorler: "tarım-gıda işletmelerinden tekstil fabrikalarına, lojistik firmalarından perakende zincirlerine",
+    rekabet: "Adana'da dijitalleşme hız kazanıyor ve ilk sırayı alanlar rakiplerini geride bırakıyor",
+    extra_p1: "Adana'nın geniş ticaret ağı için tasarladığımız sitelerde yerel SEO ön planda. 'Adana web tasarım firması', 'Adana kurumsal site' gibi aramalarda ilk sayfalarda yer almanız için içerik ve teknik altyapıyı buna göre kuruyoruz.",
+    extra_p2: "Akdeniz'in bu güçlü ticaret merkezinde, özellikle Çukurova Serbest Bölgesi'nin uluslararası müşteri kitlesine hitap eden işletmeler için iki dilli site altyapısı büyük avantaj sağlıyor.",
+    faq1_s: "Adana için yerel SEO çalışması yapıyor musunuz?",
+    faq1_c: "Evet. Adana'ya özgü anahtar kelime araştırması yapıyor, sayfa içeriklerini ve meta verilerini buna göre hazırlıyoruz.",
+    faq2_s: "Tarımsal ürün kataloğu içeren site yapabiliyor musunuz?",
+    faq2_c: "Evet. Sezonluk ürün güncelleme kolaylığı olan katalog sayfaları tasarlıyoruz.",
+    faq3_s: "Ödeme nasıl yapılıyor?",
+    faq3_c: "Peşin EFT/havale ile ödeme alıyoruz. Fatura düzenliyoruz.",
+    ads_il: 'adana',
+    ads_il_ad: 'Adana',
+  },
+  {
+    slug: 'konya',
+    ad: 'Konya',
+    tamlama: "Konya'da",
+    tamlama2: "Konya'nın",
+    bolge: 'İç Anadolu',
+    ilceler: ['Selçuklu', 'Meram', 'Karatay', 'Ereğli', 'Akşehir', 'Seydişehir', 'Beyşehir', 'Çumra'],
+    aciklama: "Konya'nın büyüyen sanayi ve tarım ekosistemindeki işletmeler için SEO odaklı kurumsal web siteleri yapıyoruz.",
+    pazar: "Türkiye'nin en büyük yüzölçümlü ili ve önemli tarım-sanayi merkezi Konya",
+    sektorler: "tarım makineleri üreticilerinden gıda sanayisine, inşaat firmalarından eğitim kurumlarına",
+    rekabet: "Konya'nın hızla dijitalleşen iş ortamında",
+    extra_p1: "Konya'nın makine ve tarım sektörü için hazırladığımız sitelerde teknik içerik sunumu kritik. Ürün özellikleri, referans listesi ve sertifika bölümleri hem kullanıcı deneyimi hem Google sıralaması açısından doğru kurgulanıyor.",
+    extra_p2: "Selçuklu'nun gelişen teknoparkı ve sanayi bölgelerindeki firmalar için modern, uluslararası standartlarda kurumsal siteler yapıyoruz. Konya'nın turizm potansiyelini değerlendiren konaklama ve rehberlik işletmeleri de hizmet kapsamımızdadır.",
+    faq1_s: "Konya'da makine sektörü için site referansınız var mı?",
+    faq1_c: "Evet. Tarım ekipmanı ve makine üreticileri için ürün kataloğu ağırlıklı siteler yaptık.",
+    faq2_s: "İçerik Türkçe ve İngilizce olarak hazırlanabilir mi?",
+    faq2_c: "Türkçe içerik sizden, İngilizce çeviri tarafınızdan sağlandığında iki dilli site kuruyoruz.",
+    faq3_s: "Mevcut siteyi yenilemek istesek ne yapmalıyız?",
+    faq3_c: "Mevcut sitenizi inceliyoruz, içerik varsa aktarıyoruz ve yeni tasarımı üzerine kuruyoruz. Süreç baştan kurmaktan biraz daha hızlı tamamlanır.",
+    ads_il: 'konya',
+    ads_il_ad: 'Konya',
+  },
+  {
+    slug: 'kayseri',
+    ad: 'Kayseri',
+    tamlama: "Kayseri'de",
+    tamlama2: "Kayseri'nin",
+    bolge: 'İç Anadolu',
+    ilceler: ['Melikgazi', 'Kocasinan', 'Talas', 'Hacılar', 'İncesu', 'Develi', 'Tomarza', 'Yeşilhisar'],
+    aciklama: "Kayseri'nin köklü ticaret ve sanayi geleneğine yakışır, kurumsal duruşu güçlü web siteleri tasarlıyoruz.",
+    pazar: "Anadolu'nun iş yapma kültürünü temsil eden ticaret şehri Kayseri",
+    sektorler: "mobilya ve tekstil üreticilerinden metal sanayisine, gıda ihracatçılarından inşaat firmalarına",
+    rekabet: "Kayseri'nin rekabetçi ticaret ortamında dijital varlık artık temel bir gereklilik",
+    extra_p1: "Kayseri'nin dünyaya açılan ihracatçı kimliği için sitelerimizi uluslararası ziyaretçiye uygun biçimde tasarlıyoruz. Şirket profili, referans müşteri ve ürün gamı bölümleri yabancı alıcıların beklentilerini karşılayacak şekilde kurgulanır.",
+    extra_p2: "Talas ve Melikgazi'nin gelişen konut ve yapı sektörü için proje tanıtım siteleri konusunda deneyimliyiz. Fotoğraf galerileri, tamamlanan projeler ve iletişim formu entegrasyonuyla satış sürecinizi dijitale taşıyoruz.",
+    faq1_s: "Kayseri'de e-ihracat için site yapıyor musunuz?",
+    faq1_c: "Kurumsal tanıtım ve katalog siteleri yapıyoruz; tam e-ticaret altyapısı kapsamımız dışında.",
+    faq2_s: "SEO içerikleri kim yazıyor?",
+    faq2_c: "Sayfa başlıkları, meta açıklamalar ve URL yapısını biz hazırlıyoruz. Ana içerik metin sizden geliyor.",
+    faq3_s: "Kaç sayfa dahil?",
+    faq3_c: "Tüm paketlerimizde 10 sayfaya kadar dahil. Fazlası için ek ücret uygulanır.",
+    ads_il: 'kayseri',
+    ads_il_ad: 'Kayseri',
+  },
+  {
+    slug: 'eskisehir',
+    ad: 'Eskişehir',
+    tamlama: "Eskişehir'de",
+    tamlama2: "Eskişehir'in",
+    bolge: 'İç Anadolu',
+    ilceler: ['Odunpazarı', 'Tepebaşı', 'Çifteler', 'Sivrihisar', 'Mihalıçcık', 'Alpu', 'Han', 'İnönü'],
+    aciklama: "Eskişehir'in yenilikçi ve genç iş dünyası için modern, hızlı ve SEO uyumlu kurumsal web siteleri tasarlıyoruz.",
+    pazar: "Üniversite şehri ve savunma sanayi üssü Eskişehir",
+    sektorler: "savunma sanayi tedarikçilerinden teknoloji startuplarına, eğitim kurumlarından turizm işletmelerine",
+    rekabet: "Eskişehir'in genç ve eğitimli nüfusunun yönlendirdiği dijital tüketici ortamında",
+    extra_p1: "Eskişehir'in üniversite ekosistemi, teknoloji girişimlerine zemin hazırlıyor. Startup ve genç işletmeler için hem bütçe dostu hem kurumsal görünümlü site paketlerimiz mevcut. Başlangıç paketimiz bu işletmeler için idealdir.",
+    extra_p2: "Odunpazarı'nın tarihi dokusunu ve şehrin modern yaşam anlayışını harmanlayan turizm ve konaklama işletmeleri için görsel ağırlıklı, rezervasyon entegrasyonlu siteler hazırlıyoruz.",
+    faq1_s: "Startup için uygun fiyatlı paket var mı?",
+    faq1_c: "Evet. Başlangıç paketimiz yeni kurulan işletmelere hitap eden, bütçe dostu bir seçenek.",
+    faq2_s: "Online rezervasyon entegrasyonu yapabiliyor musunuz?",
+    faq2_c: "Basit WhatsApp tabanlı rezervasyon yönlendirme yapıyoruz. Kompleks rezervasyon sistemleri kapsam dışında.",
+    faq3_s: "Sosyal medya bağlantıları dahil mi?",
+    faq3_c: "Evet. Instagram, Facebook, LinkedIn ve YouTube bağlantıları standart olarak ekleniyor.",
+    ads_il: 'eskisehir',
+    ads_il_ad: 'Eskişehir',
+  },
+  {
+    slug: 'gaziantep',
+    ad: 'Gaziantep',
+    tamlama: "Gaziantep'te",
+    tamlama2: "Gaziantep'in",
+    bolge: 'Güneydoğu Anadolu',
+    ilceler: ['Şahinbey', 'Şehitkamil', 'Nizip', 'İslahiye', 'Nurdağı', 'Oğuzeli', 'Araban', 'Karkamış'],
+    aciklama: "Gaziantep'in güçlü sanayi ve ihracat potansiyelini dijitalde temsil edecek kurumsal web siteleri tasarlıyoruz.",
+    pazar: "Türkiye'nin ihracat şampiyonlarından Gaziantep",
+    sektorler: "tekstil ve hazır giyimden plastik ve ambalaja, gıda ve baharatçılıktan inşaat malzemesine",
+    rekabet: "Gaziantep'in dünyaya açılan ihracatçı işletmeleri için uluslararası standartlarda",
+    extra_p1: "Gaziantep'in ihracatçı kimliği için hazırladığımız sitelerde çok dilli yapı ve uluslararası alıcı odaklı tasarım ön plana çıkıyor. Ürün kataloğu, teknik özellikler ve iletişim bölümü uluslararası standartlarda kurgulanıyor.",
+    extra_p2: "Şehrin gastronomi ve turizm değerini dijitalde yansıtmak isteyen restoran, kafe ve tur şirketleri için görsel ağırlıklı, Google Haritalar entegrasyonlu siteler de hazırlıyoruz.",
+    faq1_s: "Gaziantep'te ihracat sitesi için özel paket var mı?",
+    faq1_c: "İhracatçı firmalar için Orta veya İleri Seviye paketimiz önerilir; iki dil desteği ve teknik katalog bölümü içeriyor.",
+    faq2_s: "Siteyi kendi kendime güncelleyebilir miyim?",
+    faq2_c: "Basit içerik güncellemeleri için size kılavuz hazırlıyoruz. Büyük yapısal değişiklikler için bizimle iletişime geçmenizi öneririz.",
+    faq3_s: "Teslimat sonrası destek veriyor musunuz?",
+    faq3_c: "Pakete göre 15–30 gün teknik destek dahil. Devamında aylık bakım hizmetimiz talep üzerine sunuluyor.",
+    ads_il: 'gaziantep',
+    ads_il_ad: 'Gaziantep',
+  },
+  {
+    slug: 'mersin',
+    ad: 'Mersin',
+    tamlama: "Mersin'de",
+    tamlama2: "Mersin'in",
+    bolge: 'Akdeniz',
+    ilceler: ['Yenişehir', 'Mezitli', 'Toroslar', 'Akdeniz', 'Tarsus', 'Silifke', 'Erdemli', 'Mut'],
+    aciklama: "Türkiye'nin en büyük limanını barındıran Mersin'de lojistik, ticaret ve tarım işletmeleri için güçlü web siteleri tasarlıyoruz.",
+    pazar: "Türkiye'nin dış ticaret kapısı, Mersin Limanı'nın bulunduğu şehir",
+    sektorler: "lojistik ve gümrükleme firmalarından tarım ihracatçılarına, serbest bölge işletmelerinden turizm şirketlerine",
+    rekabet: "Mersin'in uluslararası ticaret ortamında dijital görünürlük ihracat kadar kritik",
+    extra_p1: "Mersin Serbest Bölgesi'ndeki uluslararası firmalar ve liman ekosisteminin lojistik şirketleri için iki dilli kurumsal site zorunluluk haline geldi. İngilizce sayfa yapısı ve uluslararası müşteri odaklı tasarım konusunda deneyimliyiz.",
+    extra_p2: "Akdeniz kıyısının uzunluğu ve turizm potansiyeli sayesinde Erdemli, Silifke ve Kızkalesi gibi ilçelerdeki konaklama işletmeleri için görsel ağırlıklı, rezervasyona yönlendiren siteler hazırlıyoruz.",
+    faq1_s: "Gümrükleme ve lojistik firmaları için referansınız var mı?",
+    faq1_c: "Lojistik ve ticaret şirketleri için hizmet listesi ve süreç tanıtım ağırlıklı siteler yaptık.",
+    faq2_s: "Mersin'de Google Ads desteği de veriyor musunuz?",
+    faq2_c: "Evet. Siteyi teslim ettikten sonra Google Ads kampanya kurulumu ve yönetimi hizmetimizden yararlanabilirsiniz.",
+    faq3_s: "Site kaç dilde olabilir?",
+    faq3_c: "Türkçe standart; İngilizce, Arapça ek dil desteği içerik tarafınızdan sağlandığında ekleniyor.",
+    ads_il: 'mersin',
+    ads_il_ad: 'Mersin',
+  },
+  {
+    slug: 'trabzon',
+    ad: 'Trabzon',
+    tamlama: "Trabzon'da",
+    tamlama2: "Trabzon'un",
+    bolge: 'Karadeniz',
+    ilceler: ['Ortahisar', 'Akçaabat', 'Arsin', 'Yomra', 'Araklı', 'Beşikdüzü', 'Of', 'Çaykara'],
+    aciklama: "Trabzon'un fındık, çay ve turizm ekosistemindeki işletmeler için SEO uyumlu, profesyonel web siteleri tasarlıyoruz.",
+    pazar: "Karadeniz'in ticaret ve lojistik merkezi Trabzon",
+    sektorler: "fındık ve çay ihracatçılarından tur şirketlerine, otellerden inşaat firmalarına",
+    rekabet: "Karadeniz'in bu dinamik şehrinde dijital rekabet hız kazanıyor",
+    extra_p1: "Trabzon'un Gürcistan ve Orta Asya'ya açılan ticaret güzergahındaki yeri göz önüne alındığında, ihracatçı firmalar için çok dilli site büyük önem taşıyor. Rusça ve İngilizce içerik desteği, içerik tarafınızdan sağlandığında standart paketlerimize ekleniyor.",
+    extra_p2: "Trabzon'un doğa turizmi potansiyelini kullanan yayla turizmi işletmeleri ve konaklama firmaları için fotoğraf galerileri öne çıkan, sosyal medya entegrasyonu güçlü siteler hazırlıyoruz. Sümela Manastırı çevresindeki tur şirketleri de hizmet alanımızdadır.",
+    faq1_s: "Trabzon için Rusça site yapabiliyor musunuz?",
+    faq1_c: "Rusça içerik tarafınızdan sağlandığında teknik kurulumu yapıyoruz. İçerik çevirisi hizmetimiz kapsamında değil.",
+    faq2_s: "Yayla turizmi için galeri ağırlıklı site yapabiliyor musunuz?",
+    faq2_c: "Evet. Fotoğraf galerisi, tur programı ve rezervasyon yönlendirmesi içeren siteler hazırlıyoruz.",
+    faq3_s: "Trabzon'dan çalışan biriyle görüşme imkânımız var mı?",
+    faq3_c: "Aydın merkezliyiz; görüşmeler WhatsApp ve telefon üzerinden gerçekleşiyor. Karadeniz bölgesindeki tüm illerden uzaktan hizmet veriyoruz.",
+    ads_il: 'trabzon',
+    ads_il_ad: 'Trabzon',
+  },
+];
+
+const fonts = `@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:optional;src:url(/fonts/inter-400-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:optional;src:url(/fonts/inter-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:optional;src:url(/fonts/inter-500-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:optional;src:url(/fonts/inter-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:optional;src:url(/fonts/inter-600-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:optional;src:url(/fonts/inter-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/inter-700-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/inter-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/playfair-700-latin-ext.woff2) format('woff2');unicode-range:U+011E-011F, U+0130-0131, U+015E-015F;}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:optional;src:url(/fonts/playfair-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}`;
+
+const css = `
+:root{--navy:#0a2540;--navy-dark:#061a30;--navy-light:#1a3a5c;--gold:#c9a961;--gold-dark:#856221;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-500:#64748b;--gray-700:#334155;--gray-900:#0f172a;--white:#ffffff;--success:#16a34a;--danger:#dc2626;--shadow-sm:0 1px 2px rgba(10,37,64,.06);--shadow:0 4px 12px rgba(10,37,64,.08);--shadow-lg:0 12px 32px rgba(10,37,64,.12);--radius:8px;--radius-lg:12px;--max:1200px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.65;color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--navy);text-decoration:none;transition:color .2s ease;}
+a:hover{color:var(--gold-dark);}
+h1,h2,h3,h4{font-family:"Playfair Display","Georgia",serif;color:var(--navy);line-height:1.25;font-weight:700;letter-spacing:-.01em;}
+h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem;}
+h2{font-size:clamp(1.6rem,3vw,2.25rem);margin-bottom:.85rem;}
+h3{font-size:1.35rem;margin-bottom:.75rem;}
+p{margin-bottom:1rem;}
+ul,ol{margin:0 0 1rem 1.25rem;}
+li{margin-bottom:.35rem;}
+.container{max-width:var(--max);margin:0 auto;padding:0 1.25rem;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.site-header{background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;max-width:var(--max);margin:0 auto;gap:1rem;}
+.logo{display:flex;align-items:center;gap:.6rem;}
+.logo-text{font-family:"Playfair Display",Georgia,serif;font-weight:700;color:var(--navy);font-size:1.15rem;line-height:1;}
+.logo-text small{display:block;font-family:"Inter",sans-serif;font-size:.65rem;font-weight:500;color:var(--gold-dark);letter-spacing:.15em;text-transform:uppercase;margin-top:4px;}
+.nav{display:flex;align-items:center;gap:.25rem;}
+.nav a{padding:.5rem .85rem;color:var(--gray-700);font-weight:500;font-size:.95rem;border-radius:6px;transition:all .2s ease;}
+.nav a:hover,.nav a.active{color:var(--navy);background:var(--gray-100);}
+.nav .btn-cta{background:var(--navy);color:var(--white);margin-left:.5rem;}
+.nav .btn-cta:hover{background:var(--navy-dark);color:var(--white);}
+.nav-toggle{display:none;background:none;border:0;padding:.5rem;cursor:pointer;}
+.nav-toggle span{display:block;width:26px;height:3px;background:var(--navy);margin:5px 0;transition:all .25s ease;}
+@media(max-width:900px){.nav-toggle{display:block;}.nav{position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;padding:.5rem;border-bottom:1px solid var(--gray-200);box-shadow:var(--shadow);display:none;}.nav.is-open{display:flex;}.nav a{padding:.85rem 1rem;}.nav .btn-cta{margin:.5rem 0 0;text-align:center;}}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);padding:3.5rem 0 3rem;text-align:center;position:relative;overflow:hidden;}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 40%,rgba(201,169,97,.12),transparent 50%),radial-gradient(circle at 80% 60%,rgba(201,169,97,.08),transparent 50%);pointer-events:none;}
+.page-hero .container{position:relative;z-index:1;}
+.page-hero h1{color:var(--white);}
+.page-hero p{color:rgba(255,255,255,.85);max-width:700px;margin:.75rem auto 0;font-size:1.1rem;}
+.breadcrumb{font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,.85);}
+.breadcrumb a:hover{color:var(--gold);}
+.hero-bar{display:inline-block;height:4px;width:60px;background:var(--gold);margin-bottom:1.25rem;}
+.section{padding:4.5rem 0;}
+.section-alt{background:var(--gray-50);}
+.section-header{text-align:center;max-width:720px;margin:0 auto 3rem;}
+.section-header .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.85rem;}
+.section-header p{color:var(--gray-500);font-size:1.05rem;}
+.btn{display:inline-block;padding:.85rem 1.65rem;border-radius:var(--radius);font-weight:600;font-size:.95rem;border:0;cursor:pointer;transition:all .25s ease;text-align:center;line-height:1.2;}
+.btn-primary{background:var(--gold);color:var(--navy);}
+.btn-primary:hover{background:var(--gold-dark);color:var(--white);transform:translateY(-1px);box-shadow:var(--shadow);}
+.btn-outline{border:2px solid rgba(255,255,255,.5);color:var(--white);}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.1);color:var(--white);}
+.btn-dark{background:var(--navy);color:var(--white);}
+.btn-dark:hover{background:var(--navy-dark);color:var(--white);}
+.btn-ghost{background:transparent;color:var(--navy);border:2px solid var(--navy);}
+.btn-ghost:hover{background:var(--navy);color:var(--white);}
+.btn-lg{padding:1.05rem 2rem;font-size:1rem;}
+.grid{display:grid;gap:1.5rem;}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+.card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.85rem;transition:all .25s ease;}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--gold);}
+.card .icon{width:52px;height:52px;background:var(--gray-100);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;color:var(--navy);}
+.card .icon svg{width:26px;height:26px;}
+.feature-list{list-style:none;margin:0;padding:0;}
+.feature-list li{padding:.65rem 0 .65rem 1.85rem;position:relative;}
+.feature-list li::before{content:"✓";position:absolute;left:0;top:.65rem;width:20px;height:20px;background:var(--gold);color:var(--navy);border-radius:50%;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;}
+.article-content{max-width:800px;margin:0 auto;}
+.article-content h2{margin-top:2.25rem;}
+.article-content h3{margin-top:1.85rem;}
+.article-content p{font-size:1.05rem;line-height:1.8;color:var(--gray-700);}
+.article-content ul li{font-size:1.05rem;line-height:1.7;}
+.cta-strip{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);padding:3.5rem 0;text-align:center;}
+.cta-strip h2{color:var(--white);margin-bottom:.75rem;}
+.cta-strip p{color:rgba(255,255,255,.85);font-size:1.1rem;margin-bottom:1.75rem;max-width:620px;margin-left:auto;margin-right:auto;}
+.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;}
+.text-center{text-align:center;}
+.mt-3{margin-top:1.5rem;}
+.mt-4{margin-top:2rem;}
+.mb-0{margin-bottom:0;}
+.h-sm{font-size:1.15rem;margin-bottom:.5rem;}
+.tag{display:inline-block;padding:.25rem .7rem;background:var(--gray-100);color:var(--gray-700);font-size:.8rem;border-radius:20px;font-weight:500;}
+.tag-gold{background:var(--gold);color:var(--navy);}
+.alert{padding:1rem 1.25rem;border-radius:var(--radius);margin:1rem 0;border-left:4px solid;}
+.alert-info{background:#eff6ff;border-color:#2563eb;color:#1e3a8a;}
+.alert strong{display:block;margin-bottom:.25rem;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+@media(max-width:800px){.two-col{grid-template-columns:1fr;gap:2rem;}}
+.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.75);padding:3.5rem 0 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr;}}
+.footer-grid h3{color:var(--white);font-family:"Inter",sans-serif;font-size:1rem;margin-bottom:1rem;}
+.footer-grid ul{list-style:none;margin:0;padding:0;}
+.footer-grid li{margin-bottom:.55rem;}
+.footer-grid a{color:rgba(255,255,255,.82);font-size:.92rem;}
+.footer-grid a:hover{color:var(--gold);}
+.footer-brand p{font-size:.92rem;line-height:1.7;margin-top:.85rem;}
+.footer-brand .logo-text{color:white;}
+.footer-brand .logo-text small{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.72);}
+.wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:99;transition:transform .25s ease;}
+.wa-float:hover{transform:scale(1.08);color:white;}
+.wa-float svg{width:30px;height:30px;}
+`;
+
+function buildPage(il) {
+  const ilcelerHtml = il.ilceler.map(i => `<div class="card text-center"><h3 class="mb-0 h-sm">${i}</h3></div>`).join('\n      ');
+
+  return `<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${il.ad} Web Tasarım Firması | SEO Uyumlu Kurumsal Site | Sponsorlu Reklam</title>
+<meta name="description" content="${il.ad} web tasarım firması arıyorsanız doğru yerdesiniz. SEO uyumlu, mobil uyumlu, hızlı kurumsal web sitesi tasarımı. Domain ve hosting 1 yıl dahil. ${il.tamlama2} işletmelere özel çözümler.">
+<meta name="keywords" content="${il.slug} web tasarım, ${il.slug} web tasarım firması, ${il.slug} kurumsal web sitesi, ${il.slug} web sitesi yapımı, web tasarım ${il.slug}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a2540">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://sponsorlureklam.com.tr/web-tasarim/${il.slug}.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${il.ad} Web Tasarım Firması | SEO Uyumlu Kurumsal Site | Sponsorlu Reklam">
+<meta property="og:description" content="${il.ad} web tasarım firması arıyorsanız doğru yerdesiniz. SEO uyumlu, mobil uyumlu ve hızlı açılan kurumsal web siteleri.">
+<meta property="og:url" content="https://sponsorlureklam.com.tr/web-tasarim/${il.slug}.html">
+<meta property="og:image" content="https://sponsorlureklam.com.tr/img/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${il.ad} Web Tasarım Firması | Sponsorlu Reklam">
+<meta name="twitter:description" content="${il.aciklama}">
+<link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-700-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-700-latin-ext.woff2" crossorigin>
+<style id="main-css">
+${fonts}
+${css}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "${il.ad} Web Tasarım",
+  "serviceType": "Web Tasarım",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Sponsorlu Reklam",
+    "telephone": "+905468445576",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mimar Sinan Mah. 2341 Sk. No:4",
+      "addressLocality": "Efeler",
+      "addressRegion": "Aydın",
+      "addressCountry": "TR"
+    }
+  },
+  "areaServed": {"@type": "City", "name": "${il.ad}"},
+  "description": "${il.aciklama}",
+  "offers": {"@type": "Offer", "price": "17000", "priceCurrency": "TRY"}
+}
+<\/script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://sponsorlureklam.com.tr/"},
+    {"@type": "ListItem", "position": 2, "name": "Web Tasarım", "item": "https://sponsorlureklam.com.tr/hizmetler/web-tasarim.html"},
+    {"@type": "ListItem", "position": 3, "name": "${il.ad}", "item": "https://sponsorlureklam.com.tr/web-tasarim/${il.slug}.html"}
+  ]
+}
+<\/script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"${il.faq1_s}","acceptedAnswer":{"@type":"Answer","text":"${il.faq1_c}"}},
+    {"@type":"Question","name":"${il.faq2_s}","acceptedAnswer":{"@type":"Answer","text":"${il.faq2_c}"}},
+    {"@type":"Question","name":"${il.faq3_s}","acceptedAnswer":{"@type":"Answer","text":"${il.faq3_c}"}}
+  ]
+}
+<\/script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo" aria-label="Sponsorlu Reklam">
+      <img src="../img/logo.svg" alt="Sponsorlu Reklam logosu" width="38" height="38">
+      <span class="logo-text">Sponsorlu Reklam<small>web & google ads</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../hizmetler.html" class="active">Hizmetler</a>
+      <a href="../paketler.html">Paketler</a>
+      <a href="../vaka-calismalari.html">Vakalar</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../sss.html">SSS</a>
+      <a href="../rezervasyon.html">Rezervasyon</a>
+      <a href="../iletisim.html" class="btn-cta">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Anasayfa</a> / <a href="../hizmetler/web-tasarim.html">Web Tasarım</a> / ${il.ad}
+    </nav>
+    <span class="hero-bar"></span>
+    <h1>${il.ad} Web Tasarım Firması</h1>
+    <p>${il.aciklama}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container article-content">
+
+    <h2>${il.tamlama} Web Tasarım Hizmetleri</h2>
+    <p>${il.pazar}, dijital rekabette hızla öne çıkmak isteyen işletmelere ev sahipliği yapıyor. ${il.sektorler} kadar geniş bir yelpazede, ${il.tamlama2} işletmeleri web'de doğru temsil etmek için çalışıyoruz. Ajansımız Aydın merkezli; ancak tüm projelerimizi tamamen uzaktan, kesintisiz bir iletişimle yürütüyoruz.</p>
+
+    <p>Bir web sitesi tasarlarken yalnızca görsele değil, Google'da bulunabilirliğe ve dönüşüme odaklanıyoruz. ${il.rekabet} sıradan bir site yeterli değil; hem hızlı yüklenmeli hem mobilde kusursuz görünmeli hem de arama motorlarında rakiplerinizin önüne geçmeli.</p>
+
+    <h2>${il.ad} İşletmeleri İçin Web Tasarım Süreci</h2>
+
+    <h3>1. Sektör ve Hedef Kitle Analizi</h3>
+    <p>Projeye başlamadan önce ${il.tamlama2} sektör dinamiklerini ve rakiplerinizi analiz ediyoruz. Hangi anahtar kelimelerde görünür olmanız gerektiğini belirliyor, bu kelimeleri site altyapısına entegre ediyoruz. Şablonla değil, ${il.tamlama2} işletmenize özel bir stratejiyle başlıyoruz.</p>
+
+    <h3>2. SEO Uyumlu Sayfa Yapısı</h3>
+    <p>URL yapısı, H1–H2–H3 hiyerarşisi, title ve meta description gibi teknik SEO unsurları siteyi en baştan doğru kuruyoruz. Sonradan eklemeler yerine baştan doğru yapmak Google'ın siteyi hızla indekslemesini sağlar. ${il.ad} aramaları için hedef kelime gruplarını her sayfanın içeriğine doğal biçimde yerleştiriyoruz.</p>
+
+    <h3>3. Mobil Öncelikli Tasarım</h3>
+    <p>${il.tamlama2} ziyaretçilerin büyük çoğunluğu akıllı telefondan geliyor. Google da mobil uyumluluğu sıralama kriteri olarak kullanıyor. Bu yüzden tasarımı önce mobil ekran için kurguluyoruz; masaüstü bunu takip ediyor. Dokunmatik alanlar, okunabilir font boyutları ve hızlı yükleme süresi standart.</p>
+
+    <h3>4. Sayfa Hızı Optimizasyonu</h3>
+    <p>Büyük görseller, temizlenmemiş kod ve yavaş hosting, Google sıralamalarını olumsuz etkiler. Tüm görselleri WebP formatına dönüştürüyor, CSS ve JavaScript dosyalarını minimize ediyor, hızlı hosting üzerinde yayınlıyoruz. Core Web Vitals skorlarını hedef alarak çalışıyoruz.</p>
+
+    <h3>5. Dönüşüm Odaklı Yerleşim</h3>
+    <p>İletişim butonu, telefon numarası ve form, kullanıcının en fazla tıkladığı noktalara yerleştiriliyor. WhatsApp butonu her sayfada sabit olarak görünür. Bu basit ama kritik detaylar, ziyaretçiyi müşteriye dönüştürme oranını doğrudan artırır.</p>
+
+    <h3>6. Google Haritalar ve Yerel SEO Entegrasyonu</h3>
+    <p>${il.tamlama} fiziksel adresi olan işletmeler için Google Business Profil entegrasyonu ve yerel SEO sinyalleri önemli. Adres, telefon ve çalışma saatlerini site genelinde tutarlı bir şekilde yapılandırarak Google'ın yerel arama sonuçlarında sizi öne çıkarmasına zemin hazırlıyoruz.</p>
+
+    <p>${il.extra_p1}</p>
+
+    <p>${il.extra_p2}</p>
+
+    <h2>${il.ad} Web Tasarımında Neden Farklıyız?</h2>
+    <ul>
+      <li><strong>Tek odak:</strong> Web tasarım ve Google Ads dışında başka hizmet sunmuyoruz. Bu iki konuda uzmanlaşmış bir ekibiz.</li>
+      <li><strong>Sektör sınırı:</strong> Aynı şehir ve sektörde en fazla 2 müşteriyle çalışıyoruz; rakibinizin sitesini biz yapmıyoruz.</li>
+      <li><strong>Şeffaf fiyat:</strong> Gizli ücret yok. Teklif aşamasında ne ödeyeceğinizi yazılı olarak bildiriyoruz.</li>
+      <li><strong>Teknik altyapı:</strong> Domain, hosting, SSL sertifikası ve site güvenliği ilk yıl pakete dahil.</li>
+      <li><strong>Sonrası:</strong> Siteniz yayına girdikten sonra Google Ads kampanyası eklemek isterseniz devreye girebiliriz.</li>
+    </ul>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Hizmet Verdiğimiz İlçeler</span>
+      <h2>${il.ad} Genelinde Hizmet Veriyoruz</h2>
+      <p>Uzaktan çalıştığımız için ${il.ad} sınırları içindeki tüm ilçelerde aynı kalite ve hızda hizmet sunabiliyoruz.</p>
+    </div>
+    <div class="grid grid-4">
+      ${ilcelerHtml}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Ne Yapıyoruz</span>
+      <h2>${il.ad} İçin Web Tasarım Paketlerimiz</h2>
+      <p>İşletmenizin büyüklüğüne ve ihtiyacına göre üç farklı paket sunuyoruz. Tüm paketlerde SEO uyumlu altyapı standart.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="tag tag-gold">Başlangıç</span>
+        <h3 class="mt-3">17.000 TL</h3>
+        <p>Yeni kurulan veya ilk kez profesyonel site yaptıracak işletmeler için ideal paket.</p>
+        <ul class="feature-list">
+          <li>10 sayfaya kadar SEO uyumlu site</li>
+          <li>Domain ve hosting (1 yıl dahil)</li>
+          <li>Google Ads kurulumu (2 kampanya)</li>
+          <li>Dönüşüm takibi kurulumu</li>
+          <li>15 gün Ads desteği</li>
+        </ul>
+        <a href="../paketler.html#baslangic" class="btn btn-ghost mt-3">Detaylar</a>
+      </div>
+      <div class="card" style="border-color:var(--gold);box-shadow:var(--shadow-lg);">
+        <span class="tag tag-gold">En Popüler — Orta Seviye</span>
+        <h3 class="mt-3">24.000 TL</h3>
+        <p>Analytics, negatif kelime ve IP engelleme dahil. ${il.tamlama} en çok tercih edilen paket.</p>
+        <ul class="feature-list">
+          <li>Başlangıç pakettekilerin tümü</li>
+          <li>Google Analytics entegrasyonu</li>
+          <li>Negatif anahtar kelime çalışması</li>
+          <li>1 seviye IP engelleme (30 gün)</li>
+          <li>30 gün Ads desteği</li>
+        </ul>
+        <a href="../paketler.html#orta" class="btn btn-dark mt-3">Detaylar</a>
+      </div>
+      <div class="card">
+        <span class="tag">İleri Seviye</span>
+        <h3 class="mt-3">35.000 TL</h3>
+        <p>Yapay zeka destekli kitle engelleme ve Cloudflare dahil tam paket.</p>
+        <ul class="feature-list">
+          <li>Orta seviye pakettekilerin tümü</li>
+          <li>Yapay zeka destekli kitle engelleme</li>
+          <li>Cloudflare kurulumu</li>
+          <li>1 seviye IP engelleme (60 gün)</li>
+          <li>30 gün Ads desteği</li>
+        </ul>
+        <a href="../paketler.html#ileri" class="btn btn-ghost mt-3">Detaylar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Sıkça Sorulanlar</span>
+      <h2>${il.ad} Web Tasarım Hakkında</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3 class="h-sm">${il.faq1_s}</h3>
+        <p>${il.faq1_c}</p>
+      </div>
+      <div class="card">
+        <h3 class="h-sm">${il.faq2_s}</h3>
+        <p>${il.faq2_c}</p>
+      </div>
+      <div class="card">
+        <h3 class="h-sm">${il.faq3_s}</h3>
+        <p>${il.faq3_c}</p>
+      </div>
+    </div>
+    <div class="alert alert-info mt-4">
+      <strong>Google Ads Yönetimi de mi lazım?</strong>
+      ${il.tamlama} reklam da vermek istiyorsanız siteniz hazır olduğunda devreye girebiliriz.
+      <a href="../google-ads/${il.ads_il}.html">${il.ads_il_ad} Google Ads Yönetimi sayfasına</a> göz atın.
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>${il.ad}'da Web Sitenizi Birlikte Yapalım</h2>
+    <p>15 dakikalık ücretsiz görüşmeyle işletmenizi ve hedeflerinizi konuşalım. ${il.tamlama} size en uygun çözümü birlikte bulalım.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="https://wa.me/905468445576" class="btn btn-primary btn-lg">WhatsApp ile Yazın</a>
+      <a href="../paketler.html" class="btn btn-outline btn-lg">Paket Detayları</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="../img/logo.svg" alt="Sponsorlu Reklam logosu" width="38" height="38">
+          <span class="logo-text">Sponsorlu Reklam<small>web & google ads</small></span>
+        </div>
+        <p>Aydın merkezli, Türkiye geneline hizmet veren web tasarım ve Google Ads ajansıyız. İşletmenize gerçek müşteri getiren çözümler üretiyoruz.</p>
+      </div>
+      <div>
+        <h3>Hizmetlerimiz</h3>
+        <ul>
+          <li><a href="../hizmetler/web-tasarim.html">Web Tasarım</a></li>
+          <li><a href="../hizmetler/google-ads.html">Google Ads Yönetimi</a></li>
+          <li><a href="../paketler.html">Paketler</a></li>
+          <li><a href="../vaka-calismalari.html">Vaka Çalışmaları</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kurumsal</h3>
+        <ul>
+          <li><a href="../hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../sss.html">SSS</a></li>
+          <li><a href="../rezervasyon.html">Online Rezervasyon</a></li>
+          <li><a href="../aylik-yonetim-sozlesmesi.html">Aylık Yönetim Sözleşmesi</a></li>
+          <li><a href="../iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>İletişim</h3>
+        <ul>
+          <li><a href="tel:+905468445576">0546 844 55 76</a></li>
+          <li><a href="mailto:info@sponsorlureklam.com.tr">info@sponsorlureklam.com.tr</a></li>
+          <li>Mimar Sinan Mah. 2341 Sk. No:4, Efeler/Aydın</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year">2026</span> Sponsorlu Reklam. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/905468445576" class="wa-float" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>`;
+}
+
+const outDir = path.join(__dirname, '..', 'web-tasarim');
+
+iller.forEach(il => {
+  const filePath = path.join(outDir, `${il.slug}.html`);
+  fs.writeFileSync(filePath, buildPage(il), 'utf8');
+  console.log(`✓ ${il.slug}.html oluşturuldu`);
+});
+
+console.log(`\nToplam ${iller.length} sayfa oluşturuldu.`);
