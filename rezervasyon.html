@@ -986,7 +986,11 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     return false;
   };
 
-  document.addEventListener('DOMContentLoaded', buildGrid);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildGrid);
+  } else {
+    buildGrid();
+  }
 })();
 </script>
 </body>
