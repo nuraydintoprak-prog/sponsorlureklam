@@ -28,10 +28,30 @@ jobs:
         with:
           node-version: 20
 
+      - name: Anahtar kelime araştırması (konu elle verilmediyse)
+        if: ${{ github.event.inputs.topic == '' }}
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: node scripts/keyword-research.js
+
       - name: Makale taslağı üret
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/draft-article.js "${{ github.event.inputs.topic }}"
+
+      - name: Hedef anahtar kelimeyi PR açıklamasına hazırla
+        id: kw
+        run: |
+          if [ -f data/keyword-candidates.json ]; then
+            node -e "
+              const c = require('./data/keyword-candidates.json')[0];
+              if (c) console.log('line=🔑 Hedef anahtar kelime: **' + c.keyword + '** — Türkiye\'de aylık ~' + c.search_volume + ' arama (DataForSEO)');
+              else console.log('line=');
+            " >> "$GITHUB_OUTPUT"
+          else
+            echo "line=" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Pull Request aç
         uses: peter-evans/create-pull-request@v6
@@ -42,6 +62,8 @@ jobs:
           title: "Yeni blog makalesi taslağı (AI) — inceleme bekliyor"
           body: |
             Bu PR, zamanlanmış iş tarafından üretilen bir **AI makale taslağıdır**.
+
+            ${{ steps.kw.outputs.line }}
 
             **Yayınlamadan önce kontrol et:**
             - [ ] İçerik doğru ve marka sesine uygun mu?

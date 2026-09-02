@@ -32,6 +32,18 @@ function existingArticles() {
   return { slugs, titles };
 }
 
+/* scripts/keyword-research.js tarafından üretilen aday listesinin en tepesi —
+   gerçek aylık arama hacmine göre seçilmiş konu. Yoksa null (model kendi seçer). */
+function topKeywordCandidate() {
+  const file = path.join(ROOT, "data", "keyword-candidates.json");
+  try {
+    const list = JSON.parse(fs.readFileSync(file, "utf8"));
+    return Array.isArray(list) && list.length ? list[0] : null;
+  } catch {
+    return null;
+  }
+}
+
 /* ---- JSON şeması (output_config.format) — uzunluk kısıtları desteklenmez, promptta belirtilir ---- */
 const SCHEMA = {
   type: "object",
@@ -92,11 +104,22 @@ SADECE şemaya uygun JSON üret; başka metin ekleme.`;
 async function main() {
   const topicArg = process.argv.slice(2).join(" ").trim();
   const { slugs, titles } = existingArticles();
+  const keyword = !topicArg ? topKeywordCandidate() : null;
+
+  let konuTalimati;
+  if (topicArg) {
+    konuTalimati = `Konu: "${topicArg}". Bu konuda bir blog makalesi taslağı üret.`;
+  } else if (keyword) {
+    konuTalimati =
+      `Hedef anahtar kelime (gerçek Google arama hacmi verisiyle seçildi — Türkiye'de aylık ~${keyword.search_volume} arama): "${keyword.keyword}".\n` +
+      `Bu anahtar kelimeyi doğal biçimde başlıkta/H1'de ve gövdede kullanan, kelimenin arkasındaki arama niyetine ` +
+      `(bilgi mi arıyor, hizmet mi arıyor) uygun bir makale taslağı üret. Anahtar kelimeyi zorla tekrarlama, doğal Türkçe önceliklidir.`;
+  } else {
+    konuTalimati = `Mevcut yazılarla çakışmayan, tamamlayıcı YENİ bir blog konusu seç ve o konuda makale taslağı üret.`;
+  }
 
   const userMessage =
-    (topicArg
-      ? `Konu: "${topicArg}". Bu konuda bir blog makalesi taslağı üret.`
-      : `Mevcut yazılarla çakışmayan, tamamlayıcı YENİ bir blog konusu seç ve o konuda makale taslağı üret.`) +
+    konuTalimati +
     `\n\nMevcut başlıklar:\n- ${titles.join("\n- ")}` +
     `\n\nKullanımdaki slug'lar (bunlarla çakışma, ama bunlara link verebilirsin):\n${slugs.join(", ")}`;
 
@@ -140,6 +163,7 @@ async function main() {
 
   const u = data.usage || {};
   console.log(`Üretildi: "${article.title}" (slug: ${article.slug})`);
+  if (keyword) console.log(`Hedef anahtar kelime: "${keyword.keyword}" (~${keyword.search_volume}/ay, DataForSEO)`);
   console.log(`Token: giriş ${u.input_tokens}, çıkış ${u.output_tokens}, cache okuma ${u.cache_read_input_tokens || 0}`);
 
   const file = applyToSite(article);
