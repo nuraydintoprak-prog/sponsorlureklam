@@ -74,8 +74,8 @@ async function fetchKeywordIdeas() {
     body: JSON.stringify([
       {
         keywords: SEED_KEYWORDS,
-        location_name: "Turkey",
-        language_name: "Turkish",
+        location_code: 2792, // Türkiye — https://api.dataforseo.com/v3/keywords_data/google_ads/locations (location_name "Turkey" GEÇERSİZ, "Turkiye" olarak listeleniyor; kod daha kararlı)
+        language_code: "tr", // ISO 639-1
         sort_by: "search_volume",
       },
     ]),
