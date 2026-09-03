@@ -1,16 +1,22 @@
-name: Haftalık AI makale taslağı
+name: Günlük AI makale taslağı
 
-# Her Pazartesi 06:00 UTC (Türkiye 09:00) + elle tetikleme.
-# Script bir makale taslağı üretir ve PR açar — yayın için PR'ı incele/merge et.
-# Merge sonrası Netlify/Cloudflare Pages otomatik deploy eder.
+# Her gün 05:00 UTC tetiklenir + elle tetikleme. Gerçek çalışma saati her gün
+# rastgele 0-5 saat kayar (aşağıdaki "Rastgele gecikme" adımı) — böylece yayın
+# saati her gün aynı dakikada olmaz. Script bir makale taslağı üretir ve PR
+# açar — yayın için PR'ı incele/merge et. Merge sonrası Netlify/Cloudflare
+# Pages otomatik deploy eder.
+#
+# İçerik 4 sütun arasında sırayla döner (scripts/keyword-research.js ->
+# TOPIC_CLUSTERS): 1) Google Ads kampanya yönetimi, 2) Google Ads sahte
+# tıklama, 3) İl bazlı web tasarım firmaları, 4) AntiClick tanıtımı.
 
 on:
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 5 * * *"
   workflow_dispatch:
     inputs:
       topic:
-        description: "Makale konusu (boş bırakılırsa AI yeni konu önerir)"
+        description: "Makale konusu (boş bırakılırsa AI, sıradaki içerik sütunundan gerçek arama hacmiyle konu seçer)"
         required: false
         default: ""
 
@@ -22,6 +28,13 @@ jobs:
   draft:
     runs-on: ubuntu-latest
     steps:
+      - name: Rastgele gecikme (yayın saatini her gün değiştir)
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          DELAY=$(( RANDOM % 18000 )) # 0-5 saat (saniye) — public repo, Actions dakikası sınırsız/ücretsiz
+          echo "Saat çeşitliliği için $DELAY saniye ($((DELAY/60)) dk) bekleniyor..."
+          sleep "$DELAY"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -46,7 +59,7 @@ jobs:
           if [ -f data/keyword-candidates.json ]; then
             node -e "
               const c = require('./data/keyword-candidates.json')[0];
-              if (c) console.log('line=🔑 Hedef anahtar kelime: **' + c.keyword + '** — Türkiye\'de aylık ~' + c.search_volume + ' arama (DataForSEO)');
+              if (c) console.log('line=🔑 Hedef anahtar kelime: **' + c.keyword + '** — Türkiye\'de aylık ~' + c.search_volume + ' arama (DataForSEO)' + (c.cluster ? ' — sütun: _' + c.cluster + '_' : ''));
               else console.log('line=');
             " >> "$GITHUB_OUTPUT"
           else

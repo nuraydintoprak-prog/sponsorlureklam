@@ -7,24 +7,32 @@ otomatik deploy eder. Yayın kararı her zaman sende — hiçbir şey onaysız y
 ## Akış
 
 ```
-GitHub Actions (haftalık cron / elle)
-  → scripts/keyword-research.js  (DataForSEO'dan gerçek arama hacmi çeker — konu elle verilmediyse)
-  → scripts/draft-article.js  (Claude API ile, hacme göre seçilen konuda taslak üretir)
+GitHub Actions (her gün 05:00 UTC + 0-5 saat rastgele gecikme / elle)
+  → scripts/keyword-research.js  (4 içerik sütunundan sırayla biri + DataForSEO'dan gerçek arama hacmi)
+  → scripts/draft-article.js  (Claude API ile, hacme + sütuna göre seçilen konuda taslak üretir)
   → blog/<slug>.html + blog.html + sitemap.xml + llms.txt günceller, CSS gömer
-  → Pull Request açar (hedef anahtar kelime + arama hacmi PR açıklamasında)
+  → Pull Request açar (hedef anahtar kelime + arama hacmi + sütun PR açıklamasında)
         → SEN incele / düzenle / merge et   (veya kapat = yayınlanmaz)
         → Netlify/Cloudflare push'u görür → otomatik deploy
 ```
+
+**4 içerik sütunu** (`scripts/keyword-research.js` → `TOPIC_CLUSTERS`, sırayla döner — her gün bir sonraki):
+1. Google Ads Kampanya Yönetimi — genel Google Ads danışmanlığı konuları
+2. Google Ads Sahte Tıklama — tıklama sahtekarlığı/bot trafiği; isteğe bağlı tek AntiClick.com.tr referansı
+3. İl Bazlı Web Tasarım Firmaları — mevcut `web-tasarim/{il}.html` ve `google-ads/{il}.html` sayfalarına link verir
+4. AntiClick Tanıtımı — AntiClick.com.tr'yi (aynı ekibin tıklama sahtekarlığı koruma ürünü) tanıtan bilgilendirici yazılar
+
+Rotasyon durumu `data/keyword-history.json` içindeki `clusterIndex` alanında tutulur.
 
 ## Parçalar
 
 | Dosya | Görevi |
 |---|---|
-| `scripts/keyword-research.js` | DataForSEO API'den gerçek aylık arama hacmi verisiyle anahtar kelime adayları çeker, mevcut yazılarla çakışanları eler, `data/keyword-candidates.json` yazar |
-| `scripts/draft-article.js` | Claude API'yi `fetch` ile çağırır (SDK/bağımlılık yok); konu elle verilmediyse en yüksek hacimli anahtar kelime adayını kullanır, JSON makale üretir |
+| `scripts/keyword-research.js` | 4 içerik sütunü arasında sırayla döner, DataForSEO API'den o sütunun gerçek aylık arama hacmi verisiyle anahtar kelime adayları çeker, mevcut yazılarla çakışanları eler, `data/keyword-candidates.json` yazar |
+| `scripts/draft-article.js` | Claude API'yi `fetch` ile çağırır (SDK/bağımlılık yok); konu elle verilmediyse en yüksek hacimli anahtar kelime adayını + sütun bağlamını (AntiClick linki izni dahil) kullanır, JSON makale üretir |
 | `lib/article.js` | Makale şablonu + siteye yerleştirme (blog/sitemap/llms + CSS gömme) |
-| `.github/workflows/article-draft.yml` | Zamanlama (Pazartesi 09:00 TR) + elle tetik + PR açma |
-| `data/keyword-history.json` | Daha önce hedeflenen anahtar kelimeler (tekrar önerilmesin diye) |
+| `.github/workflows/article-draft.yml` | Zamanlama (her gün 05:00 UTC + 0-5 saat rastgele gecikme) + elle tetik + PR açma |
+| `data/keyword-history.json` | Daha önce hedeflenen anahtar kelimeler + sütun rotasyon durumu |
 
 ## Kurulum (tek seferlik)
 
@@ -47,9 +55,9 @@ GitHub Actions (haftalık cron / elle)
 
 ## Kullanım
 
-- **Otomatik:** Her Pazartesi çalışır, PR açar.
-- **Elle (konu vererek):** GitHub → Actions → "Haftalık AI makale taslağı" → **Run workflow**
-  → istersen "Makale konusu" gir → Run. PR birkaç dakikada açılır.
+- **Otomatik:** Her gün çalışır (saat her gün rastgele 0-5 saat kayar), PR açar. 4 sütun sırayla döner.
+- **Elle (konu vererek):** GitHub → Actions → "Günlük AI makale taslağı" → **Run workflow**
+  → istersen "Makale konusu" gir (elle tetiklemede rastgele gecikme uygulanmaz) → Run. PR birkaç dakikada açılır.
 - **Yerelde (test):**
   ```
   DATAFORSEO_LOGIN=... DATAFORSEO_PASSWORD=... node scripts/keyword-research.js --list   # sadece adayları gör

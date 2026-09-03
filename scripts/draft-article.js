@@ -92,9 +92,10 @@ BİÇİM KURALLARI (çıktı JSON şemasına uymalı):
 - İç linkler (mutlaka 3-6 adet ekle), göreli yollar:
   * Aynı blog içi: <a href="negatif-anahtar-kelime-listesi.html">
   * Hizmetler: <a href="../hizmetler/google-ads.html">, <a href="../hizmetler/web-tasarim.html">
-  * Şehir sayfaları: ../google-ads/aydin.html (izmir, denizli, mugla, antalya) ve ../web-tasarim/<sehir>.html
+  * Google Ads şehir sayfaları (SADECE bu 5 il var): ../google-ads/aydin.html, izmir.html, denizli.html, mugla.html, antalya.html
+  * Web tasarım şehir sayfaları (bu 15 il var): ../web-tasarim/istanbul.html, ankara.html, izmir.html, bursa.html, antalya.html, aydin.html, denizli.html, eskisehir.html, gaziantep.html, kayseri.html, konya.html, mersin.html, mugla.html, trabzon.html, adana.html
   * Eylem: <a href="../rezervasyon.html"> ve <a href="../paketler.html">
-  * Yalnızca SANA VERİLEN mevcut slug listesindeki blog yazılarına link ver; uydurma slug kullanma.
+  * Yalnızca SANA VERİLEN mevcut slug listesindeki blog yazılarına link ver; uydurma slug kullanma. Yukarıdaki il listelerinde OLMAYAN bir ile şehir sayfası linki VERME.
 - body'nin son paragrafı ../rezervasyon.html'e bir çağrı içersin.
 - slug benzersiz, kebab-case, ascii (ı→i, ş→s, ğ→g, ü→u, ö→o, ç→c).
 - desc 120-155, title 55-60 karakter civarı; ogDesc kısa.
@@ -112,8 +113,18 @@ async function main() {
   } else if (keyword) {
     konuTalimati =
       `Hedef anahtar kelime (gerçek Google arama hacmi verisiyle seçildi — Türkiye'de aylık ~${keyword.search_volume} arama): "${keyword.keyword}".\n` +
+      `İçerik sütunu: "${keyword.cluster || "genel"}"${keyword.contentHint ? ` — ${keyword.contentHint}` : ""}\n` +
       `Bu anahtar kelimeyi doğal biçimde başlıkta/H1'de ve gövdede kullanan, kelimenin arkasındaki arama niyetine ` +
-      `(bilgi mi arıyor, hizmet mi arıyor) uygun bir makale taslağı üret. Anahtar kelimeyi zorla tekrarlama, doğal Türkçe önceliklidir.`;
+      `(bilgi mi arıyor, hizmet mi arıyor) uygun bir makale taslağı üret. Anahtar kelimeyi zorla tekrarlama, doğal Türkçe önceliklidir.` +
+      (keyword.cluster === "Google Ads Sahte Tıklama"
+        ? `\nBu yazıda, konuyla doğal bağlandığı bir noktada TEK bir dış link olarak <a href="https://anticlick.com.tr/">AntiClick</a>'e ` +
+          `(tıklama sahtekarlığı koruma yazılımı) dürüst, abartısız bir referans verebilirsin — zorunlu değil, konu gerektiriyorsa.`
+        : "") +
+      (keyword.cluster === "AntiClick Tanıtımı"
+        ? `\nBu yazı AntiClick.com.tr'yi (aynı ekibin tıklama sahtekarlığı koruma ürünü) tanıtmalı. Gövde içinde en az 1, en fazla 2 kez ` +
+          `<a href="https://anticlick.com.tr/">AntiClick</a>'e dış link ver. Ürünü nasıl çalıştığını (IP/cihaz engelleme, sahte tıklama tespiti gibi) ` +
+          `somut biçimde anlat — abartılı satış dili değil, bilgilendirici bir yaklaşım kullan. Satış garantisi verme.`
+        : "");
   } else {
     konuTalimati = `Mevcut yazılarla çakışmayan, tamamlayıcı YENİ bir blog konusu seç ve o konuda makale taslağı üret.`;
   }
