@@ -1,62 +1,10 @@
 [
   {
-    "keyword": "google ads reklam ajansları",
-    "search_volume": 110,
-    "competition": "MEDIUM",
-    "cpc": 8.24
-  },
-  {
-    "keyword": "adwords ajansları",
-    "search_volume": 20,
-    "competition": "MEDIUM",
-    "cpc": 1.06
-  },
-  {
-    "keyword": "google adwords ajansları",
-    "search_volume": 20,
-    "competition": "MEDIUM",
-    "cpc": 25.91
-  },
-  {
-    "keyword": "kurumsal web sitesi paketleri",
-    "search_volume": 20,
-    "competition": "HIGH",
-    "cpc": 4.74
-  },
-  {
-    "keyword": "web tasarım fiyatları 2022",
-    "search_volume": 10,
-    "competition": null,
-    "cpc": null
-  },
-  {
     "keyword": "adworks reklam",
     "search_volume": 10,
     "competition": "MEDIUM",
-    "cpc": null
-  },
-  {
-    "keyword": "benim işletmem seo",
-    "search_volume": 10,
-    "competition": "MEDIUM",
-    "cpc": 3.01
-  },
-  {
-    "keyword": "kurumsal web site paketleri",
-    "search_volume": 10,
-    "competition": "HIGH",
-    "cpc": 2.37
-  },
-  {
-    "keyword": "sitetescil yönetim paneli",
-    "search_volume": 10,
-    "competition": "LOW",
-    "cpc": null
-  },
-  {
-    "keyword": "statik web sitesi fiyatları",
-    "search_volume": 10,
-    "competition": null,
-    "cpc": null
+    "cpc": null,
+    "cluster": "Google Ads Kampanya Yönetimi",
+    "contentHint": "Google Ads reklam verme, kampanya kurulumu/yönetimi, bütçe, hedefleme gibi genel Google Ads danışmanlığı konuları."
   }
 ]
