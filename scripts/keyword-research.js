@@ -177,6 +177,9 @@ async function main() {
 
   if (adaylar.length === 0) {
     console.log("Bu kümede uygun yeni aday bulunamadı (hepsi ya kullanılmış ya da mevcut içerikle çakışıyor).");
+    // Önceki çalıştırmadan kalma eski adayı silmezsek draft-article.js onu okuyup
+    // aynı (zaten yayınlanmış) konuyu tekrar üretir — bkz. 2026-09-04 mükerrer makale hatası.
+    if (fs.existsSync(CANDIDATES_FILE)) fs.unlinkSync(CANDIDATES_FILE);
     if (!LIST_MODE) saveHistory(history); // rotasyon yine de ilerlesin — yarın bir sonraki küme denenir
     process.exit(0);
   }
