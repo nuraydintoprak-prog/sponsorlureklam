@@ -1,0 +1,66 @@
+[
+  {
+    "keyword": "istanbul web tasarım firmaları",
+    "search_volume": 90,
+    "competition": "MEDIUM",
+    "cpc": null,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "izmir web tasarım firmaları",
+    "search_volume": 70,
+    "competition": "MEDIUM",
+    "cpc": null,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "antalya web tasarım firmaları",
+    "search_volume": 40,
+    "competition": "MEDIUM",
+    "cpc": 3.4,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "istanbul web tasarım firması",
+    "search_volume": 30,
+    "competition": "MEDIUM",
+    "cpc": null,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "web tasarım ajansı yazılım firması medyacode istanbul",
+    "search_volume": 20,
+    "competition": "LOW",
+    "cpc": null,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "bursa web tasarım firması",
+    "search_volume": 10,
+    "competition": "MEDIUM",
+    "cpc": 1.91,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "karşıyaka web tasarım firması",
+    "search_volume": 10,
+    "competition": null,
+    "cpc": null,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  },
+  {
+    "keyword": "tuzla web tasarım firması",
+    "search_volume": 10,
+    "competition": null,
+    "cpc": null,
+    "cluster": "İl Bazlı Web Tasarım Firmaları",
+    "contentHint": "Belirli bir ile özgü web tasarım ihtiyaçları/firma arayışı. Yazı, ilgili web-tasarim/{il}.html ve google-ads/{il}.html sayfalarına (mevcutsa) link vermeli."
+  }
+]
