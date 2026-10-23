@@ -395,7 +395,7 @@ ${css}
   },
   "areaServed": {"@type": "City", "name": "${il.ad}"},
   "description": "${il.aciklama}",
-  "offers": {"@type": "Offer", "price": "17000", "priceCurrency": "TRY"}
+  "offers": {"@type": "Offer"}
 }
 <\/script>
 <script type="application/ld+json">

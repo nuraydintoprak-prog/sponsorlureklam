@@ -95,7 +95,6 @@ const SERVICES = {
     other: "google-ads",
     label: "Web Tasarım",
     mainPage: "../hizmetler/web-tasarim.html",
-    price: "17000",
     h1: (c) => `${c.name} Web Tasarım`,
     title: (c) => `${c.name} Web Tasarım | SEO Uyumlu Kurumsal Web Sitesi`,
     desc: (c) =>
@@ -127,7 +126,6 @@ const SERVICES = {
     other: "web-tasarim",
     label: "Google Ads Yönetimi",
     mainPage: "../hizmetler/google-ads.html",
-    price: "5000",
     h1: (c) => `${c.name} Google Ads Ajansı`,
     title: (c) => `${c.name} Google Ads Ajansı | Reklam Kurulumu ve Yönetimi`,
     desc: (c) =>
@@ -228,8 +226,7 @@ function page(svcKey, c) {
   "serviceType": ${JSON.stringify(s.label)},
   "provider": { "@type": "ProfessionalService", "name": "Sponsorlu Reklam", "telephone": "+905468445576", "address": { "@type": "PostalAddress", "streetAddress": "Mimar Sinan Mah. 2341 Sk. No:4", "addressLocality": "Efeler", "addressRegion": "Aydın", "addressCountry": "TR" } },
   "areaServed": { "@type": "City", "name": ${JSON.stringify(c.name)} },
-  "description": ${JSON.stringify(s.desc(c))},
-  "offers": { "@type": "Offer", "price": "${s.price}", "priceCurrency": "TRY" }
+  "description": ${JSON.stringify(s.desc(c))}
 }
 </script>
 <script type="application/ld+json">
