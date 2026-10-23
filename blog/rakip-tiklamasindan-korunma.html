@@ -535,7 +535,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   <div class="container article-content">
     <p class="article-meta">15 Nisan 2026 · 8 dk okuma · <a href="../blog.html">← Tüm Yazılar</a></p>
 
-    <p>Reklam dünyasının en konuşulmayan gerçeği şu: Google Ads tıklamalarının önemli bir kısmı gerçek müşteriden gelmiyor. Sektörünüze ve rekabetinize bağlı olarak <strong>tıklamaların %15-40'ı sahte olabiliyor</strong>. Bu kayıp doğrudan cebinizden çıkıyor.</p>
+    <p>Reklam dünyasının en konuşulmayan gerçeği şu: Google Ads tıklamalarının önemli bir kısmı gerçek müşteriden gelmiyor. Oran sektöre ve rekabete göre çok değişiyor ve herkes için geçerli kesin bir rakam vermek mümkün değil; ama Google'ın yakalayamadığı her geçersiz tıklama <strong>doğrudan bütçenizden çıkıyor</strong>.</p>
 
     <h2>Sahte Tıklamanın Türleri</h2>
     <ul>
@@ -549,34 +549,34 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <ol>
       <li><strong>Yüksek hemen çıkma oranı:</strong> Sitenize gelen ziyaretçilerin %90'ı 5 saniye içinde çıkıyorsa kuşkulanın.</li>
       <li><strong>Tek sayfada kalma:</strong> Hiçbir kullanıcı diğer sayfalara geçmiyorsa muhtemelen gerçek değil.</li>
-      <li><strong>Belirli saatlerde anormal artış:</strong> Sabah 03:00-05:00 arası tıklamalar artmışsa botlardır.</li>
-      <li><strong>Aynı IP'den çoklu tıklama:</strong> Tek bir IP adresinden günde 5-10 tıklama gelmesi anormaldir.</li>
+      <li><strong>Belirli saatlerde anormal artış:</strong> Gerçek müşterilerin pek arama yapmadığı gece saatlerinde açıklanamayan artışlar varsa dikkatle incelenmeli.</li>
+      <li><strong>Aynı IP'den çoklu tıklama:</strong> Aynı kaynaktan kısa sürede tekrar tekrar gelen tıklamalar şüphe uyandırır.</li>
       <li><strong>Tutarsız konum verisi:</strong> Aydın'a hizmet verirken İstanbul'dan, Ankara'dan tıklama gelmesi şüphelidir.</li>
     </ol>
 
     <h2>Google'ın Otomatik Koruması Yeterli mi?</h2>
-    <p>Google Ads, sahte tıklamalar için kendi geliştirdiği algoritmaları kullanır ve tespit ettiği sahte tıklamaların ücretini iade eder. Ancak bu sistem mükemmel değildir; sofistike tıklama saldırılarını yakalayamaz. Hesap raporlarında "geçersiz tıklama" olarak işaretlenenler genelde sahte tıklamaların yalnızca üçte biri kadardır.</p>
-    <blockquote>Bir müşterimizin hesabında Google'ın "geçersiz" işaretlediği tıklama oranı %4'tü. Bizim üçüncü taraf araçla yaptığımız analizde gerçek sahte tıklama oranı %22 çıktı. Aradaki fark doğrudan bütçeye yansıyor.</blockquote>
+    <p>Google Ads, sahte tıklamalar için kendi geliştirdiği algoritmaları kullanır ve tespit ettiği sahte tıklamaların ücretini iade eder. Ancak bu sistem mükemmel değildir; bazı gelişmiş tıklama saldırıları gözden kaçabilir.</p>
+    <blockquote>Bir müşterimizin hesabında Google'ın "geçersiz" işaretlediği tıklama oranı %4'tü. Üçüncü taraf bir araçla yaptığımız analiz ise şüpheli tıklama oranının bundan belirgin şekilde yüksek olduğuna işaret etti. Bu tür araçların sonuçları da kesin değildir; ama aradaki fark, hesabın daha yakından incelenmesi gerektiğini gösteriyordu.</blockquote>
 
     <h2>1. Yöntem: IP Engelleme</h2>
     <p>Google Ads içinde <strong>Kampanya Ayarları → Ek Ayarlar → IP Hariç Tutmaları</strong> menüsünden şüpheli IP adreslerini engelleyebilirsiniz. Maksimum 500 IP/kampanya hariç tutulabilir. Bu, en temel ve etkili korumadır.</p>
-    <p>Rakiplerinizin ofis IP'lerini, suşpheli aktivite gösteren kullanıcı IP'lerini ve bilinen bot ağlarını bu listeye eklersiniz. Manuel takip yorucu olduğu için çoğunlukla otomatik araçlarla yapılır.</p>
+    <p>Rakiplerinizin ofis IP'lerini, şüpheli aktivite gösteren kullanıcı IP'lerini ve bilinen bot ağlarını bu listeye eklersiniz. Manuel takip yorucu olduğu için çoğunlukla otomatik araçlarla yapılır.</p>
 
     <h2>2. Yöntem: Üçüncü Taraf Tıklama Koruma Yazılımları</h2>
-    <p>ClickCease, Clixtell, Lunio gibi araçlar tıklamaları gerçek zamanlı analiz eder ve şüpheli IP'leri otomatik olarak Google Ads hesabınıza engel olarak ekler. Aylık 50-200 dolar arası ücretle çalışırlar.</p>
+    <p>ClickCease, Clixtell, Lunio gibi araçlar tıklamaları gerçek zamanlı analiz eder ve şüpheli IP'leri otomatik olarak Google Ads hesabınıza engel olarak ekler. Bu araçlar genelde aylık abonelikle çalışır; güncel ücretlerini kendi sitelerinden kontrol etmenizi öneriyoruz.</p>
     <p>Yapay zeka tabanlı bu araçlar, davranış desenlerine bakar: fare hareketi var mı, gerçek bir kullanıcı gibi mi davranıyor, daha önce hangi sitelerde aynı parmak izini bıraktı?</p>
 
     <h2>3. Yöntem: Cloudflare ile Sunucu Tarafı Filtreleme</h2>
-    <p>Sitenizi Cloudflare arkasına alırsanız, sahte trafik daha sitenize ulaşmadan filtrelenir. Üstelik ücretsiz planı bile çoğu küçük işletme için yeterlidir. Bot Fight Mode aktive edildiğinde basit botlar engellenir.</p>
+    <p>Sitenizi Cloudflare gibi bir hizmetin arkasına almak, basit botların sitenize erişmesini zorlaştırabilir ve sahte form gönderimlerini azaltabilir. Ancak bunun bir sınırı var: Reklam tıklaması Google'da gerçekleştiği için, bu filtreleme tıklamanın ücretlendirilmesini engellemez. Daha çok sitenizi ve dönüşüm verinizi temiz tutmaya yarar.</p>
 
     <h2>4. Yöntem: Coğrafi ve Saat Bazlı Hedefleme</h2>
     <p>Türkiye dışından hizmet vermiyorsanız, kampanyalarınızda yalnızca Türkiye'yi hedefleyin. Yerel iş veriyorsanız sadece hedef şehirlerinize yönelin. Mesai saatleri dışında reklam yayınlanmasın istiyorsanız zamanlama (ad scheduling) kullanın. Sahte tıklamaların büyük kısmı belirli saatlerde yoğunlaşır; bu saatleri kapatmak masrafsız bir korumadır.</p>
 
     <h2>5. Yöntem: Reklam Uzantısı Stratejisi</h2>
-    <p>Telefon araması uzantısı (call extension), site bağlantısı uzantıları gibi yapısal eklemeler bot tıklamalarını zorlaştırır. Çünkü botlar genelde tek bir hedef tıklar; uzantılar farklı tıklama yüzeyleri yaratır ve bot davranışı belirginleşir.</p>
+    <p>Arama öğesi ve site bağlantıları gibi öğeler doğrudan bir koruma sağlamaz; ama gerçek kullanıcıların sizinle farklı yollardan iletişime geçmesini kolaylaştırır. Gerçek müşterilerin hangi öğeleri nasıl kullandığını bilmek, şüpheli tıklama desenlerini gerçek davranıştan ayırmanıza yardımcı olur.</p>
 
     <h2>Sahte Tıklamayı Tamamen Bitirebilir misiniz?</h2>
-    <p>Hayır. Hiçbir yöntem %100 koruma sağlayamaz. Ancak doğru bir kombinasyonla sahte tıklama oranınızı %20'lerden %3-5'e indirmek gerçekçidir. Bu fark yıllık bütçede on binlerce liralık tasarruf demektir.</p>
+    <p>Hayır. Hiçbir yöntem %100 koruma sağlayamaz. Ancak doğru bir kombinasyonla sahte tıklamaların bütçenize etkisini belirgin şekilde azaltmak mümkündür.</p>
 
     <p>Sahte tıklama analizinizi yapıp koruma sistemini birlikte kuralım. <a href="../rezervasyon.html">Görüşme rezervasyonu</a> alabilirsiniz.</p>
   </div>
