@@ -274,6 +274,7 @@ function articleHtml(a) {
       <a href="../hizmetler.html">Hizmetler</a>
       <a href="../paketler.html">Paketler</a>
       <a href="../vaka-calismalari.html">Vakalar</a>
+      <a href="../referanslar.html">Referanslar</a>
       <a href="../blog.html">Blog</a>
       <a href="../sss.html">SSS</a>
       <a href="../rezervasyon.html">Rezervasyon</a>
@@ -325,6 +326,7 @@ ${a.body}
           <li><a href="../hizmetler/google-ads.html">Google Ads Yönetimi</a></li>
           <li><a href="../paketler.html">Paketler</a></li>
           <li><a href="../vaka-calismalari.html">Vaka Çalışmaları</a></li>
+          <li><a href="../referanslar.html">Referanslarımız</a></li>
         </ul>
       </div>
       <div>

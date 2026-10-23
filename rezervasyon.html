@@ -447,6 +447,26 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .logo-cloud { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; align-items: center; padding: 2rem 0; opacity: .8; }
 @media (max-width: 800px) { .logo-cloud { grid-template-columns: repeat(3, 1fr); } }
 .logo-cloud > div { aspect-ratio: 3/1; background: var(--gray-100); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--gray-500); font-weight: 600; font-size: .85rem; }
+
+/* ===== Uzun içerik + grafik bileşenleri ===== */
+.narrow-read { max-width: 820px; }
+.narrow-read h2 { margin-top: 2.5rem; }
+.narrow-read h2:first-child { margin-top: 0; }
+.narrow-read h3 { margin-top: 1.75rem; }
+.lead-in { font-size: 1.15rem; color: var(--gray-700); }
+.ref-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+.ref-feature-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow); }
+.ref-figure { margin: 0; }
+.ref-feature .ref-figure { max-width: 460px; margin: 0 auto; width: 100%; }
+.ref-figure svg, .viz svg { width: 100%; height: auto; display: block; }
+.ref-figure figcaption, .viz figcaption { font-size: .9rem; color: var(--gray-500); margin-top: .85rem; text-align: center; }
+.ref-figure.wide { max-width: 900px; margin: 0 auto; }
+.ref-lessons li { margin-bottom: .85rem; }
+.ref-faq h3 { font-size: 1.1rem; color: var(--navy); }
+.viz { margin: 2rem 0; padding: 1.5rem; background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); }
+.note-box { background: #fbf7ee; border-left: 4px solid var(--gold); padding: 1.1rem 1.35rem; border-radius: var(--radius); margin: 1.5rem 0; }
+.note-box strong { color: var(--navy); }
+@media (max-width: 860px) { .ref-feature { grid-template-columns: 1fr; } }
 </style>
 <style>
   .day-grid {
@@ -635,6 +655,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       <a href="hizmetler.html">Hizmetler</a>
       <a href="paketler.html">Paketler</a>
       <a href="vaka-calismalari.html">Vakalar</a>
+      <a href="referanslar.html">Referanslar</a>
       <a href="blog.html">Blog</a>
       <a href="sss.html">SSS</a>
       <a href="rezervasyon.html">Rezervasyon</a>
@@ -789,6 +810,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <li><a href="hizmetler/google-ads.html">Google Ads Yönetimi</a></li>
           <li><a href="paketler.html">Paketler</a></li>
           <li><a href="vaka-calismalari.html">Vaka Çalışmaları</a></li>
+          <li><a href="referanslar.html">Referanslarımız</a></li>
         </ul>
       </div>
       <div>
