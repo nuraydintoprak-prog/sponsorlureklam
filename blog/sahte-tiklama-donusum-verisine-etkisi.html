@@ -527,13 +527,13 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p>Google'ın akıllı teklif sistemleri (Hedef EBM, Hedef ROAS, Dönüşümleri En Üst Düzeye Çıkar) kararlarını geçmiş dönüşüm verilerine dayandırır. Kirlenmiş veri bu algoritmayı üç biçimde bozar:</p>
 
     <h3>1. Hedef EBM'nin Yanlış Hesaplanması</h3>
-    <p>Hedef Edinme Başına Maliyet (EBM) stratejisi, bir dönüşüm elde etmek için ne kadar harcamanız gerektiğini öğrenmek üzere geçmiş verinizi kullanır. Sahte tıklamalar tıklama maliyetini artırdığından, algoritma "bir dönüşüm için daha fazla tıklama gerekildi" çıkarımı yapar. Bu, gerçekte mümkün olan hedef EBM'yi olduğundan yüksek kurgular ve aslında kazanabileceğiniz müzayedelerde daha düşük teklif vermenize neden olur.</p>
+    <p>Hedef Edinme Başına Maliyet (EBM) stratejisi, bir dönüşüm elde etmek için ne kadar harcamanız gerektiğini öğrenmek üzere geçmiş verinizi kullanır. Sahte tıklamalar tıklama maliyetini artırdığından, algoritma "bir dönüşüm için daha fazla tıklama gerekiyor" çıkarımı yapar. Bu, gerçekte mümkün olan hedef EBM'yi olduğundan yüksek kurgular ve aslında kazanabileceğiniz müzayedelerde daha düşük teklif vermenize neden olur.</p>
 
     <h3>2. Hedefleme Kalitesinin Düşmesi</h3>
     <p>Algoritma, hangi kullanıcı segmentlerinin dönüşüme geçtiğini öğrenerek benzer kullanıcılara daha yüksek teklif verir. Sahte tıklamalar çeşitli bot segmentlerinden gelirse, algoritma bu segmentleri de potansiyel dönüşüm kitlesi olarak değerlendirebilir ve gerçek müşterilere benzer olmayan kullanıcılara kaynak ayırabilir.</p>
 
     <h3>3. Öğrenme Döneminin Uzaması</h3>
-    <p>Google Ads bir kampanya başlatıldığında veya önemli değişiklikler yapıldığında "öğrenme dönemi" geçirir; bu süreçte performans dalgalanır. Normal şartlarda 1-2 hafta olan bu dönem, yüksek miktarda sahte tıklama nedeniyle veri kalitesi düşükse 3-4 haftaya uzayabilir. Bu süre boyunca ödediğiniz etkinsizlik maliyeti direkt kayıptır.</p>
+    <p>Google Ads bir kampanya başlatıldığında veya önemli değişiklikler yapıldığında "öğrenme dönemi" geçirir; bu süreçte performans dalgalanır. Veri kalitesi sahte tıklamalar nedeniyle düşükse, algoritmanın sağlıklı bir dengeye ulaşması daha uzun sürebilir. Bu süre boyunca ödediğiniz etkinsizlik maliyeti direkt kayıptır.</p>
 
     <h2>Akıllı Teklif Veri Kirliliğini Nasıl Anlarsınız?</h2>
 
@@ -543,7 +543,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     </div>
 
     <h3>GA4 ile Dönüşüm Karşılaştırması</h3>
-    <p>Google Ads'in bildirdiği dönüşüm sayısını GA4'ün raporladığı dönüşüm sayısıyla karşılaştırın. İki kaynak arasında %20'yi aşan fark varsa — ki Google Ads daha yüksek gösteriyorsa — şüphe gereklidir. GA4 oturum bazlı çalışır ve sahte tıklamaların büyük bölümünü oturum olarak saymayabilir çünkü tıklama sonrası sayfada geçirilen süre sıfıra yakındır.</p>
+    <p>Google Ads'in bildirdiği dönüşüm sayısını GA4'ün raporladığı dönüşümlerle ve gerçek arama, form ve mesaj sayılarınızla karşılaştırın. İki aracın rakamları farklı sayım kuralları nedeniyle hiçbir zaman birebir aynı olmaz; ama aradaki fark belirgin şekilde büyüdüyse ya da Google Ads tıklamaları artarken GA4'te bu tıklamalara karşılık gelen anlamlı oturumlar görünmüyorsa, durumu daha yakından incelemek gerekir.</p>
 
     <h3>Mikro Dönüşüm Analizi</h3>
     <p>Form gönderimi veya satın alma gibi makro dönüşümlerin yanı sıra sayfa kaydırma, vidyo izleme, form alanına tıklama gibi mikro dönüşümleri de GA4'te ölçüyorsanız, bunları da karşılaştırın. Gerçek kullanıcılar mikro dönüşümleri tetikler; botlar tetiklemez. Tıklama sayısı yüksek ama hem makro hem mikro dönüşümler düşükse, bu güçlü bir sahte tıklama göstergesidir.</p>
@@ -551,7 +551,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <h2>Veri Kirliliğini Temizleme Yöntemleri</h2>
 
     <h3>Dönüşüm Penceresi Kısaltma</h3>
-    <p>Google Ads varsayılan olarak 30 günlük dönüşüm penceresi kullanır; bazı hesaplarda bu 90 güne kadar uzar. Sahte tıklamalar genellikle tıklama anında hiçbir aksiyon oluşturmaz. Dönüşüm penceresini 7-14 güne kısaltmak, eski kirlenmiş verinin algoritma üzerindeki etkisini azaltır.</p>
+    <p>Google Ads'te dönüşüm penceresi, bir tıklamadan sonra kaç gün içindeki dönüşümlerin o tıklamaya atfedileceğini belirler. Sahte tıklamalar zaten dönüşüm üretmediği için, pencereyi kısaltmak onları ortadan kaldırmaz. Ancak pencereyi işinizin gerçek karar süresine göre ayarlamak, raporların ve akıllı teklifin daha doğru veriyle çalışmasına yardımcı olur. Asıl temizlik, sahte form gönderimleri gibi yanlışlıkla dönüşüm olarak sayılan olayları ayıklamak ve sahte tıklamaların kaynağını hedeflemeden çıkarmakla yapılır.</p>
 
     <h3>İstatistik Sıfırlama (Hesap Geçmişi Koruması)</h3>
     <p>Yoğun sahte tıklama saldırısı sonrası başarısız olan bir kampanyada, bazen kampanyayı sıfırdan oluşturmak kirlenmiş geçmişi taşımaktan daha iyidir. Yeni kampanya başlatmadan önce IP engelleme ve hedefleme daraltmayı uygulayın; ardından temiz bir veri geçmişi oluşturun.</p>
@@ -563,7 +563,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p>Sahte tıklamaların geldiği ağları, coğrafyaları veya cihaz türlerini hariç tutarak kalan trafik kalitesini yükseltin. Algoritmanın öğrendiği veri daha temiz hale gelince EBM hedeflerine ulaşmak kolaylaşır.</p>
 
     <h2>Manuel Teklif Geçici Çözüm Olarak</h2>
-    <p>Sahte tıklama sorunu çözülene kadar akıllı teklif yerine geçici olarak manuel TBM veya Geliştirilmiş TBM (eTBM) stratejisine geçmeyi düşünün. Manuel teklif algoritmanın bozuk verisine güvenmeden doğrudan kontrol sağlar. Sahte tıklama azalıp dönüşüm veriniz stabilleştikten sonra akıllı teklif stratejisine dönebilirsiniz.</p>
+    <p>Sahte tıklama sorunu çözülene kadar akıllı teklif yerine geçici olarak manuel TBM gibi daha kontrollü bir stratejiye geçmeyi düşünün. Manuel teklif algoritmanın bozuk verisine güvenmeden doğrudan kontrol sağlar. Sahte tıklama azalıp dönüşüm veriniz stabilleştikten sonra akıllı teklif stratejisine dönebilirsiniz.</p>
 
     <blockquote>Veri kalitesi olmadan akıllı teklif, yanlış haritayla navigasyon yapmaya benzer: sistemi size karşı çalıştırırsınız.</blockquote>
 
