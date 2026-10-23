@@ -478,9 +478,438 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Web sitesi ne kadar sürede teslim ediliyor?","acceptedAnswer":{"@type":"Answer","text":"Standart kurumsal site 7-15 iş günü içinde teslim edilir. İçerik ve görsel sağlanma hızına göre süre değişir."}},
-    {"@type":"Question","name":"Google Ads reklamım ne zaman sonuç vermeye başlar?","acceptedAnswer":{"@type":"Answer","text":"İlk tıklamalar yayın başladığı saatten itibaren gelir. Anlamlı optimizasyon için en az 14-30 günlük veri toplama dönemi gerekir."}},
-    {"@type":"Question","name":"Aylık yönetim ücreti var mı?","acceptedAnswer":{"@type":"Answer","text":"Evet, paket bitiminden sonra reklam yönetimini sürdürmek isteyen müşterilerimize aylık yönetim hizmeti sunuyoruz. Detaylar sözleşme sayfamızda."}}
+    {
+      "@type": "Question",
+      "name": "Fiyatlarınızı neden sitede yayınlamıyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çünkü her işletmenin ihtiyacı farklı. Tek sayfalık bir kafe sitesi ile on yedi ilçe sayfası olan bir yerel hizmet sitesi ya da üç dilli bir ihracatçı sitesi aynı emeği gerektirmiyor. Herkese aynı fiyatı yazmak, ya bazılarına fazla ödetmek ya da bazı işleri eksik yapmak demek. Bu yüzden önce ihtiyacınızı dinliyor, sonra size özel teklif hazırlıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fiyat teklifini nasıl alırım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sitedeki herhangi bir \"Fiyat Al\" butonuna basmanız yeterli. WhatsApp açılır ve hangi hizmet için fiyat istediğiniz otomatik yazılı gelir. Birkaç kısa soru sorup size özel teklifimizi yazılı olarak iletiyoruz. İsterseniz paketler sayfasındaki formu da kullanabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Teklif almak beni bir şeye bağlar mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Teklif almak tamamen ücretsiz ve hiçbir yükümlülük doğurmuyor. Teklifi inceler, sorularınızı sorar, isterseniz başka ajansların teklifleriyle karşılaştırırsınız. Onaylarsanız sözleşme ve başlangıç adımlarına geçiyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Teklifte gizli kalem olur mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Olmaz. Teklifte kapsamı, takvimi ve fiyatı açıkça yazıyoruz. Sonradan ek bir ihtiyaç doğarsa, örneğin yeni sayfalar ya da yeni bir dil sürümü, bunu önce sizinle konuşup ayrıca teklif ediyoruz. Onayınız olmadan hiçbir ek ücret çıkmıyor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reklam bütçesi teklifin içinde mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Reklam bütçesi doğrudan Google'a, sizin Google Ads hesabınızdan ödenir. Bizim teklifimiz kurulum, tasarım ve yönetim emeğinin karşılığıdır. İkisi birbirinden tamamen ayrı."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sahte tıklama tamamen engellenebilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır, ve bunu vaat eden birine temkinli yaklaşın. Ama katmanlı bir savunmayla sahte tıklamayı ciddi oranda azaltmak, kalanını tespit edip Google'dan iadesini istemek mümkün. Yaklaşımımızı 9 adımlı savunma planı yazımızda anlattık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sahte tıklamaların parasını geri alabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Belirli koşullarda evet. Google, incelemesi sonucunda geçersiz bulduğu tıklamalar için hesabınıza kredi tanımlayabiliyor. Bunun için düzenli bir kanıt dosyasıyla başvurmak gerekiyor. Süreci geçersiz tıklamaya itiraz yazımızda örnek metinle paylaştık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IP engelleme ne kadar etkili?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doğru kullanıldığında etkili, yanlış kullanıldığında zararlı. Google Ads'te kampanya başına sınırlı sayıda IP engellenebiliyor ve mobil IP'ler birçok kullanıcı arasında paylaşılabiliyor. Bu yüzden IP engellemeyi kanıta dayalı ve düzenli bir liste olarak yönetiyoruz. Detaylar IP engelleme yazımızda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rakibimin tıkladığını nasıl kanıtlarım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google'a itiraz için kimin yaptığını kanıtlamanız gerekmiyor; tıklamaların şüpheli olduğunu göstermeniz yeterli. Sunucu kayıtları, tıklama görünümü raporu ve analiz verileriyle bir kanıt dosyası hazırlıyoruz. Yöntemi kanıt toplama yazımızda anlattık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rakibime karşı hukuki bir yol var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bazı durumlarda değerlendirilebilir, ama bu bir avukatın işi. Biz teknik delil dosyasını hazırlıyor, hukuki değerlendirme için bir avukata danışmanızı öneriyoruz. Genel çerçeveyi hukuki yollar yazımızda paylaştık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koruma için ekstra bir yazılım şart mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Her zaman değil. Düşük rekabetli sektörlerde Google Ads'in kendi ayarları ve düzenli takip çoğu zaman yeterli. Rekabetin sert olduğu sektörlerde ise otomatik koruma araçları ve Cloudflare gibi ek katmanlar devreye girebiliyor. İhtiyacı hesabınızın verisine bakarak belirliyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sitem Google'da ne zaman çıkar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Organik sıralama zaman alan bir süreç ve kimse kesin bir tarih veremez. Doğru kurulmuş bir site, Google'ın sizi tanımasını hızlandırır. Yayın günü siteyi Search Console'a ekliyor ve site haritasını gönderiyoruz. Hemen görünür olmak isterseniz Google Ads ile destekleyebiliyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Siteniz neden bu kadar hızlı açılıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çünkü hızı tasarımın başına koyuyoruz. Görselleri sıkıştırıyor, yazı tiplerini kendi sunucumuzdan yüklüyor, kritik stilleri sayfaya gömüyor ve gereksiz kodu çıkarıyoruz. Aynı yöntemleri müşterilerimizin sitelerinde de uyguluyoruz. Detaylar site açılış hızı yazımızda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mobil uyumlu site ile responsive site aynı şey mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Responsive tasarım, mobil uyumun teknik temeli ama tek başına yeterli değil. Gerçek mobil uyum; görünüm, okunabilirlik, parmakla kolay kullanım ve mobil bağlantıda hız katmanlarının hepsini kapsıyor. Mobil uyum yazımızda başparmak testini anlattık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Çok dilli site yapıyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Turizm, ihracat ve sağlık turizmi gibi alanlarda İngilizce, Arapça, Rusça ve diğer dillerde sayfalar hazırlıyoruz. Otomatik çeviri kullanmıyor, Arapça gibi sağdan sola yazılan diller için tasarımı uyarlıyor ve her dil sürümünün Google'da doğru ülkelerde görünmesi için teknik ayarları yapıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Landing page nedir, bana gerekir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Landing page, reklamdan gelen ziyaretçiyi tek bir hedefe yönlendiren özel bir sayfa. Google Ads veriyorsanız çoğu zaman anasayfaya göre çok daha iyi sonuç veriyor. Landing page nedir yazımızda anatomisini anlattık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sitemde hangi sayfalar olmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çoğu kurumsal site için anasayfa, hizmet sayfaları, hakkımızda, referanslar, SSS, iletişim, yasal metinler ve iyi bir 404 sayfası temel. Sektörünüze göre ek sayfalar gerekebilir. Listeyi olmazsa olmaz sayfalar yazımızda detaylandırdık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arama ağı mı, görüntülü reklam mı, hangisiyle başlamalıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yerel hizmet veren ve hemen müşteri isteyen işletmelerin çoğu için arama ağı daha doğru bir başlangıç. Çünkü arama ağında reklamınız, tam o an sizin hizmetinizi arayan birine çıkıyor. Görüntülü reklam ise bilinirlik ve yeniden pazarlama için daha uygun. Farkları bu yazımızda karşılaştırdık."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Performance Max kampanyası kullanıyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Duruma göre. Performance Max, yeterli dönüşüm verisi olan ve görsel malzeme sunabilen hesaplarda güçlü olabiliyor. Ama kontrolün bir kısmını Google'a bıraktığı için, verisi az olan yeni hesaplarda genelde klasik arama kampanyalarıyla başlamayı öneriyoruz. Detaylar Performance Max yazımızda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Negatif anahtar kelime nedir, neden önemli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reklamınızın gösterilmesini istemediğiniz aramaları belirten kelimeler. Örneğin \"ücretsiz\", \"iş ilanı\" ya da \"nasıl yapılır\" gibi aramalar çoğu işletmeye müşteri getirmiyor. Bu kelimeleri negatif listeye eklemek, bütçenin ilgisiz tıklamalara gitmesini engelliyor. Başlangıç için negatif kelime listemize bakabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kalite puanı nedir, maliyetimi etkiler mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kalite puanı, Google'ın reklamınızın, anahtar kelimenizin ve açılış sayfanızın ne kadar uyumlu ve faydalı olduğuna dair değerlendirmesi. Yüksek kalite puanı genelde daha düşük tıklama maliyeti ve daha iyi reklam sırası demek. Bu yüzden reklam metni ile açılış sayfası arasındaki uyuma çok önem veriyoruz. Kalite puanı yazımıza göz atabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reklamımı kendim yönetebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elbette. Kurulumu sağlam yaptığımız ve dönüşüm takibini kurduğumuz için, isterseniz paket süresinden sonra reklamları kendiniz yönetebilirsiniz. Ara ara bir uzman gözü isterseniz tek defalık panel kontrolü hizmetimizle hesabınızı inceleyip yazılı rapor sunabiliyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sitemin metinlerini kim yazıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Birlikte yazıyoruz. Siz işinizi en iyi bilen kişisiniz, biz de o bilgiyi hem ziyaretçinin hem Google'ın anlayacağı bir dile çeviriyoruz. Metinlerin büyük kısmını biz hazırlıyor, sizin onayınıza sunuyoruz. Sektörünüze özel teknik bilgileri ise sizden alıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fotoğraflarımı kendim mi çekmeliyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gerçek fotoğraflar her zaman stok görsellerden daha güçlü. Profesyonel bir çekim ideal, ama iyi ışıkta telefonla çekilmiş fotoğraflar da çoğu zaman yeterli oluyor. Size neyi, nasıl çekeceğinizi anlatan basit bir çekim listesi hazırlıyoruz. Gerekirse güvendiğimiz fotoğrafçılara yönlendirebiliyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Blog açmalı mıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Düzenli içerik üretebilecekseniz evet. Müşterilerinizin sorduğu sorulara uzun ve faydalı cevaplar yazmak, hem Google'da görünürlüğünüzü artırıyor hem de uzmanlığınızı gösteriyor. Ama son yazısı iki yıl önce yayınlanmış bir blog, hiç olmamasından daha kötü görünebilir. Bu yüzden önce ne kadar düzenli yazabileceğinizi birlikte planlıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sitede fiyat listesi yayınlamalı mıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sektörünüze bağlı. Standart ürün ve hizmetlerde şeffaf bir fiyat listesi güven verebiliyor; referansımız Bursa Hurdacı Polat'ın tarihli fiyat listesi buna iyi bir örnek. İhtiyaca göre değişen hizmetlerde ise sabit liste yerine hızlı teklif akışı daha doğru. Sizin işiniz için hangisinin uygun olduğunu birlikte değerlendiriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "KVKK metni gerekli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İletişim formuyla ad, telefon ya da e-posta topluyorsanız kişisel veri işliyorsunuz demektir ve ziyaretçiyi bilgilendirmeniz gerekiyor. Formun yanına aydınlatma metnine bağlantı veren bir onay kutusu ekliyoruz. Metnin içeriği işletmenize özel olmalı; hukuki bir konu olduğu için bir uzmandan destek almanızı öneriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Size nasıl ulaşırım, kim cevap veriyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En hızlı yol WhatsApp. Mesajınıza bir çağrı merkezi değil, işinizi bilen ekip arkadaşımız cevap veriyor. Telefon ve e-postayla da ulaşabilirsiniz. Mesai saatleri dışında gelen mesajlara bir sonraki iş günü dönüyoruz; acil reklam sorunlarında ise daha hızlı hareket etmeye çalışıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proje boyunca ne sıklıkla bilgi alırım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web sitesi projelerinde her önemli aşamada, yani site haritası, tasarım taslağı, içerik ve test aşamalarında sizinle paylaşım yapıyor ve onayınızı alıyoruz. Aylık yönetim müşterilerimize ise her ay düzenli rapor gönderiyor, önemli bir gelişme olduğunda ayı beklemeden haber veriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sizinle çalışırken benden ne bekleniyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İşinizi ve müşterinizi bize anlatmanız, içerik ve fotoğrafları zamanında paylaşmanız, gelen telefon ve talepler hakkında geri bildirim vermeniz ve biraz sabır. Bu dört şey olduğunda süreç çok daha hızlı ve verimli ilerliyor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sizinle çalışmayı bırakırsam ne olur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiçbir şey kaybetmezsiniz. Domain, hosting, site dosyaları, Google Ads ve Analytics hesapları zaten sizin adınıza. Erişimlerimizi kaldırır, gerekirse yeni ajansınıza ya da ekibinize düzgün bir devir yaparız. Müşterilerimizi bize bağımlı kılmak değil, iyi iş yaparak tutmak istiyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Daha önce kimlerle çalıştınız?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Farklı sektörlerden ve şehirlerden işletmelerle çalıştık. İsim paylaşmayı kabul eden müşterilerimizi referanslarımız sayfasında, gizlilik tercih edenleri ise sektör ve sonuçlarıyla vaka çalışmalarımızda anlatıyoruz. Öne çıkan referansımız Bursa Hurdacı Polat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Referans sitelerinizi görebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elbette. Referans sayfamızdaki linklere tıklayıp siteleri canlı olarak gezebilir, telefonunuzdan açıp hızlarına kendiniz bakabilirsiniz. Ekran görüntüsü değil, yayında olan siteler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sizinle çalışırsam adım bir yerde paylaşılır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır, açık onayınız olmadan asla. Referans ya da vaka çalışması olarak paylaşmak istersek önce sizden izin istiyoruz. Onay vermezseniz, çalışmamız tamamen gizli kalır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yüz yüze görüşebilir miyiz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aydın'daki müşterilerimizle ofisimizde ya da işyerlerinde yüz yüze görüşebiliyoruz. Diğer şehirlerdeki müşterilerimizle süreci görüntülü görüşme, WhatsApp ve e-postayla yürütüyoruz. Şehrinize özel yaklaşımımızı web tasarım sayfamızdaki şehir bağlantılarından okuyabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi şehirlere hizmet veriyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aydın merkezliyiz ama Türkiye genelinde, 81 ilden müşterimiz var. İşler uzaktan da yürütülebiliyor; gerektiğinde sahada da görüşmeler yapıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Aynı sektörden başka bir müşterinizle çalışıyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aynı il + aynı sektörden en fazla 2 müşteri ile çalışıyoruz. Sizin reklamınızla başka bir müşterimizin reklamının çakışmaması için bu sınırı koyduk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yalnızca web sitesi yaptırabilir miyim, reklamsız?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, sadece web tasarım hizmeti alabilirsiniz. Ancak siteyi yaptıktan sonra Google Ads kurmazsanız sitenin tam potansiyelini kullanmamış olursunuz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Web sitesi ne kadar sürede teslim ediliyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standart kurumsal bir site için 7-15 iş günü. İçerik (yazılı metin, görseller, logo, kurumsal renk) ne kadar hızlı sağlanırsa süre o kadar kısalıyor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hazır şablon mu kullanıyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Her site sıfırdan, işinize özel tasarlanır. Ancak çalışan kanıtlanmış yapıları (örn. yüksek dönüşüm getiren sayfa düzenleri) referans alırız."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Domain ve hosting dahil mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, ilk 1 yıl için domain ve hosting tüm paketlerimizde dahildir. İkinci yıldan itibaren yenileme ücretleri size aittir (yıllık ~500-900 TL)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Siteyi sonradan kendim güncelleyebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Yönetim paneli üzerinden yazı, görsel, telefon, adres gibi temel bilgileri kolayca güncelleyebilirsiniz. Eğitim videosu da paylaşıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Aylık reklam bütçem ne kadar olmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sektör ve rekabete göre değişir. Türkiye genelinde küçük-orta işletmeler için sağlıklı bir başlangıç bütçesi 7.500-15.000 TL/ay arasındadır. Daha az bütçeyle de başlanabilir ama veri toplamak yavaşlar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reklam bütçesi size mi ödeniyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Reklam bütçesi doğrudan Google'a ödenir. Bizim aldığımız sadece kurulum ücreti ve aylık yönetim ücretidir. Reklam hesabı sizin adınıza açılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sonuç garantisi veriyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "\"Şu kadar müşteri getireceğiz\" gibi bir garanti vermek mümkün değil, çünkü reklam sonucunu Google'ın algoritması belirliyor. Bizim garantimiz: kurulum disiplini, optimizasyon emeği ve şeffaf raporlama."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rakiplerim reklamıma tıklayıp bütçemi yer mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maalesef bu sektörde sahte tıklama yaygın. Biz IP engelleme ve yapay zeka destekli kitle engelleme ile sahte tıklamaların %70-90'ını yakalıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reklamımı ne sıklıkta optimize ediyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Her gün izliyoruz. Ancak optimizasyon yapmak için yeterli veri (genelde 7-14 günlük tıklama verisi) gerekir. Boş kararla optimizasyon yapmıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ödeme nasıl alınıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paket ücreti %50 peşin, %50 teslimde alınır. Aylık yönetim ücreti ise ay başında peşin ödenir. Banka havalesi ve kredi kartı kabul ediyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sözleşmeli mi çalışıyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Hem kurulum hem aylık yönetim için yazılı sözleşme imzalıyoruz. Aylık yönetim sözleşmemizi buradan inceleyebilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İstediğim zaman çıkabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aylık yönetim sözleşmesi 30 günlük peşin ödeme dönemleridir. Bir sonraki ay ödenmediği takdirde sözleşme otomatik sonlanır. Cezai şart yoktur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hesap ve site benim adıma mı kalır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Google Ads hesabı sizin adınıza açılır, web sitesi sizin sunucunuza ve domaininize kurulur. Çalışmayı bıraktığımız gün hiçbir şeyi kaybetmezsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İlk görüşme ücretli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır, ücretsiz. 15-30 dakika sürer. Rezervasyon sayfamızdan uygun bir gün seçerek randevu alabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Reklam panelime ben de erişebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tabii ki. Google Ads ve Analytics hesaplarınıza her zaman doğrudan erişiminiz olur. Tüm harcamaları, tıklamaları ve dönüşümleri canlı izleyebilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Aylık rapor alıyor muyum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, her ayın 1-3'ünde önceki ayın detaylı raporu PDF olarak gönderilir. Ayrıca canlı dashboard linki de paylaşılır."
+      }
+    }
   ]
 }
 </script>
@@ -524,6 +953,196 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <div class="breadcrumb"><a href="index.html">Anasayfa</a> / SSS</div>
     <h1>Sıkça Sorulan Sorular</h1>
     <p>Web tasarım, Google Ads kurulumu, fiyatlandırma ve süreç hakkında en çok aldığımız soruların cevapları. Aradığınızı bulamazsanız bize WhatsApp'tan ulaşabilirsiniz.</p>
+<!-- sss-ek -->
+    <h2 style="margin:2.5rem 0 1.25rem;">Fiyat ve Teklif</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Fiyatlarınızı neden sitede yayınlamıyorsunuz?</button>
+      <div class="faq-a"><p>Çünkü her işletmenin ihtiyacı farklı. Tek sayfalık bir kafe sitesi ile on yedi ilçe sayfası olan bir yerel hizmet sitesi ya da üç dilli bir ihracatçı sitesi aynı emeği gerektirmiyor. Herkese aynı fiyatı yazmak, ya bazılarına fazla ödetmek ya da bazı işleri eksik yapmak demek. Bu yüzden önce ihtiyacınızı dinliyor, sonra size özel teklif hazırlıyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Fiyat teklifini nasıl alırım?</button>
+      <div class="faq-a"><p>Sitedeki herhangi bir "Fiyat Al" butonuna basmanız yeterli. WhatsApp açılır ve hangi hizmet için fiyat istediğiniz otomatik yazılı gelir. Birkaç kısa soru sorup size özel teklifimizi yazılı olarak iletiyoruz. İsterseniz <a href="paketler.html#siparis">paketler sayfasındaki formu</a> da kullanabilirsiniz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Teklif almak beni bir şeye bağlar mı?</button>
+      <div class="faq-a"><p>Hayır. Teklif almak tamamen ücretsiz ve hiçbir yükümlülük doğurmuyor. Teklifi inceler, sorularınızı sorar, isterseniz başka ajansların teklifleriyle karşılaştırırsınız. Onaylarsanız sözleşme ve başlangıç adımlarına geçiyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Teklifte gizli kalem olur mu?</button>
+      <div class="faq-a"><p>Olmaz. Teklifte kapsamı, takvimi ve fiyatı açıkça yazıyoruz. Sonradan ek bir ihtiyaç doğarsa, örneğin yeni sayfalar ya da yeni bir dil sürümü, bunu önce sizinle konuşup ayrıca teklif ediyoruz. Onayınız olmadan hiçbir ek ücret çıkmıyor.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Reklam bütçesi teklifin içinde mi?</button>
+      <div class="faq-a"><p>Hayır. Reklam bütçesi doğrudan Google'a, sizin Google Ads hesabınızdan ödenir. Bizim teklifimiz kurulum, tasarım ve yönetim emeğinin karşılığıdır. İkisi birbirinden tamamen ayrı.</p></div>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.25rem;">Sahte Tıklama ve Koruma</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Sahte tıklama tamamen engellenebilir mi?</button>
+      <div class="faq-a"><p>Hayır, ve bunu vaat eden birine temkinli yaklaşın. Ama katmanlı bir savunmayla sahte tıklamayı ciddi oranda azaltmak, kalanını tespit edip Google'dan iadesini istemek mümkün. Yaklaşımımızı <a href="blog/google-ads-sahte-tiklama-engelleme.html">9 adımlı savunma planı</a> yazımızda anlattık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Sahte tıklamaların parasını geri alabilir miyim?</button>
+      <div class="faq-a"><p>Belirli koşullarda evet. Google, incelemesi sonucunda geçersiz bulduğu tıklamalar için hesabınıza kredi tanımlayabiliyor. Bunun için düzenli bir kanıt dosyasıyla başvurmak gerekiyor. Süreci <a href="blog/google-ads-gecersiz-tiklama-itiraz.html">geçersiz tıklamaya itiraz</a> yazımızda örnek metinle paylaştık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">IP engelleme ne kadar etkili?</button>
+      <div class="faq-a"><p>Doğru kullanıldığında etkili, yanlış kullanıldığında zararlı. Google Ads'te kampanya başına sınırlı sayıda IP engellenebiliyor ve mobil IP'ler birçok kullanıcı arasında paylaşılabiliyor. Bu yüzden IP engellemeyi kanıta dayalı ve düzenli bir liste olarak yönetiyoruz. Detaylar <a href="blog/google-ads-ip-engelleme-siniri.html">IP engelleme</a> yazımızda.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Rakibimin tıkladığını nasıl kanıtlarım?</button>
+      <div class="faq-a"><p>Google'a itiraz için kimin yaptığını kanıtlamanız gerekmiyor; tıklamaların şüpheli olduğunu göstermeniz yeterli. Sunucu kayıtları, tıklama görünümü raporu ve analiz verileriyle bir kanıt dosyası hazırlıyoruz. Yöntemi <a href="blog/sahte-tiklama-kanit-toplama.html">kanıt toplama</a> yazımızda anlattık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Rakibime karşı hukuki bir yol var mı?</button>
+      <div class="faq-a"><p>Bazı durumlarda değerlendirilebilir, ama bu bir avukatın işi. Biz teknik delil dosyasını hazırlıyor, hukuki değerlendirme için bir avukata danışmanızı öneriyoruz. Genel çerçeveyi <a href="blog/rakip-tiklamasi-hukuki-yollar.html">hukuki yollar</a> yazımızda paylaştık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Koruma için ekstra bir yazılım şart mı?</button>
+      <div class="faq-a"><p>Her zaman değil. Düşük rekabetli sektörlerde Google Ads'in kendi ayarları ve düzenli takip çoğu zaman yeterli. Rekabetin sert olduğu sektörlerde ise otomatik koruma araçları ve Cloudflare gibi ek katmanlar devreye girebiliyor. İhtiyacı hesabınızın verisine bakarak belirliyoruz.</p></div>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.25rem;">Teknik, Hız ve SEO</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Sitem Google'da ne zaman çıkar?</button>
+      <div class="faq-a"><p>Organik sıralama zaman alan bir süreç ve kimse kesin bir tarih veremez. Doğru kurulmuş bir site, Google'ın sizi tanımasını hızlandırır. Yayın günü siteyi Search Console'a ekliyor ve site haritasını gönderiyoruz. Hemen görünür olmak isterseniz Google Ads ile destekleyebiliyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Siteniz neden bu kadar hızlı açılıyor?</button>
+      <div class="faq-a"><p>Çünkü hızı tasarımın başına koyuyoruz. Görselleri sıkıştırıyor, yazı tiplerini kendi sunucumuzdan yüklüyor, kritik stilleri sayfaya gömüyor ve gereksiz kodu çıkarıyoruz. Aynı yöntemleri müşterilerimizin sitelerinde de uyguluyoruz. Detaylar <a href="blog/kurumsal-site-acilis-hizi.html">site açılış hızı</a> yazımızda.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Mobil uyumlu site ile responsive site aynı şey mi?</button>
+      <div class="faq-a"><p>Responsive tasarım, mobil uyumun teknik temeli ama tek başına yeterli değil. Gerçek mobil uyum; görünüm, okunabilirlik, parmakla kolay kullanım ve mobil bağlantıda hız katmanlarının hepsini kapsıyor. <a href="blog/mobil-uyumlu-site-neden-sart.html">Mobil uyum</a> yazımızda başparmak testini anlattık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Çok dilli site yapıyor musunuz?</button>
+      <div class="faq-a"><p>Evet. Turizm, ihracat ve sağlık turizmi gibi alanlarda İngilizce, Arapça, Rusça ve diğer dillerde sayfalar hazırlıyoruz. Otomatik çeviri kullanmıyor, Arapça gibi sağdan sola yazılan diller için tasarımı uyarlıyor ve her dil sürümünün Google'da doğru ülkelerde görünmesi için teknik ayarları yapıyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Landing page nedir, bana gerekir mi?</button>
+      <div class="faq-a"><p>Landing page, reklamdan gelen ziyaretçiyi tek bir hedefe yönlendiren özel bir sayfa. Google Ads veriyorsanız çoğu zaman anasayfaya göre çok daha iyi sonuç veriyor. <a href="blog/landing-page-nedir.html">Landing page nedir</a> yazımızda anatomisini anlattık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Sitemde hangi sayfalar olmalı?</button>
+      <div class="faq-a"><p>Çoğu kurumsal site için anasayfa, hizmet sayfaları, hakkımızda, referanslar, SSS, iletişim, yasal metinler ve iyi bir 404 sayfası temel. Sektörünüze göre ek sayfalar gerekebilir. Listeyi <a href="blog/olmazsa-olmaz-sayfalar.html">olmazsa olmaz sayfalar</a> yazımızda detaylandırdık.</p></div>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.25rem;">Google Ads Detayları</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Arama ağı mı, görüntülü reklam mı, hangisiyle başlamalıyım?</button>
+      <div class="faq-a"><p>Yerel hizmet veren ve hemen müşteri isteyen işletmelerin çoğu için arama ağı daha doğru bir başlangıç. Çünkü arama ağında reklamınız, tam o an sizin hizmetinizi arayan birine çıkıyor. Görüntülü reklam ise bilinirlik ve yeniden pazarlama için daha uygun. Farkları <a href="blog/arama-agi-mi-goruntulu-reklam-mi.html">bu yazımızda</a> karşılaştırdık.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Performance Max kampanyası kullanıyor musunuz?</button>
+      <div class="faq-a"><p>Duruma göre. Performance Max, yeterli dönüşüm verisi olan ve görsel malzeme sunabilen hesaplarda güçlü olabiliyor. Ama kontrolün bir kısmını Google'a bıraktığı için, verisi az olan yeni hesaplarda genelde klasik arama kampanyalarıyla başlamayı öneriyoruz. Detaylar <a href="blog/performance-max-nedir.html">Performance Max</a> yazımızda.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Negatif anahtar kelime nedir, neden önemli?</button>
+      <div class="faq-a"><p>Reklamınızın gösterilmesini istemediğiniz aramaları belirten kelimeler. Örneğin "ücretsiz", "iş ilanı" ya da "nasıl yapılır" gibi aramalar çoğu işletmeye müşteri getirmiyor. Bu kelimeleri negatif listeye eklemek, bütçenin ilgisiz tıklamalara gitmesini engelliyor. Başlangıç için <a href="blog/negatif-anahtar-kelime-listesi.html">negatif kelime listemize</a> bakabilirsiniz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Kalite puanı nedir, maliyetimi etkiler mi?</button>
+      <div class="faq-a"><p>Kalite puanı, Google'ın reklamınızın, anahtar kelimenizin ve açılış sayfanızın ne kadar uyumlu ve faydalı olduğuna dair değerlendirmesi. Yüksek kalite puanı genelde daha düşük tıklama maliyeti ve daha iyi reklam sırası demek. Bu yüzden reklam metni ile açılış sayfası arasındaki uyuma çok önem veriyoruz. <a href="blog/kalite-puani-nasil-yukseltilir.html">Kalite puanı</a> yazımıza göz atabilirsiniz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Reklamımı kendim yönetebilir miyim?</button>
+      <div class="faq-a"><p>Elbette. Kurulumu sağlam yaptığımız ve dönüşüm takibini kurduğumuz için, isterseniz paket süresinden sonra reklamları kendiniz yönetebilirsiniz. Ara ara bir uzman gözü isterseniz tek defalık panel kontrolü hizmetimizle hesabınızı inceleyip yazılı rapor sunabiliyoruz.</p></div>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.25rem;">Web Sitesi İçeriği</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Sitemin metinlerini kim yazıyor?</button>
+      <div class="faq-a"><p>Birlikte yazıyoruz. Siz işinizi en iyi bilen kişisiniz, biz de o bilgiyi hem ziyaretçinin hem Google'ın anlayacağı bir dile çeviriyoruz. Metinlerin büyük kısmını biz hazırlıyor, sizin onayınıza sunuyoruz. Sektörünüze özel teknik bilgileri ise sizden alıyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Fotoğraflarımı kendim mi çekmeliyim?</button>
+      <div class="faq-a"><p>Gerçek fotoğraflar her zaman stok görsellerden daha güçlü. Profesyonel bir çekim ideal, ama iyi ışıkta telefonla çekilmiş fotoğraflar da çoğu zaman yeterli oluyor. Size neyi, nasıl çekeceğinizi anlatan basit bir çekim listesi hazırlıyoruz. Gerekirse güvendiğimiz fotoğrafçılara yönlendirebiliyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Blog açmalı mıyım?</button>
+      <div class="faq-a"><p>Düzenli içerik üretebilecekseniz evet. Müşterilerinizin sorduğu sorulara uzun ve faydalı cevaplar yazmak, hem Google'da görünürlüğünüzü artırıyor hem de uzmanlığınızı gösteriyor. Ama son yazısı iki yıl önce yayınlanmış bir blog, hiç olmamasından daha kötü görünebilir. Bu yüzden önce ne kadar düzenli yazabileceğinizi birlikte planlıyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Sitede fiyat listesi yayınlamalı mıyım?</button>
+      <div class="faq-a"><p>Sektörünüze bağlı. Standart ürün ve hizmetlerde şeffaf bir fiyat listesi güven verebiliyor; referansımız Bursa Hurdacı Polat'ın tarihli fiyat listesi buna iyi bir örnek. İhtiyaca göre değişen hizmetlerde ise sabit liste yerine hızlı teklif akışı daha doğru. Sizin işiniz için hangisinin uygun olduğunu birlikte değerlendiriyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">KVKK metni gerekli mi?</button>
+      <div class="faq-a"><p>İletişim formuyla ad, telefon ya da e-posta topluyorsanız kişisel veri işliyorsunuz demektir ve ziyaretçiyi bilgilendirmeniz gerekiyor. Formun yanına aydınlatma metnine bağlantı veren bir onay kutusu ekliyoruz. Metnin içeriği işletmenize özel olmalı; hukuki bir konu olduğu için bir uzmandan destek almanızı öneriyoruz.</p></div>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.25rem;">İletişim ve Çalışma Düzeni</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Size nasıl ulaşırım, kim cevap veriyor?</button>
+      <div class="faq-a"><p>En hızlı yol WhatsApp. Mesajınıza bir çağrı merkezi değil, işinizi bilen ekip arkadaşımız cevap veriyor. Telefon ve e-postayla da ulaşabilirsiniz. Mesai saatleri dışında gelen mesajlara bir sonraki iş günü dönüyoruz; acil reklam sorunlarında ise daha hızlı hareket etmeye çalışıyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Proje boyunca ne sıklıkla bilgi alırım?</button>
+      <div class="faq-a"><p>Web sitesi projelerinde her önemli aşamada, yani site haritası, tasarım taslağı, içerik ve test aşamalarında sizinle paylaşım yapıyor ve onayınızı alıyoruz. Aylık yönetim müşterilerimize ise her ay düzenli rapor gönderiyor, önemli bir gelişme olduğunda ayı beklemeden haber veriyoruz.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Sizinle çalışırken benden ne bekleniyor?</button>
+      <div class="faq-a"><p>İşinizi ve müşterinizi bize anlatmanız, içerik ve fotoğrafları zamanında paylaşmanız, gelen telefon ve talepler hakkında geri bildirim vermeniz ve biraz sabır. Bu dört şey olduğunda süreç çok daha hızlı ve verimli ilerliyor.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Sizinle çalışmayı bırakırsam ne olur?</button>
+      <div class="faq-a"><p>Hiçbir şey kaybetmezsiniz. Domain, hosting, site dosyaları, Google Ads ve Analytics hesapları zaten sizin adınıza. Erişimlerimizi kaldırır, gerekirse yeni ajansınıza ya da ekibinize düzgün bir devir yaparız. Müşterilerimizi bize bağımlı kılmak değil, iyi iş yaparak tutmak istiyoruz.</p></div>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.25rem;">Referanslar ve Güven</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">Daha önce kimlerle çalıştınız?</button>
+      <div class="faq-a"><p>Farklı sektörlerden ve şehirlerden işletmelerle çalıştık. İsim paylaşmayı kabul eden müşterilerimizi <a href="referanslar.html">referanslarımız</a> sayfasında, gizlilik tercih edenleri ise sektör ve sonuçlarıyla <a href="vaka-calismalari.html">vaka çalışmalarımızda</a> anlatıyoruz. Öne çıkan referansımız Bursa Hurdacı Polat.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Referans sitelerinizi görebilir miyim?</button>
+      <div class="faq-a"><p>Elbette. Referans sayfamızdaki linklere tıklayıp siteleri canlı olarak gezebilir, telefonunuzdan açıp hızlarına kendiniz bakabilirsiniz. Ekran görüntüsü değil, yayında olan siteler.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Sizinle çalışırsam adım bir yerde paylaşılır mı?</button>
+      <div class="faq-a"><p>Hayır, açık onayınız olmadan asla. Referans ya da vaka çalışması olarak paylaşmak istersek önce sizden izin istiyoruz. Onay vermezseniz, çalışmamız tamamen gizli kalır.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Yüz yüze görüşebilir miyiz?</button>
+      <div class="faq-a"><p>Aydın'daki müşterilerimizle ofisimizde ya da işyerlerinde yüz yüze görüşebiliyoruz. Diğer şehirlerdeki müşterilerimizle süreci görüntülü görüşme, WhatsApp ve e-postayla yürütüyoruz. Şehrinize özel yaklaşımımızı <a href="hizmetler/web-tasarim.html">web tasarım</a> sayfamızdaki şehir bağlantılarından okuyabilirsiniz.</p></div>
+    </div>
+<!-- /sss-ek -->
   </div>
 </section>
 
