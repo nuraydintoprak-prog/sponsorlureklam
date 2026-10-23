@@ -478,7 +478,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .table-wrap tr:nth-child(even) td { background: #fafbfc; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Google Analytics 4 ile Dönüşüm Takibi","description":"GA4 ve olay tabanlı dönüşüm yapısı.","image":"https://sponsorlureklam.com.tr/img/logo.png","datePublished":"2026-02-10T09:00:00+03:00","dateModified":"2026-02-10T09:00:00+03:00","author":{"@type":"Organization","name":"Sponsorlu Reklam"},"publisher":{"@type":"Organization","name":"Sponsorlu Reklam","logo":{"@type":"ImageObject","url":"https://sponsorlureklam.com.tr/img/logo.png"}},"mainEntityOfPage":"https://sponsorlureklam.com.tr/blog/google-analytics-4-donusum-takibi.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"Google Analytics 4 ile Dönüşüm Takibi","description":"GA4 ve olay tabanlı dönüşüm yapısı.","image":"https://sponsorlureklam.com.tr/img/logo.png","datePublished":"2026-02-10T09:00:00+03:00","dateModified":"2026-10-23T09:00:00+03:00","author":{"@type":"Organization","name":"Sponsorlu Reklam"},"publisher":{"@type":"Organization","name":"Sponsorlu Reklam","logo":{"@type":"ImageObject","url":"https://sponsorlureklam.com.tr/img/logo.png"}},"mainEntityOfPage":"https://sponsorlureklam.com.tr/blog/google-analytics-4-donusum-takibi.html"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -522,7 +522,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
 <section class="section">
   <div class="container article-content">
-    <p class="article-meta">10 Şubat 2026 · 7 dk okuma · <a href="../blog.html">← Tüm Yazılar</a></p>
+    <p class="article-meta">10 Şubat 2026 · 10 dk okuma · Güncellendi: 23 Ekim 2026· <a href="../blog.html">← Tüm Yazılar</a></p>
 
     <h2>Universal Analytics ile GA4 Arasındaki Fark</h2>
     <p>Eski Universal Analytics oturum (session) merkezliydi: bir kullanıcı sitenize girer, sayfaları gezer, ayrılır — bu bir oturumdur. GA4 ise olay (event) merkezlidir: her tıklama, her sayfa görüntüleme, her form gönderimi bir olaydır. Daha esnek ama daha karmaşık.</p>
@@ -578,6 +578,104 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     </ol>
 
     <p>GA4 kurulumunuzu kontrol ettirmek için <a href="../rezervasyon.html">görüşme rezervasyonu</a> alabilirsiniz.</p>
+<!-- derin-ek -->
+<h2>Derinlemesine: GA4'ü Bir Muhasebe Defteri Gibi Tutmak</h2>
+    <p>İyi bir esnaf, gün sonunda defterini açar: Bugün kaç müşteri geldi, kaçı alışveriş yaptı, ne kadar satış oldu? Google Analytics 4, web sitenizin defteri. Ama bu defter, siz ona neyi yazacağını söylemezseniz, sadece kaç kişinin kapıdan girip çıktığını kaydediyor. Kimin telefon ettiğini, kimin form gönderdiğini, kimin WhatsApp'tan yazdığını bilmesi için ona bu eylemleri tanıtmanız gerekiyor. Dönüşüm takibi tam olarak bu: Sitenizde gerçekleşen değerli eylemleri tanımlamak ve saymak.</p>
+    <p>Bu bölümde GA4'te dönüşüm takibini kendi müşterilerimizin sitelerinde nasıl kurduğumuzu, hangi eylemleri ölçtüğümüzü, Google Ads ile nasıl bağladığımızı ve en sık yapılan hataları detaylı anlatıyoruz.</p>
+
+    <figure class="viz">
+      <svg viewBox="0 0 720 250" role="img" xmlns="http://www.w3.org/2000/svg">
+        <title>Ziyaretçi eyleminden reklam optimizasyonuna giden veri akışı</title>
+        <g font-family="Inter, sans-serif" font-size="12">
+          <text x="20" y="26" font-size="15" font-weight="700" fill="#0a2540">Bir telefon tıklamasının yolculuğu</text>
+          <rect x="20" y="60" width="150" height="70" rx="10" fill="#e8edf3"/><text x="95" y="90" text-anchor="middle" fill="#0a2540" font-weight="700">Ziyaretçi</text><text x="95" y="110" text-anchor="middle" fill="#5b6b7f">"Ara" butonuna basar</text>
+          <rect x="200" y="60" width="150" height="70" rx="10" fill="#f4ede0" stroke="#c9a961"/><text x="275" y="90" text-anchor="middle" fill="#0a2540" font-weight="700">Etkinlik</text><text x="275" y="110" text-anchor="middle" fill="#5b6b7f">GA4'e kaydedilir</text>
+          <rect x="380" y="60" width="150" height="70" rx="10" fill="#0a2540"/><text x="455" y="90" text-anchor="middle" fill="#fff" font-weight="700">Önemli etkinlik</text><text x="455" y="110" text-anchor="middle" fill="#c9d6e6">dönüşüm sayılır</text>
+          <rect x="560" y="60" width="140" height="70" rx="10" fill="#16a34a"/><text x="630" y="90" text-anchor="middle" fill="#fff" font-weight="700">Google Ads</text><text x="630" y="110" text-anchor="middle" fill="#eafff1">teklifleri öğrenir</text>
+          <path d="M170 95 H200 M350 95 H380 M530 95 H560" stroke="#94a3b8" stroke-width="2"/>
+          <text x="20" y="175" fill="#5b6b7f">Zincirin her halkası çalışmalı. Bir halka kopuksa, reklam hesabı neyin işe yaradığını bilmeden para harcar.</text>
+          <text x="20" y="200" fill="#5b6b7f">Bu yüzden kurulumdan sonra her dönüşümü kendimiz tetikleyip test ediyoruz.</text>
+        </g>
+      </svg>
+      <figcaption>GA4'te önemli olarak işaretlenen etkinlikler, Google Ads'e aktarıldığında reklam optimizasyonunun temelini oluşturuyor.</figcaption>
+    </figure>
+
+    <h2>Hangi Eylemleri Ölçmeliyiz?</h2>
+    <p>Her site farklı, ama yerel işletmeler ve kurumsal siteler için ölçtüğümüz eylemler genelde şunlar:</p>
+    <ul>
+      <li><strong>Telefon tıklamaları:</strong> Mobilde telefon numarasına dokunarak arama başlatma. Yerel hizmetlerde en değerli dönüşümlerden biri.</li>
+      <li><strong>WhatsApp tıklamaları:</strong> WhatsApp butonuna basarak sohbet başlatma. Türkiye'de çoğu işletme için telefon kadar, hatta daha fazla değerli.</li>
+      <li><strong>Form gönderimleri:</strong> İletişim, teklif ya da randevu formunun başarıyla gönderilmesi. Sadece formun açılması değil, gönderilmesi.</li>
+      <li><strong>E-posta tıklamaları:</strong> E-posta adresine tıklama. Özellikle kurumsal ve B2B sitelerde değerli.</li>
+      <li><strong>Yol tarifi tıklamaları:</strong> Harita ya da yol tarifi bağlantısına tıklama. Mağazası ya da ofisi olan işletmeler için.</li>
+      <li><strong>Satın alma:</strong> E-ticaret sitelerinde tamamlanan sipariş ve sipariş tutarı.</li>
+    </ul>
+    <p>Bunların yanında, dönüşüme yakın ama dönüşüm olmayan eylemleri de ölçebiliyoruz: Fiyat sayfasının görüntülenmesi, bir videonun izlenmesi, bir katalogun indirilmesi gibi. Ama bunları "önemli etkinlik" olarak işaretlemiyor, sadece analiz için izliyoruz. Çünkü Google Ads'e çok fazla ve değeri düşük eylemi dönüşüm olarak bildirmek, reklam optimizasyonunu yanlış yöne götürüyor.</p>
+
+    <h2>GA4'te Etkinlik ve Önemli Etkinlik Farkı</h2>
+    <p>GA4'ün mantığı etkinlikler üzerine kurulu. Sitede olan her şey bir etkinlik: Sayfa görüntüleme, kaydırma, tıklama, form gönderimi. Bu etkinliklerin bazılarını "önemli etkinlik" olarak işaretlediğinizde, GA4 onları dönüşüm gibi ayrıca raporluyor. Eski Analytics sürümünde "hedef" ve "dönüşüm" olarak bilinen kavramlar, GA4'te bu yapıya dönüştü. Arayüzdeki adlandırmalar zaman zaman değişebiliyor, ama mantık aynı: Önce eylemi bir etkinlik olarak yakala, sonra değerli olanları önemli olarak işaretle.</p>
+    <p>Bazı etkinlikleri GA4 otomatik olarak topluyor; örneğin sayfa görüntüleme, kaydırma ve dış bağlantı tıklamaları. Telefon ve WhatsApp tıklaması gibi işletmeye özel eylemleri ise genelde Google Etiket Yöneticisi gibi bir araçla ya da sitenin koduna eklenen küçük bir kodla tanımlıyoruz.</p>
+
+    <h2>Google Ads ile Bağlantı</h2>
+    <p>GA4'te ölçtüğünüz dönüşümleri Google Ads'e aktarmak, reklamlarınızın neyi optimize edeceğini bilmesini sağlıyor. Bunun için GA4 mülkünüzü Google Ads hesabınıza bağlıyor, önemli etkinlikleri Google Ads'e içe aktarıyoruz. Alternatif olarak Google Ads'in kendi dönüşüm etiketini de kullanabiliyorsunuz. Hangisinin kullanılacağı hesabın yapısına bağlı; önemli olan aynı dönüşümü iki kez saymamak. Hem GA4'ten aktarılan hem de Google Ads etiketiyle ölçülen aynı form gönderimi, iki ayrı dönüşüm olarak sayılırsa raporlar şişiyor ve teklif stratejileri yanlış öğreniyor.</p>
+    <p>Bir de dönüşüm değeri meselesi var. Tüm dönüşümler aynı değerde değil. Bir randevu talebi, bir e-posta tıklamasından daha değerli olabilir. Dönüşümlere yaklaşık değerler atamak, Google Ads'in değeri yüksek dönüşümlere öncelik vermesini sağlıyor.</p>
+
+    <h2>Gizlilik, Çerezler ve Onay</h2>
+    <p>Analiz ve reklam ölçümü, ziyaretçilerin tarayıcılarında çerezler ve benzeri teknolojiler kullanıyor. Bu yüzden kişisel verilerin korunması mevzuatı ve çerez onayı konusu doğrudan ölçümü ilgilendiriyor. Sitenizde ziyaretçileri bilgilendiren ve gerektiğinde onay alan bir yapı olmalı. Google'ın onay modu gibi çözümler, ziyaretçinin onay tercihine göre ölçüm kodlarının nasıl davranacağını ayarlamaya yardımcı oluyor. Onay vermeyen ziyaretçilerin verileri sınırlı toplandığı için raporlarda bazı boşluklar olabiliyor; bu normal. Hukuki uygunluk için bir uzmandan destek almanızı öneriyoruz. Biz ölçüm kurulumunu yaparken çerez bilgilendirmesini de sürecin bir parçası olarak ele alıyoruz.</p>
+
+    <h2>Kurulumdan Sonra Test: En Çok Atlanan Adım</h2>
+    <p>Dönüşüm takibi kurulduktan sonra en çok atlanan adım test. Oysa yanlış kurulmuş bir dönüşüm takibi, hiç olmamasından bile daha zararlı olabiliyor; çünkü yanlış veriyle yanlış kararlar alınıyor. Biz her kurulumdan sonra şu testleri yapıyoruz:</p>
+    <ol>
+      <li>Telefon numarasına mobilde dokunup GA4'ün gerçek zamanlı raporunda etkinliğin göründüğünü kontrol ediyoruz.</li>
+      <li>WhatsApp butonuna basıp aynı kontrolü yapıyoruz.</li>
+      <li>Formu gerçek bilgilerle doldurup gönderiyor, hem etkinliğin kaydedildiğini hem de formun işletmeye ulaştığını doğruluyoruz.</li>
+      <li>Formu boş göndermeye çalışıp, hatalı gönderimlerin dönüşüm sayılmadığından emin oluyoruz.</li>
+      <li>Birkaç gün sonra Google Ads'te dönüşümlerin göründüğünü ve aynı dönüşümün iki kez sayılmadığını kontrol ediyoruz.</li>
+    </ol>
+
+    <h2>Google Etiket Yöneticisi Neden Kullanışlı?</h2>
+    <p>Telefon, WhatsApp ve form gibi eylemleri ölçmek için sitenize küçük kodlar eklemek gerekiyor. Bunu doğrudan sitenin koduna eklemek mümkün, ama her değişiklikte sitenin koduna dokunmak gerekiyor. Google Etiket Yöneticisi ise bu kodları tek bir yerden yönetmeyi sağlıyor. Siteye bir kez eklenen bu araçla, yeni bir ölçüm eklemek ya da mevcut birini değiştirmek, sitenin koduna dokunmadan yapılabiliyor. Ayrıca değişiklikleri yayına almadan önce önizleme modunda test etmek, hataları canlı siteye çıkmadan yakalamayı sağlıyor. Biz çoğu projede ölçümü bu yöntemle kuruyoruz; ama çok basit sitelerde doğrudan kod eklemek de yeterli olabiliyor.</p>
+
+    <h2>Kurulumdan Sonraki İlk 30 Gün</h2>
+    <p>Ölçüm kurulduktan sonra hemen karar vermeye başlamamak gerekiyor. İlk günlerde gelen veri az oluyor ve tek tük dönüşümler yanıltıcı sonuçlara yol açabiliyor. Biz kurulumdan sonraki ilk haftayı, ölçümün doğru çalıştığını teyit etmeye ayırıyoruz: Her gün birkaç test dönüşümü yapıp raporlara düşüp düşmediğine bakıyoruz, gerçek telefon ve form sayılarını sistemdeki rakamlarla karşılaştırıyoruz. İkinci ve üçüncü haftalarda hangi kampanyanın, hangi kelimenin dönüşüm getirdiğine dair ilk eğilimler ortaya çıkmaya başlıyor. Ancak dördüncü haftanın sonunda, yeterli veri biriktiyse, bütçe kaydırma ya da kelime durdurma gibi daha büyük kararlara geçiyoruz. Bu sabır, yanlış bir veriye dayanarak iyi çalışan bir kampanyayı kapatma riskini azaltıyor.</p>
+    <p>Bu dönemde işletme sahibinden de küçük bir destek istiyoruz: Gelen aramalarda müşteriye "Bizi nereden buldunuz?" diye sormak. Bu basit soru, sistemdeki rakamların gerçekle ne kadar örtüştüğünü anlamamıza yardımcı oluyor.</p>
+
+    <h2>Raporları Okumak: Ne Bakmalı?</h2>
+    <p>GA4'te çok sayıda rapor var ve kaybolmak kolay. Bir işletme sahibi olarak düzenli bakmanızı önerdiğimiz birkaç şey var. Hangi kanallardan dönüşüm geliyor: Organik arama mı, reklam mı, doğrudan ziyaret mi, sosyal medya mı? Hangi sayfalar dönüşüm getiriyor: Hangi hizmet sayfası en çok telefon ve form getiriyor? Mobil ve masaüstü arasında dönüşüm farkı var mı? Dönüşüm sayısı zaman içinde nasıl değişiyor? Bu dört soru, sitenizin ve reklamlarınızın sağlığı hakkında çok şey anlatıyor. Biz aylık raporlarımızda bu soruların cevaplarını sade bir dille özetliyoruz.</p>
+
+    <h2>Sahte Form Gönderimlerini Ayıklamak</h2>
+    <p>Dönüşüm takibinin sessiz düşmanlarından biri, botların doldurduğu sahte formlar. Bir form ne kadar görünürse, botların ilgisini çekme ihtimali de o kadar artıyor. Bu sahte gönderimler dönüşüm olarak sayıldığında iki sorun yaratıyor: Raporlarınız olduğundan daha iyi görünüyor ve Google Ads'in akıllı teklif stratejileri, sahte form dolduran trafiği daha çok getirmeyi öğrenebiliyor. Bu yüzden formlarda basit korumalar kullanıyoruz: Botların doldurduğu ama insanların görmediği gizli alanlar, gönderim hızı kontrolleri ve gerektiğinde doğrulama mekanizmaları. Gelen formların kalitesini de düzenli kontrol ediyor, anlamsız ya da tekrarlayan gönderimler görürsek kaynağını araştırıyoruz. Bu konuyu <a href="sahte-tiklama-donusum-verisine-etkisi.html">sahte tıklamanın dönüşüm verisine etkisi</a> yazımızda detaylı anlattık.</p>
+
+    <h2>Çevrimdışı Dönüşümler: Telefonun Sonrası</h2>
+    <p>Bir müşteri sitenizden aradı ve dönüşüm sayıldı. Ama bu telefon bir satışa dönüştü mü? GA4 ve Google Ads, telefonun ötesini kendiliğinden bilemiyor. Satış süreci uzun olan işletmelerde, örneğin klinik, emlak ya da B2B satışlarında, gerçek satışları reklam hesabına geri bildirmek mümkün. Buna çevrimdışı dönüşüm içe aktarma deniyor. Bu yöntemle Google Ads, sadece telefon getiren değil, satış getiren aramaları öğrenmeye başlıyor. Kurulumu daha teknik ve düzenli bir veri akışı gerektiriyor; ama satış değeri yüksek işletmeler için reklam verimliliğini ciddi şekilde artırabiliyor. Daha basit bir başlangıç olarak, müşterilerimizden gelen telefonların kaçının işe dönüştüğünü düzenli olarak bize bildirmelerini istiyor, bu bilgiyi optimizasyonda kullanıyoruz.</p>
+
+    <h2>Örnek Senaryo: Bir Klima Servisi</h2>
+    <p>Temsilî bir örnek verelim. Bir klima servisinin sitesinde form, telefon ve WhatsApp butonu var, ama hiçbiri ölçülmüyor. Google Ads'e her ay para harcanıyor ve işletme sahibi "reklamdan iş geliyor mu bilmiyorum" diyor. Kurulumda üç eylemi ayrı ayrı önemli etkinlik olarak tanımlıyor, Google Ads'e bağlıyor ve test ediyoruz. İlk ayın sonunda tablo netleşiyor: Dönüşümlerin büyük kısmı WhatsApp'tan geliyor, form neredeyse hiç kullanılmıyor. Bir kampanya çok tıklama alıyor ama hiç dönüşüm getirmiyor; arama terimlerine baktığımızda iş ilanı arayanlardan tıklama aldığını görüyoruz. Bu kampanyayı düzeltiyor, WhatsApp butonunu mobilde daha görünür hale getiriyoruz. Ölçüm olmasaydı, bu kararların hiçbiri veriye dayanmayacaktı.</p>
+
+    <h2>Sık Yapılan Hatalar</h2>
+    <ol>
+      <li><strong>Sayfa görüntülemelerini dönüşüm saymak:</strong> "Teşekkürler" sayfası olmayan formlarda iletişim sayfasının her görüntülenmesini dönüşüm saymak, rakamları şişiriyor.</li>
+      <li><strong>Aynı dönüşümü iki kez saymak:</strong> GA4 ve Google Ads etiketinin aynı eylemi ayrı ayrı saymasına izin vermek.</li>
+      <li><strong>Test etmemek:</strong> Kurulumu yapıp çalışıp çalışmadığını hiç kontrol etmemek.</li>
+      <li><strong>Telefon ve WhatsApp'ı ölçmemek:</strong> Sadece formu ölçüp, en değerli iletişim kanallarını göz ardı etmek.</li>
+      <li><strong>Sahte form gönderimlerini ayıklamamak:</strong> Botların doldurduğu formların dönüşüm sayılması ve reklam algoritmasının yanlış öğrenmesi.</li>
+      <li><strong>Site değişikliğinden sonra kontrol etmemek:</strong> Site yenilendiğinde ya da bir buton değiştirildiğinde ölçümün bozulması ve aylarca fark edilmemesi.</li>
+    </ol>
+
+    <h2>Sık Sorulan Sorular</h2>
+    <h3>GA4 ücretsiz mi?</h3>
+    <p>Evet, Google Analytics 4'ün standart sürümü ücretsiz ve çoğu işletmenin ihtiyacını fazlasıyla karşılıyor.</p>
+    <h3>Telefonla gelen müşterileri ölçebilir miyim?</h3>
+    <p>Sitedeki telefon numarasına yapılan tıklamaları ölçebiliyorsunuz. Numarayı ezberleyip sonradan arayan kişileri ise bu yolla ölçmek mümkün değil. Bu yüzden telefon tıklamalarını, gerçek arama sayısının bir alt sınırı olarak düşünmek gerekiyor.</p>
+    <h3>Eski Analytics verilerim ne oldu?</h3>
+    <p>Google, eski Universal Analytics sürümünü kullanımdan kaldırdı. Eski veriler GA4'e otomatik aktarılmadı. Bu yüzden GA4'teki verileriniz, GA4'ün kurulduğu tarihten itibaren başlıyor.</p>
+    <h3>GA4'teki rakamlar Google Ads'tekiyle neden aynı değil?</h3>
+    <p>İki araç dönüşümleri farklı kurallarla sayabiliyor: Dönüşümün hangi tarihe yazıldığı, hangi tıklamaya atfedildiği ve onay vermeyen ziyaretçilerin nasıl değerlendirildiği gibi. Küçük farklar normal. Büyük farklar ise genelde kurulumda bir sorun olduğuna işaret ediyor ve incelenmeli.</p>
+    <h3>Çerez onayı vermeyen ziyaretçiler ölçülmüyor mu?</h3>
+    <p>Onay vermeyen ziyaretçiler için ölçüm sınırlı kalıyor; bu yüzden raporlardaki rakamlar gerçekten biraz düşük görünebiliyor. Google'ın onay modu bu boşluğu kısmen modelleyerek tamamlıyor, ama kesin sayı vermiyor. Biz bu nedenle raporları her zaman gerçek telefon ve form sayılarıyla birlikte değerlendiriyoruz. Çerez ve onay ayarlarının yasal gerekliliklere uygun olup olmadığı konusunda ise bir hukukçuya danışmanızı öneriyoruz.</p>
+    <h3>Dönüşüm takibini kendim kurabilir miyim?</h3>
+    <p>Temel kurulum, biraz teknik bilgiyle mümkün. Ama telefon ve WhatsApp tıklamalarını doğru ölçmek, Google Ads ile çift saymayı önlemek ve çerez onayını doğru yönetmek deneyim istiyor. Takıldığınız noktada bize yazabilirsiniz.</p>
+<!-- /derin-ek -->
   </div>
 </section>
 
