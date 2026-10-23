@@ -149,7 +149,7 @@ const SERVICES = {
       ["Negatif Kelime ve IP Engelleme", "İlgisiz aramalarda çıkmamak için negatif kelime listeleri, sahte tıklamalara karşı IP engelleme çalışması yapıyoruz."],
     ],
     faq: (c) => [
-      [`${c.loc} Google Ads için ne kadar bütçe gerekir?`, "Reklam bütçesi sektöre ve rekabete göre değişir ve doğrudan Google'a ödenir. Aylık yönetim ücretimiz ise 5.000 TL'den başlar ve reklam bütçesinden ayrıdır."],
+      [`${c.loc} Google Ads için ne kadar bütçe gerekir?`, "Reklam bütçesi sektöre ve rekabete göre değişir ve doğrudan Google'a ödenir. Aylık yönetim ücretimiz reklam bütçesinden ayrıdır; hesabınızın büyüklüğüne göre size özel fiyat çıkarıyoruz."],
       ["Reklam hesabı kimin olur?", "Hesap her zaman sizin adınıza açılır ve size aittir. Sözleşme bittiğinde erişimimizi kaldırırız, sahiplik sizde kalır."],
       [`${c.loc} olmadan reklamı nasıl yönetiyorsunuz?`, "Google Ads tamamen çevrimiçi yönetilir. Hesabınıza yetkili olarak bağlanıp kampanyaları uzaktan kurar ve her gün optimize ederiz; Aydın merkezliyiz, Türkiye geneline hizmet veriyoruz."],
     ],

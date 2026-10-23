@@ -277,6 +277,12 @@ li { margin-bottom: .35rem; }
 .price-card .badge-discount { background: var(--danger); color: white; font-size: .7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-left: .35rem; vertical-align: middle; }
 .price-card .price { font-family: "Playfair Display", Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--navy); margin: .35rem 0 .25rem; }
 .price-card .price small { font-size: .9rem; font-weight: 400; color: var(--gray-500); }
+.price-card .price-ask { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .1rem; background: var(--gold); color: var(--navy); border-radius: var(--radius); padding: .7rem 1rem; font-size: 1.9rem; text-decoration: none; text-align: center; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.price-card .price-ask small { font-family: "Inter", sans-serif; font-size: .78rem; font-weight: 600; color: var(--navy); opacity: .75; letter-spacing: .02em; }
+.price-card .price-ask:hover { background: var(--navy); color: var(--gold); transform: translateY(-2px); }
+.price-card .price-ask:hover small { color: var(--white); }
+.price-ask-inline { display: inline-block; background: var(--gold); color: var(--navy); padding: .35rem 1rem; border-radius: var(--radius); text-decoration: none; }
+.price-ask-inline:hover { background: var(--navy); color: var(--gold); }
 .price-card .features { list-style: none; margin: 1.5rem 0; padding: 0; flex: 1; }
 .price-card .features li { padding: .55rem 0 .55rem 1.65rem; border-bottom: 1px solid var(--gray-100); position: relative; font-size: .94rem; }
 .price-card .features li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-dark); font-weight: 700; }
@@ -471,7 +477,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Muğla'da Google Ads için ne kadar bütçe gerekir?","acceptedAnswer":{"@type":"Answer","text":"Reklam bütçesi sektöre ve rekabete göre değişir ve doğrudan Google'a ödenir. Aylık yönetim ücretimiz ise 5.000 TL'den başlar ve reklam bütçesinden ayrıdır."}},
+    {"@type":"Question","name":"Muğla'da Google Ads için ne kadar bütçe gerekir?","acceptedAnswer":{"@type":"Answer","text":"Reklam bütçesi sektöre ve rekabete göre değişir ve doğrudan Google'a ödenir. Aylık yönetim ücretimiz reklam bütçesinden ayrıdır; hesabınızın büyüklüğüne göre size özel fiyat çıkarıyoruz."}},
     {"@type":"Question","name":"Reklam hesabı kimin olur?","acceptedAnswer":{"@type":"Answer","text":"Hesap her zaman sizin adınıza açılır ve size aittir. Sözleşme bittiğinde erişimimizi kaldırırız, sahiplik sizde kalır."}},
     {"@type":"Question","name":"Muğla'da olmadan reklamı nasıl yönetiyorsunuz?","acceptedAnswer":{"@type":"Answer","text":"Google Ads tamamen çevrimiçi yönetilir. Hesabınıza yetkili olarak bağlanıp kampanyaları uzaktan kurar ve her gün optimize ederiz; Aydın merkezliyiz, Türkiye geneline hizmet veriyoruz."}}
   ]
@@ -566,7 +572,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <div class="grid grid-3">
       <div class="card">
         <h3 class="h-sm">Muğla'da Google Ads için ne kadar bütçe gerekir?</h3>
-        <p>Reklam bütçesi sektöre ve rekabete göre değişir ve doğrudan Google'a ödenir. Aylık yönetim ücretimiz ise 5.000 TL'den başlar ve reklam bütçesinden ayrıdır.</p>
+        <p>Reklam bütçesi sektöre ve rekabete göre değişir ve doğrudan Google'a ödenir. Aylık yönetim ücretimiz reklam bütçesinden ayrıdır; hesabınızın büyüklüğüne göre size özel fiyat çıkarıyoruz.</p>
       </div>
       <div class="card">
         <h3 class="h-sm">Reklam hesabı kimin olur?</h3>

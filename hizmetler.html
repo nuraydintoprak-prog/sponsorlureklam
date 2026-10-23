@@ -276,6 +276,12 @@ li { margin-bottom: .35rem; }
 .price-card .badge-discount { background: var(--danger); color: white; font-size: .7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-left: .35rem; vertical-align: middle; }
 .price-card .price { font-family: "Playfair Display", Georgia, serif; font-size: 2.4rem; font-weight: 700; color: var(--navy); margin: .35rem 0 .25rem; }
 .price-card .price small { font-size: .9rem; font-weight: 400; color: var(--gray-500); }
+.price-card .price-ask { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .1rem; background: var(--gold); color: var(--navy); border-radius: var(--radius); padding: .7rem 1rem; font-size: 1.9rem; text-decoration: none; text-align: center; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.price-card .price-ask small { font-family: "Inter", sans-serif; font-size: .78rem; font-weight: 600; color: var(--navy); opacity: .75; letter-spacing: .02em; }
+.price-card .price-ask:hover { background: var(--navy); color: var(--gold); transform: translateY(-2px); }
+.price-card .price-ask:hover small { color: var(--white); }
+.price-ask-inline { display: inline-block; background: var(--gold); color: var(--navy); padding: .35rem 1rem; border-radius: var(--radius); text-decoration: none; }
+.price-ask-inline:hover { background: var(--navy); color: var(--gold); }
 .price-card .features { list-style: none; margin: 1.5rem 0; padding: 0; flex: 1; }
 .price-card .features li { padding: .55rem 0 .55rem 1.65rem; border-bottom: 1px solid var(--gray-100); position: relative; font-size: .94rem; }
 .price-card .features li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-dark); font-weight: 700; }
@@ -572,12 +578,12 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       <div class="card">
         <h3 class="h-sm">Aylık Google Ads Yönetimi</h3>
         <p>Kurulumdan sonraki aylık optimizasyon. Sadece web sitesi tarafımızdan yapılan müşterilerimize sunuyoruz.</p>
-        <p class="mb-0"><strong>Aylık ücret:</strong> 5.000 TL</p>
+        <p class="mb-0"><a class="btn btn-ghost" href="https://wa.me/905468445576?text=Merhaba%2C%20Ayl%C4%B1k%20Google%20Ads%20Y%C3%B6netimi%20i%C3%A7in%20fiyat%20almak%20istiyorum." rel="noopener noreferrer">Fiyat Al</a></p>
       </div>
       <div class="card">
         <h3 class="h-sm">Tek Defalık Panel Kontrolü</h3>
         <p>Mevcut Google Ads hesabınızın sağlık taraması. Hatalar, eksikler ve iyileştirme önerileri ile birlikte raporlanır.</p>
-        <p class="mb-0"><strong>Kontrol ücreti:</strong> 1.500 TL</p>
+        <p class="mb-0"><a class="btn btn-ghost" href="https://wa.me/905468445576?text=Merhaba%2C%20Tek%20Defal%C4%B1k%20Panel%20Kontrol%C3%BC%20i%C3%A7in%20fiyat%20almak%20istiyorum." rel="noopener noreferrer">Fiyat Al</a></p>
       </div>
       <div class="card">
         <h3 class="h-sm">Cloudflare Kurulumu</h3>

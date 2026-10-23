@@ -36,7 +36,7 @@ Yapmadıklarımız: Sosyal medya yönetimi (Instagram/Facebook günlük post atm
 
 ### Google Ads Yönetimi
 
-- **Aylık ücret:** 5.000 TL/ay (peşin, ay başında ödenir)
+- **Aylık ücret:** Size özel teklif (peşin, ay başında ödenir)
 - **Asgari süre:** 1 ay, cezai şart yok
 - **Reklam bütçesi:** AYRI — müşteri doğrudan Google'a öder (Google Ads hesabına bağlı kredi kartı/fatura)
 - **Kapsam (pakete göre değişir):**
@@ -51,7 +51,7 @@ Yapmadıklarımız: Sosyal medya yönetimi (Instagram/Facebook günlük post atm
 
 ### Web Tasarım
 
-- **Başlangıç fiyatı:** 17.000 TL (tek seferlik, 10 sayfa)
+- **Fiyat:** Size özel teklif (tek seferlik, 10 sayfa)
 - **Teknik:** SEO uyumlu altyapı, mobile-first responsive, hızlı yüklenme, Google Search Console kurulumu
 - **Mülkiyet:** Domain ve hosting müşteri adına kayıtlıdır; kaynak kod müşteriye aittir.
 
@@ -73,17 +73,19 @@ Not: Aydın merkezdir (ofis Efeler'de). Diğer iller uzaktan hizmet kapsamındad
 
 ---
 
-## Paket fiyatları (2026)
+## Paketler (2026)
 
-| Paket | Tek Sefer | Aylık |
-|-------|-----------|-------|
-| Başlangıç (web + ilk reklamlar) | 17.000 TL | — |
-| Orta Seviye (web + Ads + Analytics + IP engelleme) | 24.000 TL | — |
-| İleri Seviye (tam paket + Cloudflare + AI kitle engelleme) | 35.000 TL | — |
-| Sadece Aylık Google Ads Yönetimi | — | 5.000 TL/ay |
-| Tek Defalık Google Ads Kontrolü (rapor) | 1.500 TL | — |
+| Paket | Ödeme |
+|-------|-------|
+| Başlangıç (web + ilk reklamlar) | Tek sefer |
+| Orta Seviye (web + Ads + Analytics + IP engelleme) | Tek sefer |
+| İleri Seviye (tam paket + Cloudflare + AI kitle engelleme) | Tek sefer |
+| Sadece Aylık Google Ads Yönetimi | Aylık |
+| Tek Defalık Google Ads Kontrolü (rapor) | Tek sefer |
 
-Tüm paketlerde KDV dahildir. Ödeme banka havalesi veya kredi kartı ile yapılır.
+Fiyatlar sitede yayınlanmaz; her işletmeye ihtiyaca göre özel teklif verilir (WhatsApp: 0546 844 55 76, "Fiyat Al").
+
+Teklif onaylandıktan sonra ödeme banka havalesi veya kredi kartı ile yapılır.
 
 ---
 

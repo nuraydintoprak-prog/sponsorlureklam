@@ -522,7 +522,7 @@ ${css}
     <div class="grid grid-3">
       <div class="card">
         <span class="tag tag-gold">Başlangıç</span>
-        <h3 class="mt-3">17.000 TL</h3>
+        <h3 class="mt-3"><a class="price-ask-inline" href="https://wa.me/905468445576?text=Merhaba%2C%20Ba%C5%9Flang%C4%B1%C3%A7%20Paketi%20i%C3%A7in%20fiyat%20almak%20istiyorum." rel="noopener noreferrer">Fiyat Al</a></h3>
         <p>Yeni kurulan veya ilk kez profesyonel site yaptıracak işletmeler için ideal paket.</p>
         <ul class="feature-list">
           <li>10 sayfaya kadar SEO uyumlu site</li>
@@ -535,7 +535,7 @@ ${css}
       </div>
       <div class="card" style="border-color:var(--gold);box-shadow:var(--shadow-lg);">
         <span class="tag tag-gold">En Popüler — Orta Seviye</span>
-        <h3 class="mt-3">24.000 TL</h3>
+        <h3 class="mt-3"><a class="price-ask-inline" href="https://wa.me/905468445576?text=Merhaba%2C%20Orta%20Seviye%20Paket%20i%C3%A7in%20fiyat%20almak%20istiyorum." rel="noopener noreferrer">Fiyat Al</a></h3>
         <p>Analytics, negatif kelime ve IP engelleme dahil. ${il.tamlama} en çok tercih edilen paket.</p>
         <ul class="feature-list">
           <li>Başlangıç pakettekilerin tümü</li>
@@ -548,7 +548,7 @@ ${css}
       </div>
       <div class="card">
         <span class="tag">İleri Seviye</span>
-        <h3 class="mt-3">35.000 TL</h3>
+        <h3 class="mt-3"><a class="price-ask-inline" href="https://wa.me/905468445576?text=Merhaba%2C%20%C4%B0leri%20Seviye%20Paket%20i%C3%A7in%20fiyat%20almak%20istiyorum." rel="noopener noreferrer">Fiyat Al</a></h3>
         <p>Yapay zeka destekli kitle engelleme ve Cloudflare dahil tam paket.</p>
         <ul class="feature-list">
           <li>Orta seviye pakettekilerin tümü</li>

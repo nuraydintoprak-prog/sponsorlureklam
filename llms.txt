@@ -10,8 +10,8 @@
 
 ## Temel hizmetler
 
-- [Google Ads Yönetimi](https://sponsorlureklam.com.tr/hizmetler/google-ads.html): Arama, görüntülü ve YouTube reklam kampanyalarının kurulumu, optimizasyonu ve aylık raporlaması. Aylık peşin ücret 5.000 TL'den başlar; reklam bütçesi ayrıdır ve müşteri tarafından doğrudan Google'a ödenir.
-- [Web Tasarım](https://sponsorlureklam.com.tr/hizmetler/web-tasarim.html): SEO uyumlu, mobile-first, hızlı yüklenen kurumsal web siteleri. Tek seferlik ücret 17.000 TL'den başlar.
+- [Google Ads Yönetimi](https://sponsorlureklam.com.tr/hizmetler/google-ads.html): Arama, görüntülü ve YouTube reklam kampanyalarının kurulumu, optimizasyonu ve aylık raporlaması. Aylık yönetim ücreti size özel teklifle belirlenir; reklam bütçesi ayrıdır ve müşteri tarafından doğrudan Google'a ödenir.
+- [Web Tasarım](https://sponsorlureklam.com.tr/hizmetler/web-tasarim.html): SEO uyumlu, mobile-first, hızlı yüklenen kurumsal web siteleri. Fiyat size özel teklifle belirlenir.
 
 ## Şehir bazlı hizmet sayfaları
 
@@ -23,14 +23,15 @@ Aydın merkezliyiz; aşağıdaki illerde hem web tasarım hem Google Ads için a
 - [Muğla Web Tasarım](https://sponsorlureklam.com.tr/web-tasarim/mugla.html) • [Muğla Google Ads](https://sponsorlureklam.com.tr/google-ads/mugla.html)
 - [Antalya Web Tasarım](https://sponsorlureklam.com.tr/web-tasarim/antalya.html) • [Antalya Google Ads](https://sponsorlureklam.com.tr/google-ads/antalya.html)
 
-## Paketler ve fiyatlar
+## Paketler
 
-- [Tüm paketler ve fiyatlar](https://sponsorlureklam.com.tr/paketler.html)
-- Başlangıç Paketi (web + ilk reklamlar): 17.000 TL — tek seferlik
-- Orta Seviye Paket (web + Google Ads + Analytics + IP engelleme): 24.000 TL — tek seferlik
-- İleri Seviye Paket (tam paket + Cloudflare + AI kitle engelleme): 35.000 TL — tek seferlik
-- Aylık Google Ads Yönetimi: 5.000 TL/ay (peşin)
-- Tek Defalık Google Ads Kontrolü (sadece analiz/rapor): 1.500 TL
+- [Tüm paketler](https://sponsorlureklam.com.tr/paketler.html)
+- Başlangıç Paketi (web + ilk reklamlar)
+- Orta Seviye Paket (web + Google Ads + Analytics + IP engelleme)
+- İleri Seviye Paket (tam paket + Cloudflare + AI kitle engelleme)
+- Aylık Google Ads Yönetimi
+- Tek Defalık Google Ads Kontrolü (sadece analiz/rapor)
+- Fiyatlar sitede yayınlanmaz; her işletmeye ihtiyaca göre özel teklif verilir (WhatsApp: 0546 844 55 76, "Fiyat Al").
 
 ## Sözleşme ve hukuki
 
@@ -82,7 +83,7 @@ Aydın merkezliyiz; aşağıdaki illerde hem web tasarım hem Google Ads için a
 
 ## Sıkça sorulan kritik bilgiler
 
-- **Aylık yönetim ücreti ile reklam bütçesi farklı şeylerdir.** Aylık yönetim ücreti (5.000 TL/ay) Sponsorlu Reklam'a ödenir. Reklam bütçesi ise doğrudan Google'a, müşterinin Google Ads hesabına bağlı kredi kartı veya fatura ile ödenir.
+- **Aylık yönetim ücreti ile reklam bütçesi farklı şeylerdir.** Aylık yönetim ücreti Sponsorlu Reklam'a ödenir. Reklam bütçesi ise doğrudan Google'a, müşterinin Google Ads hesabına bağlı kredi kartı veya fatura ile ödenir.
 - **Reklam hesabı müşterinin mülkiyetindedir.** Google Ads hesabı, Analytics hesabı, domain ve hosting hep müşteri adına kayıtlıdır. Sözleşme sona erdiğinde Sponsorlu Reklam erişimini kaldırır, müşterinin sahipliği devam eder.
 - **Asgari sözleşme süresi 1 aydır, cezai şart yoktur.** Müşteri sonraki ay için ödeme yapmayarak istediği zaman sözleşmeyi sonlandırabilir.
 - **Aynı il + aynı sektörden en fazla 2 müşteri** kuralı uygulanır (çıkar çatışmasını önlemek için).
