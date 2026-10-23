@@ -1,3 +1,5 @@
+// UYARI (Ekim 2026): web-tasarim/*.html sayfaları elle yeniden yazıldı (tools/iller/*.js + tools/il-page.js).
+// Bu betiği çalıştırmak o sayfaların 2000+ kelimelik özgün içeriğinin üzerine yazar. Çalıştırmadan önce kontrol edin.
 /**
  * Şehir (il) bazlı hizmet sayfası üreticisi — Sponsorlu Reklam
  *
