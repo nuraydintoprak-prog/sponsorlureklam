@@ -485,7 +485,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   "description": "Yerel işletmenizin reklam bütçesini sadece hizmet verdiğiniz bölgeye yönlendirmenin yolu: coğrafi hedefleme.",
   "image": "https://sponsorlureklam.com.tr/img/logo.png",
   "datePublished": "2026-05-31T09:00:00+03:00",
-  "dateModified": "2026-05-31T09:00:00+03:00",
+  "dateModified": "2026-10-23T09:00:00+03:00",
   "author": { "@type": "Organization", "name": "Sponsorlu Reklam" },
   "publisher": { "@type": "Organization", "name": "Sponsorlu Reklam", "logo": { "@type": "ImageObject", "url": "https://sponsorlureklam.com.tr/img/logo.png" } },
   "mainEntityOfPage": "https://sponsorlureklam.com.tr/blog/yerel-isletmeler-icin-cografi-hedefleme.html"
@@ -533,7 +533,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
 <section class="section">
   <div class="container article-content">
-    <p class="article-meta">31 Mayıs 2026 · 7 dk okuma · <a href="../blog.html">← Tüm Yazılar</a></p>
+    <p class="article-meta">31 Mayıs 2026 · 10 dk okuma · Güncellendi: 23 Ekim 2026· <a href="../blog.html">← Tüm Yazılar</a></p>
 
     <p>Diyelim ki Efeler'de bir diş kliniğiniz var. Müşteriniz Aydın ve çevre ilçelerden geliyor; kimse diş tedavisi için 600 km yol gelmez. Ama Google Ads hesabınızda konum ayarını dikkatlice yapmadıysanız, reklamınız Türkiye'nin her yerinde gösterilir. Antalya'daki biri reklamınıza tıklar, siz para ödersiniz, o kişi asla müşteriniz olmaz. İşte coğrafi hedefleme bu israfı bitirir.</p>
 
@@ -588,6 +588,96 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p>Coğrafi hedefleme, yerel bir işletmenin Google Ads'te yapabileceği en yüksek getirili ince ayardır. Doğru iller, doğru "bulunduğu yer" seçeneği ve düzenli konum raporu kontrolü ile aynı bütçeden çok daha fazla yerel müşteri çıkarırsınız. Kurduktan sonra unutulan değil, ilk haftalarda izlenip optimize edilen bir ayardır.</p>
 
     <p>Reklamlarınızın doğru bölgeye gidip gitmediğini birlikte kontrol edelim mi? <a href="../hizmetler/google-ads.html">Google Ads yönetimi</a> hizmetimizi inceleyebilir ya da <a href="../rezervasyon.html">görüşme rezervasyonu</a> alabilirsiniz.</p>
+<!-- derin-ek -->
+<h2>Derinlemesine: Haritayı Müşterinin Gözünden Çizmek</h2>
+    <p>Coğrafi hedeflemeyi biz bir mahalle esnafının dükkânından çevresine bakmasına benzetiyoruz. Esnaf, müşterilerinin çoğunun hangi sokaklardan geldiğini, hangi semtlerden insanların ancak özel bir sebeple uğradığını ve hangi bölgelerin ise hiç müşteri getirmediğini zamanla öğrenir. Google Ads'te bu bilgiyi bir harita üzerinde çiziyorsunuz; ama bu haritayı doğru çizmek için yalnızca dükkânınızın adresini değil, müşterinizin nasıl hareket ettiğini de bilmeniz gerekiyor.</p>
+    <p>Yukarıda konum hedefleme türlerini, en kritik ayar olan konum seçeneğini ve pratik bir kurulum sırasını anlattık. Bu bölümde Google'ın bir kullanıcının konumunu nasıl belirlediğini, hizmet bölgesine giden işletmelerle müşterinin işletmeye geldiği işletmeler arasındaki farkı, konum raporlarının nasıl okunacağını ve birden fazla şubesi olan işletmelerin hedeflemeyi nasıl kurabileceğini daha ayrıntılı ele alıyoruz.</p>
+
+    <figure class="viz">
+      <svg viewBox="0 0 720 300" role="img" xmlns="http://www.w3.org/2000/svg">
+        <title>Merkezden dışa doğru hizmet bölgesi halkaları</title>
+        <g font-family="Inter, sans-serif" font-size="12">
+          <text x="20" y="26" font-size="15" font-weight="700" fill="#0a2540">Hizmet bölgesini halkalarla düşünmek</text>
+          <circle cx="190" cy="165" r="120" fill="#f1f5f9" stroke="#cbd5e1"/>
+          <circle cx="190" cy="165" r="80" fill="#e2e8f0" stroke="#94a3b8"/>
+          <circle cx="190" cy="165" r="40" fill="#1e3a5f"/>
+          <circle cx="190" cy="165" r="6" fill="#c9a961"/>
+          <text x="190" y="190" text-anchor="middle" fill="#fff">Merkez</text>
+          <text x="190" y="110" text-anchor="middle" fill="#0a2540">Yakın çevre</text>
+          <text x="190" y="62" text-anchor="middle" fill="#64748b">Uzak çevre</text>
+          <g fill="#0a2540">
+            <text x="360" y="80" font-weight="700">Merkez: Tam teklif</text>
+            <text x="360" y="98" fill="#334155">Müşterinin en kolay ulaştığı, en çok iş gelen bölge</text>
+            <text x="360" y="148" font-weight="700">Yakın çevre: Veriye göre</text>
+            <text x="360" y="166" fill="#334155">Hizmet verilen ama daha az talep gelen ilçeler</text>
+            <text x="360" y="216" font-weight="700">Uzak çevre: Dikkatli</text>
+            <text x="360" y="234" fill="#334155">Yalnızca özel hizmetler için ya da hiç hedefleme yok</text>
+          </g>
+          <text x="360" y="276" fill="#64748b">Temsilî şema: Halkaların genişliği her işletmede farklıdır.</text>
+        </g>
+      </svg>
+      <figcaption>Hizmet bölgesini tek bir sınır yerine katmanlar halinde düşünmek, bütçeyi en çok iş getiren bölgeye yoğunlaştırmayı kolaylaştırır.</figcaption>
+    </figure>
+
+    <h2>Google Kullanıcının Konumunu Nasıl Biliyor?</h2>
+    <p>Google, bir kullanıcının nerede olduğunu tahmin etmek için birkaç farklı sinyal kullanıyor: cihazın konum ayarları, bağlandığı Wi-Fi ağları, IP adresi ve kullanıcının Google hesabındaki konum geçmişi gibi. Bu sinyaller çoğu zaman oldukça doğru sonuç veriyor; ama her zaman kesin değil. Örneğin IP adresine dayalı konum tahmini, bazı internet bağlantılarında kullanıcıyı gerçekte bulunduğu ilçeden farklı bir yerde gösterebiliyor. Mobil bağlantılarda da benzer sapmalar olabiliyor.</p>
+    <p>Bu yüzden çok dar bir alan hedeflediğinizde, örneğin tek bir mahalleyi ya da birkaç kilometrelik bir yarıçapı, bazı gerçek müşterilerin hedefin dışında kalması mümkün. Biz yarıçap hedeflemesini kurarken bu sapma payını da hesaba katıyor ve alanı biraz daha geniş tutup, konum raporlarına göre zamanla daraltmayı tercih ediyoruz.</p>
+
+    <h3>Aramadaki şehir adı da bir sinyal</h3>
+    <p>Kullanıcının bulunduğu yer dışında, arama yaptığı ifadedeki konum da önemli. İzmir'de oturan biri, annesi için "Aydın evde bakım hizmeti" diye arama yapabilir. Bu kişi Aydın'da bulunmuyor; ama aradığı hizmet Aydın'da. Konum seçeneğinizi yalnızca "bulunan kişiler" olarak ayarladıysanız, bu kişiye reklamınız gösterilmeyebiliyor. Bazı sektörlerde, örneğin yaşlı bakım, düğün mekânı, tatil konaklaması ya da taşınma hizmetlerinde, bu tür aramalar çok değerli olabiliyor.</p>
+    <p>Bu durumlarda biz genelde iki kampanyalı bir yapı kuruyoruz: Birinci kampanya yalnızca hizmet bölgesinde bulunan kişileri hedefliyor. İkinci kampanya ise daha geniş bir bölgeyi hedefliyor ama yalnızca şehir adı içeren kelimelerle çalışıyor; örneğin "Aydın evde bakım" gibi. Böylece uzaktaki kişilere yalnızca hizmet bölgenizle ilgili arama yaptıklarında reklam gösteriliyor.</p>
+
+    <h2>Müşteri Size mi Geliyor, Siz Müşteriye mi?</h2>
+    <p>Yerel işletmeleri coğrafi hedefleme açısından ikiye ayırıyoruz ve hedeflemeyi buna göre kuruyoruz:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Müşteri işletmeye gelir</th><th>İşletme müşteriye gider</th></tr></thead>
+        <tbody>
+          <tr><td>Örnekler</td><td>Diş kliniği, kuaför, restoran, oto servis</td><td>Tesisatçı, çilingir, klima servisi, temizlik firması</td></tr>
+          <tr><td>Belirleyici ölçüt</td><td>Müşterinin kabul edeceği yolculuk süresi</td><td>Ekibin makul sürede ulaşabileceği alan</td></tr>
+          <tr><td>Uygun hedefleme</td><td>İşletme etrafında yarıçap ya da yakın ilçeler</td><td>Hizmet verilen ilçelerin listesi</td></tr>
+          <tr><td>Öne çıkan öğe</td><td>Konum öğesi, yol tarifi</td><td>Arama öğesi, hizmet bölgesi bilgisi</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Müşterinin işletmeye geldiği işlerde, hedeflemeyi belirleyen şey mesafe değil, yolculuk süresi. Şehir merkezinde trafik yoğunsa, beş kilometre uzaklıktaki bir semt, on beş kilometre uzaklıktaki bir ilçeden daha zor ulaşılır olabiliyor. İşletmenin müşteriye gittiği işlerde ise ekibin kapasitesi belirleyici. Bir tesisatçının tek bir ekibi varsa, şehrin bir ucundan diğer ucuna aynı gün gitmesi mümkün olmayabilir; bu durumda hedeflemeyi ekibin gerçekten hizmet verebileceği bölgeyle sınırlamak gerekiyor.</p>
+
+    <h2>Konum Raporlarını Okumak</h2>
+    <p>Google Ads'te konumla ilgili iki farklı rapor bakış açısı var ve ikisini karıştırmamak gerekiyor. Birincisi, hedeflediğiniz konumların performansını gösteriyor: Örneğin "Aydın" hedefinizin ya da çizdiğiniz yarıçapın toplam sonuçlarını. İkincisi ise kullanıcıların gerçekte nerede bulunduğunu gösteriyor: Hangi ilçelerden, hatta bazen hangi şehirlerden tıklama geldiğini. İkinci rapor, hedeflemenin gerçekte nasıl çalıştığını görmek için çok değerli.</p>
+    <p>Biz bu raporu incelerken şu sorulara cevap arıyoruz: Hedefimiz dışındaki bir bölgeden tıklama geliyor mu? Gelen tıklamaların dönüşüm oranı ilçelere göre nasıl değişiyor? Hiç tıklama almadığımız ama hizmet verdiğimiz bir bölge var mı? Bu soruların cevapları, hedeflemeyi genişletmek, daraltmak ya da ilçeler arasında farklı teklif stratejileri uygulamak için temel oluşturuyor. Ancak küçük ilçelerde veri az olduğu için, tek bir ayın sonuçlarına bakıp karar vermek yerine birkaç aylık veriyi birlikte değerlendirmeyi tercih ediyoruz.</p>
+
+    <h3>Konum teklif ayarları ve akıllı teklif</h3>
+    <p>Yukarıda bölgelere göre teklifi yüzde olarak artırıp azaltmaktan bahsettik. Bu yöntem, manuel teklif stratejilerinde doğrudan çalışıyor. Ancak dönüşüm odaklı akıllı teklif stratejileri kullanıyorsanız, Google konum gibi sinyalleri zaten kendisi değerlendiriyor ve elle girdiğiniz konum teklif ayarlarının çoğu bu stratejilerde dikkate alınmıyor. Bu durumda bir bölgeyi gerçekten öne çıkarmak ya da geri plana itmek istiyorsanız, o bölge için ayrı bir kampanya açmak ya da bölgeyi hedeflemeden çıkarmak daha etkili oluyor.</p>
+
+    <h2>Birden Fazla Şubesi Olan İşletmeler</h2>
+    <p>Birden fazla şubesi olan bir işletmede, tüm şubeleri tek bir kampanyada toplamak ilk bakışta pratik görünüyor. Ama bu durumda bir şubenin yakınındaki kullanıcıya diğer şubenin reklamı ya da genel bir reklam gösterilebiliyor; bütçenin hangi şubeye ne kadar harcandığını görmek de zorlaşıyor. Biz şube sayısı az olan işletmelerde her şube için ayrı bir kampanya ya da en azından ayrı konum hedeflemeleri kuruyoruz. Her şubenin reklam metninde kendi semt ya da ilçe adını kullanıyor, reklamın kullanıcıyı o şubeye ait bir açılış sayfasına götürmesini sağlıyoruz.</p>
+    <p>Şubeler birbirine çok yakınsa, hedefleme alanlarının çakışması kaçınılmaz olabiliyor. Bu durumda çakışan bölgede hangi şubenin öne çıkacağına, şubelerin kapasitesine ve müşterinin ulaşım kolaylığına bakarak karar veriyoruz. Google İşletme Profili'nde her şubenin ayrı bir profili olması ve bu profillerin reklam hesabına bağlanması da, reklamlarda doğru adresin gösterilmesini sağlıyor.</p>
+
+    <h2>Konum Öğesi ve Haritalarda Görünmek</h2>
+    <p>Google İşletme Profilinizi reklam hesabınıza bağladığınızda, reklamlarınızda adresiniz ve işletmenize olan uzaklık gösterilebiliyor. Bu bilgi, özellikle mobilde "yakınımdaki" türünden aramalar yapan kullanıcılar için çok önemli; çünkü kullanıcı reklamı gördüğünde işletmenin ne kadar uzakta olduğunu hemen anlıyor. Ayrıca bazı durumlarda reklamlarınız Google Haritalar'da da gösterilebiliyor. Bunun için profilinizin doğru, güncel ve doğrulanmış olması gerekiyor. Profil bakımıyla ilgili ayrıntıları <a href="google-isletme-profili-yerel-seo.html">işletme profili ve yerel SEO yazımızda</a> anlattık.</p>
+
+    <h2>Açılış Sayfasında Yerel Sinyaller</h2>
+    <p>Coğrafi hedefleme reklamın kime gösterileceğini belirliyor; ama kullanıcının reklama tıkladıktan sonra "doğru yere geldim" hissetmesi açılış sayfasına bağlı. Aydın'daki bir kullanıcı, açılış sayfasında yalnızca genel bilgiler görürse, bu işletmenin gerçekten kendi şehrinde hizmet verip vermediğinden emin olamayabiliyor. Biz yerel kampanyalarda açılış sayfasında şehir ya da ilçe adının, hizmet verilen bölgelerin listesinin, yerel bir telefon numarasının ve mümkünse adresin ve haritanın yer almasına özen gösteriyoruz. Kendi sitemizde de bu yaklaşımı kullanıyor, hizmet verdiğimiz şehirler için ayrı sayfalar hazırlıyoruz.</p>
+
+    <h2>Konum ve Zamanı Birlikte Düşünmek</h2>
+    <p>Konum hedeflemesi tek başına değil, reklam zamanlamasıyla birlikte daha anlamlı hale geliyor. Bir ilçeden gelen talepler hafta içi ve mesai saatlerinde değerliyken, hafta sonu ekibin o bölgeye gidemediği durumlar olabiliyor. Ya da sahil ilçelerinde yaz aylarında nüfus ve talep artarken, kış aylarında belirgin şekilde azalabiliyor. Biz sezonluk nüfus değişimi olan bölgelerde konum raporlarını aylara göre karşılaştırıyor, gerekirse bu bölgeleri sezona göre ayrı kampanyalarda yönetiyoruz. Böylece bir bölgedeki sezon etkisi, diğer bölgelerin sonuçlarını bozmuyor.</p>
+
+    <h2>Örnek: Bir Klima Servisinin Hedefleme Düzeni</h2>
+    <p>Aşağıdaki örnek temsilîdir; gerçek bir müşteriye ait değildir. Bir klima servisi, merkez ilçede bulunuyor ve iki ekiple çalışıyordu. Başlangıçta tüm ili hedefliyordu ve uzak ilçelerden gelen talepleri genelde ya geri çeviriyor ya da yüksek yol maliyetiyle karşılıyordu. Konum raporunu incelediğimizde, uzak ilçelerden gelen tıklamaların bir kısmının aramaya dönüştüğünü, ama bu işlerin çoğunun firmaya kâr bırakmadığını gördük.</p>
+    <p>Hedeflemeyi yeniden düzenledik: Merkez ilçe ve ekiplerin aynı gün ulaşabildiği yakın ilçeler ana kampanyada kaldı. Uzak ilçeler hedeflemeden çıkarıldı; ama yalnızca yıllık bakım sözleşmesi gibi önceden planlanabilen işler için, bu ilçeleri hedefleyen ayrı ve küçük bütçeli bir kampanya açıldı. Bu düzen, ekiplerin günlük rotasını daha verimli hale getirdi ve bütçenin kârlı işlere yoğunlaşmasını sağladı. Firma üçüncü bir ekip kurduğunda ise hedeflemeyi yeniden genişletmek kolay oldu.</p>
+
+    <h2>Sıkça Sorulan Sorular</h2>
+    <h3>İl mi hedeflemeliyim, yarıçap mı?</h3>
+    <p>Müşteri işletmenize geliyorsa, yarıçap genelde daha isabetli. Siz müşteriye gidiyorsanız ve hizmet verdiğiniz bölge ilçe sınırlarıyla tanımlanabiliyorsa, ilçe hedeflemesi daha anlaşılır ve yönetilebilir oluyor. İkisini birlikte kullanmak da mümkün.</p>
+    <h3>Konum hedeflemesi yaptım ama başka şehirlerden tıklama geliyor, neden?</h3>
+    <p>Konum seçeneğiniz "ilgi gösteren kişileri" de kapsıyor olabilir. Bu ayarı kontrol edin. Ayar doğruysa, konum tahminindeki küçük sapmalar ya da hedefin sınırına yakın bölgelerden gelen kullanıcılar da bu duruma yol açabiliyor.</p>
+    <h3>Tatile gelen turistlere reklam göstermek istiyorum, ne yapmalıyım?</h3>
+    <p>Turizmle ilgili işlerde, hem bölgede bulunan hem de bölgeye ilgi gösteren kişileri hedeflemek mantıklı olabilir. Ayrıca turistlerin kullandığı dillerde reklam ve açılış sayfası hazırlamak, bu kitleye ulaşmayı kolaylaştırıyor.</p>
+    <h3>Yarıçapı kaç kilometre seçmeliyim?</h3>
+    <p>Tek bir doğru rakam yok. Müşterilerinizin işletmenize ulaşmak için ne kadar yol gitmeye razı olduğunu ya da ekibinizin makul sürede nereye ulaşabildiğini düşünerek başlayın. Ardından konum raporlarına bakarak yarıçapı zamanla genişletin ya da daraltın.</p>
+    <h3>Coğrafi hedeflemeyi ne sıklıkla gözden geçirmeliyim?</h3>
+    <p>Yeni kampanyalarda ilk haftalarda sık, sonrasında ayda bir kontrol yeterli. Ayrıca yeni bir şube açtığınızda, ekip sayınız değiştiğinde ya da hizmet bölgenizi genişlettiğinizde hedeflemeyi mutlaka güncellemeniz gerekiyor.</p>
+<!-- /derin-ek -->
   </div>
 </section>
 
