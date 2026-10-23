@@ -485,7 +485,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   "description": "Dönüşüm takibi kurmadan reklam vermek, kör uçmaya benzer.",
   "image": "https://sponsorlureklam.com.tr/img/logo.png",
   "datePublished": "2026-04-05T09:00:00+03:00",
-  "dateModified": "2026-04-05T09:00:00+03:00",
+  "dateModified": "2026-10-23T09:00:00+03:00",
   "author": { "@type": "Organization", "name": "Sponsorlu Reklam" },
   "publisher": { "@type": "Organization", "name": "Sponsorlu Reklam", "logo": { "@type": "ImageObject", "url": "https://sponsorlureklam.com.tr/img/logo.png" } },
   "mainEntityOfPage": "https://sponsorlureklam.com.tr/blog/donusum-takibi-kurmadan-reklam.html"
@@ -533,7 +533,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
 <section class="section">
   <div class="container article-content">
-    <p class="article-meta">5 Nisan 2026 · 5 dk okuma · <a href="../blog.html">← Tüm Yazılar</a></p>
+    <p class="article-meta">5 Nisan 2026 · 10 dk okuma · Güncellendi: 23 Ekim 2026· <a href="../blog.html">← Tüm Yazılar</a></p>
 
     <p>Bir gün bir müşteri aradı: "3 aydır reklam veriyorum, hiç satış gelmedi." Hesabına girdik. Reklamlar yayında, tıklama oluyor, ama dönüşüm takibi hiç kurulmamıştı. Dönüşümleri ölçmediği için Google'ın algoritması da hangi tıklamanın satışa dönüştüğünü öğrenememiş, sürekli rastgele kişilere reklam göstermişti. 3 ayda 38.000 TL boşa harcanmıştı.</p>
 
@@ -584,6 +584,110 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p>Dönüşümü kurduktan sonra mutlaka test edin. Kendiniz form doldurun, kendinize ait telefonla arayın, kontrol edin. Google Ads ekranında 24 saat içinde dönüşüm görünmeye başlamalı. Görünmezse kurulum hatalıdır.</p>
 
     <p>Dönüşüm takibinizi inceleyip eksikleri çıkaralım. <a href="../rezervasyon.html">Görüşme rezervasyonu</a> alabilirsiniz.</p>
+<!-- derin-ek -->
+<h2>Derinlemesine: Ölçmeden Reklam Vermek Neden Kör Uçuştur?</h2>
+    <p>Bir pilotu, gösterge paneli tamamen kapalı bir uçakta uçmaya çalışırken hayal edin. Motorlar çalışıyor, uçak havada, ama pilot ne kadar yükseklikte olduğunu, hangi yöne gittiğini ve ne kadar yakıtı kaldığını bilmiyor. Dışarıdan bakan biri için her şey yolunda görünebilir; ama pilot aslında tamamen tahminle hareket ediyor. Dönüşüm takibi olmayan bir Google Ads hesabı tam olarak böyle. Reklamlar yayında, tıklamalar geliyor, para harcanıyor; ama hangi tıklamanın müşteriye dönüştüğünü kimse bilmiyor.</p>
+    <p>Yukarıda dönüşüm takibinin ne olduğunu ve temel kurulum yöntemlerini anlattık. Bu bölümde işin biraz daha derinine iniyoruz: Telefon aramalarını nasıl ölçtüğümüzü, Google Ads'in dönüşümleri sayarken hangi ayarlara baktığını, akıllı teklif stratejilerinin bu veriyi nasıl kullandığını ve kurulumdan sonra en sık karşılaştığımız sorunları. Google Analytics 4 tarafını ise <a href="google-analytics-4-donusum-takibi.html">GA4 dönüşüm takibi yazımızda</a> ayrıca ele aldık.</p>
+
+    <figure class="viz">
+      <svg viewBox="0 0 720 260" role="img" xmlns="http://www.w3.org/2000/svg">
+        <title>Dönüşüm verisinin akıllı teklif stratejisine geri beslenmesi</title>
+        <g font-family="Inter, sans-serif" font-size="12">
+          <text x="20" y="26" font-size="15" font-weight="700" fill="#0a2540">Öğrenme döngüsü: Veri olmadan kırılır</text>
+          <rect x="40" y="60" width="150" height="56" rx="10" fill="#0a2540"/>
+          <text x="115" y="93" text-anchor="middle" fill="#fff">Reklam gösterilir</text>
+          <rect x="285" y="60" width="150" height="56" rx="10" fill="#1e3a5f"/>
+          <text x="360" y="93" text-anchor="middle" fill="#fff">Kullanıcı tıklar</text>
+          <rect x="530" y="60" width="150" height="56" rx="10" fill="#1e3a5f"/>
+          <text x="605" y="93" text-anchor="middle" fill="#fff">Arar / yazar</text>
+          <rect x="285" y="170" width="150" height="56" rx="10" fill="#c9a961"/>
+          <text x="360" y="196" text-anchor="middle" fill="#0a2540" font-weight="700">Dönüşüm etiketi</text>
+          <text x="360" y="214" text-anchor="middle" fill="#0a2540">Google'a bildirir</text>
+          <g stroke="#94a3b8" stroke-width="2" fill="none">
+            <line x1="190" y1="88" x2="285" y2="88"/><line x1="435" y1="88" x2="530" y2="88"/>
+            <path d="M605 116 V198 H435"/><path d="M285 198 H115 V116"/>
+          </g>
+          <text x="200" y="245" fill="#64748b">Etiket yoksa döngünün alt yarısı yok olur; algoritma neyin işe yaradığını öğrenemez.</text>
+        </g>
+      </svg>
+      <figcaption>Dönüşüm verisi, Google'ın bir sonraki reklamı kime göstereceğine karar verirken kullandığı en önemli geri bildirimdir.</figcaption>
+    </figure>
+
+    <h2>Telefon Aramalarını Ölçmek: Yerel İşletmelerin Asıl Dönüşümü</h2>
+    <p>Bizim çalıştığımız işletmelerin çoğu için en değerli dönüşüm bir form değil, telefon araması. Bir tesisatçıya, bir diş kliniğine ya da bir oto servise ulaşmak isteyen kişi genelde formu doldurup beklemek yerine doğrudan arıyor. Bu yüzden telefon aramalarını doğru ölçmek, bu işletmeler için dönüşüm takibinin en kritik parçası. Google Ads'te telefon aramalarını ölçmenin birkaç farklı yolu var ve her biri farklı bir durumu kapsıyor:</p>
+    <ul>
+      <li><strong>Reklamdan doğrudan aramalar:</strong> Reklamınıza eklediğiniz arama öğesi sayesinde, kullanıcı siteye gitmeden doğrudan reklamdaki numaraya dokunarak arayabiliyor. Bu aramalar, belirlediğiniz bir süreden uzun sürdüğünde dönüşüm olarak sayılabiliyor.</li>
+      <li><strong>Sitedeki numaraya tıklama:</strong> Kullanıcı sitenize geldikten sonra sayfadaki telefon numarasına dokunuyor. Bu tıklamayı Etiket Yöneticisi ile ölçmek oldukça kolay; ama tıklamanın gerçek bir aramaya dönüşüp dönüşmediğini göstermiyor.</li>
+      <li><strong>Sitedeki numarayı arama (yönlendirme numarası ile):</strong> Google, sitenizdeki numarayı reklamdan gelen ziyaretçiler için geçici bir yönlendirme numarasıyla değiştirebiliyor. Bu yöntem, bu özelliğin desteklendiği ülkelerde kullanılabiliyor ve aramanın gerçekten yapılıp yapılmadığını ve ne kadar sürdüğünü ölçmeye imkân veriyor. Türkiye'de bu özelliğin kullanılabilirliğini kurulum sırasında hesap üzerinden kontrol etmek gerekiyor.</li>
+    </ul>
+    <p>Biz genelde ilk iki yöntemi mutlaka kuruyor, üçüncüsünü ise kullanılabildiği durumlarda ekliyoruz. Ayrıca işletme sahibinden, belirli dönemlerde gelen aramaları kısaca not etmesini istiyoruz. Bu notlar, Google Ads'teki rakamların gerçekle ne kadar örtüştüğünü kontrol etmemizi sağlıyor.</p>
+
+    <h3>WhatsApp tıklamaları için bir uyarı</h3>
+    <p>Son yıllarda birçok işletme için WhatsApp, telefonun önüne geçti. WhatsApp butonuna tıklamayı ölçmek kolay, ama burada da aynı sorun var: Butona tıklayan herkes mesaj göndermiyor. Bu yüzden biz WhatsApp tıklamalarını dönüşüm olarak sayarken, gerçek mesaj sayısıyla düzenli olarak karşılaştırıyoruz. Aradaki fark çok büyükse, butonun yanlışlıkla tıklanmaya açık bir yerde olup olmadığını ya da sayfada başka bir sorun olup olmadığını inceliyoruz.</p>
+
+    <h2>Google Ads Dönüşüm Ayarları: Küçük Seçimler, Büyük Farklar</h2>
+    <p>Bir dönüşüm eylemi oluştururken Google birkaç ayar soruyor. Bu ayarlar çoğu zaman varsayılan halde bırakılıyor; ama her biri raporlardaki rakamları ve akıllı teklifin davranışını doğrudan etkiliyor.</p>
+
+    <h3>Sayım: "Bir" mi, "Her" mi?</h3>
+    <p>Google, aynı tıklamadan sonra gerçekleşen birden fazla dönüşümü nasıl sayacağınızı soruyor. "Her" seçeneği, aynı kişinin yaptığı her dönüşümü ayrı ayrı sayıyor; e-ticarette her satın alma ayrı bir gelir olduğu için bu mantıklı. "Bir" seçeneği ise aynı tıklamadan sonra kaç dönüşüm olursa olsun yalnızca birini sayıyor. Form ve telefon gibi müşteri adayı dönüşümlerinde biz "Bir" seçeneğini tercih ediyoruz; çünkü aynı kişinin formu iki kere göndermesi, iki ayrı müşteri anlamına gelmiyor.</p>
+
+    <h3>Dönüşüm penceresi</h3>
+    <p>Dönüşüm penceresi, bir tıklamadan sonra kaç gün içinde gerçekleşen dönüşümlerin o tıklamaya atfedileceğini belirliyor. Acil hizmetlerde kullanıcı genelde tıkladığı gün arıyor; ama mobilya, eğitim ya da emlak gibi uzun karar süreçli sektörlerde kişi haftalar sonra dönüşüm yapabiliyor. Pencereyi işinizin karar süresine göre ayarlamak, raporların gerçeği daha iyi yansıtmasını sağlıyor.</p>
+
+    <h3>Birincil ve ikincil dönüşümler</h3>
+    <p>Her dönüşüm eylemi "birincil" ya da "ikincil" olarak işaretlenebiliyor. Birincil dönüşümler hem raporlarda görünüyor hem de akıllı teklif kararlarında kullanılıyor; ikincil dönüşümler ise yalnızca gözlem amaçlı. Biz yalnızca gerçek bir iş fırsatı anlamına gelen eylemleri birincil yapıyoruz. "Hizmetler sayfasını ziyaret etme" gibi bir eylemi birincil yaparsanız, Google bu ziyaretleri daha çok getirmek için uğraşıyor; ama bu ziyaretlerin hiçbiri sizi aramayabiliyor.</p>
+
+    <h3>İlişkilendirme modeli</h3>
+    <p>Bir kullanıcı karar vermeden önce birkaç farklı reklama tıklayabiliyor. İlişkilendirme modeli, dönüşümün bu tıklamalar arasında nasıl paylaştırılacağını belirliyor. Google Ads'te bugün varsayılan model veriye dayalı ilişkilendirme; bu model, hesabınızdaki verilere bakarak hangi tıklamanın dönüşüme ne kadar katkı yaptığını tahmin ediyor. Küçük hesaplarda veri az olduğu için modelin sonuçları daha az güvenilir olabilir; ama çoğu durumda varsayılan modeli kullanmak makul bir başlangıç.</p>
+
+    <h2>Gelişmiş Dönüşümler ve Gizlilik</h2>
+    <p>Tarayıcıların gizlilik kısıtlamaları ve çerez onay mekanizmaları yüzünden, bazı dönüşümler artık klasik etiketlerle tam olarak ölçülemiyor. Google'ın "gelişmiş dönüşümler" özelliği, kullanıcının formda paylaştığı e-posta ya da telefon gibi bilgileri tarayıcıda şifreleyerek (karma işlemiyle) Google'a göndermeyi ve böylece ölçümün doğruluğunu artırmayı amaçlıyor. Bu özellik, özellikle form dönüşümü olan işletmeler için faydalı olabiliyor.</p>
+    <p>Ancak kullanıcıya ait bilgilerin işlenmesi, kişisel verilerin korunmasıyla ilgili yasal yükümlülükleri de beraberinde getiriyor. Biz bu özelliği kurmadan önce işletmenin aydınlatma metni ve çerez onay yapısının buna uygun olup olmadığını konuşuyoruz. Yasal uyumluluk konusunda ise her zaman bir hukukçudan destek almanızı öneriyoruz.</p>
+
+    <h2>Dönüşüm Değeri: Her Müşteri Aynı Değil</h2>
+    <p>Yukarıda dönüşüme değer atamaktan bahsettik. Bunu biraz açalım: Bir diş kliniği için implant tedavisi soran bir hasta ile diş taşı temizliği soran bir hasta aynı değerde değil. Her ikisi de bir form gönderdiğinde Google Ads ikisini de "bir dönüşüm" olarak görüyor. Eğer bu iki hizmete farklı dönüşüm değerleri atarsanız, Google daha değerli müşterileri bulmaya daha çok önem vermeye başlıyor.</p>
+    <p>Bu değerler kesin olmak zorunda değil; ortalama tahminler bile algoritmaya hangi dönüşümün daha önemli olduğunu anlatmaya yetiyor. Biz işletme sahibiyle birlikte her hizmet için yaklaşık bir değer belirliyor, ardından "dönüşüm değerini en üst düzeye çıkar" gibi değer odaklı teklif stratejilerini, yeterli veri biriktiğinde kontrollü olarak deniyoruz.</p>
+
+    <h2>Kurulumdan Sonra En Sık Gördüğümüz Sorunlar</h2>
+    <p>Dönüşüm takibini kurmak işin yarısı; diğer yarısı, kurulumun gerçekten doğru çalıştığından emin olmak. Biz denetimlerde şu sorunlarla sıkça karşılaşıyoruz:</p>
+    <ol>
+      <li><strong>Etiketin her sayfada tetiklenmesi:</strong> Teşekkür sayfası yerine tüm sayfalarda çalışan bir dönüşüm etiketi, her ziyareti dönüşüm olarak sayıyor. Bu durumda dönüşüm sayısı tıklama sayısına çok yakın çıkıyor.</li>
+      <li><strong>Aynı dönüşümün iki kez sayılması:</strong> Hem Google Ads etiketi hem de GA4'ten içe aktarılan aynı dönüşüm birincil olarak işaretlenmişse, her dönüşüm iki kere sayılabiliyor.</li>
+      <li><strong>Site yenilendikten sonra kaybolan etiketler:</strong> Site tasarımı değiştiğinde ya da yeni bir tema kurulduğunda, eski etiketler silinebiliyor. Raporlarda dönüşümler bir anda sıfıra düştüyse, ilk bakılacak yer burası.</li>
+      <li><strong>Form gönderilmeden sayılan dönüşümler:</strong> "Gönder" butonuna her tıklama, form hatalı doldurulsa bile dönüşüm olarak sayılabiliyor. Doğru yöntem, formun başarıyla gönderildiğini gösteren bir olayı ölçmek.</li>
+      <li><strong>Test dönüşümlerinin raporlarda kalması:</strong> Kurulum sırasında yapılan testler, küçük hesaplarda raporları belirgin şekilde etkileyebiliyor. Test tarihlerini not alıp değerlendirmede hesaba katıyoruz.</li>
+    </ol>
+    <p>Bu sorunları yakalamak için Google'ın etiket yardımcısı aracı ve Google Ads'teki dönüşüm tanılama ekranı çok işe yarıyor. Biz her kurulumdan sonra bu araçlarla bir kontrol yapıyor, ardından ilk haftalarda rakamları gerçek arama ve mesaj sayılarıyla karşılaştırıyoruz.</p>
+
+    <h2>Örnek: Ölçüm Kurulduktan Sonra Değişen Kararlar</h2>
+    <p>Aşağıdaki örnek temsilîdir; gerçek bir müşteriye ait değildir. Bir oto ekspertiz işletmesi, üç ayrı kampanyayla reklam veriyordu ve en çok tıklama alan kampanyanın en iyi kampanya olduğunu düşünüyordu. Dönüşüm takibini kurduktan birkaç hafta sonra tablo değişti: En çok tıklama alan kampanya, fiyat araştırması yapan ama aramayan kullanıcıları çekiyordu. Daha az tıklama alan bir kampanya ise, "ekspertiz randevu" gibi aramalardan gelen ve doğrudan arayan kullanıcılar getiriyordu.</p>
+    <p>Bu veri olmadan işletme bütçeyi yanlış kampanyaya artırmaya devam edecekti. Ölçüm sayesinde bütçenin bir kısmını gerçekten arama getiren kampanyaya kaydırdık ve diğer kampanyanın kelimelerini daralttık. Bu örnek, dönüşüm takibinin yalnızca rapor için değil, doğru karar vermek için gerekli olduğunu gösteriyor.</p>
+
+    <h2>Reklama Başlamadan Önce Kısa Kontrol Listesi</h2>
+    <p>Yeni bir hesap açıyorsanız ya da uzun süre ara verdiğiniz reklamlara yeniden başlıyorsanız, biz ilk reklamı yayına almadan önce şu soruların cevabının "evet" olmasını öneriyoruz:</p>
+    <ul>
+      <li>Form gönderimi, telefon tıklaması ve WhatsApp tıklaması için dönüşüm eylemleri tanımlandı mı?</li>
+      <li>Reklamdaki arama öğesinden gelen aramalar ölçülüyor mu?</li>
+      <li>Yalnızca gerçek iş fırsatı anlamına gelen eylemler birincil olarak işaretlendi mi?</li>
+      <li>Sayım ayarı müşteri adayı dönüşümleri için "Bir" olarak seçildi mi?</li>
+      <li>Her dönüşüm eylemi en az bir kez test edildi ve raporda görüldü mü?</li>
+      <li>Aynı dönüşümün hem Google Ads etiketiyle hem GA4 aktarımıyla iki kez sayılmadığından emin olundu mu?</li>
+      <li>Çerez onay yapısı ve aydınlatma metni ölçüm kurulumuyla uyumlu mu?</li>
+    </ul>
+    <p>Bu listeyi tamamlamak birkaç saat sürebilir; ama reklam bütçesinin ilk gününden itibaren doğru veriyle çalışmanızı sağlıyor. Ölçümü sonradan eklemek mümkün, ancak o zamana kadar harcanan bütçeden öğrenilecek her şey kaybolmuş oluyor.</p>
+
+    <h2>Sıkça Sorulan Sorular</h2>
+    <h3>Dönüşüm takibi kurmak ne kadar sürer?</h3>
+    <p>Basit bir sitede form, telefon ve WhatsApp ölçümü genelde kısa sürede kurulabiliyor. Asıl zaman alan kısım, kurulumdan sonraki test ve doğrulama süreci. Biz kurulumdan sonraki ilk haftayı rakamları kontrol etmeye ayırıyoruz.</p>
+    <h3>Dönüşüm takibi olmadan akıllı teklif kullanabilir miyim?</h3>
+    <p>Dönüşüm odaklı akıllı teklif stratejileri, dönüşüm verisi olmadan anlamlı çalışamıyor. Ölçüm yoksa, tıklama odaklı ya da manuel teklif stratejileri daha kontrollü bir seçenek; ama bu durumda da hangi tıklamanın işe yaradığını bilemiyorsunuz.</p>
+    <h3>Mevcut hesabımda dönüşüm takibi doğru mu, nasıl anlarım?</h3>
+    <p>Dönüşüm sayısını gerçek arama, mesaj ve form sayılarınızla karşılaştırın. Ayrıca Google Ads'teki dönüşüm eylemleri listesinde her eylemin durumuna ve hangilerinin birincil olarak işaretlendiğine bakın. Emin olamıyorsanız, hesabınızı birlikte inceleyebiliriz.</p>
+    <h3>Dönüşüm takibini siz mi kuruyorsunuz?</h3>
+    <p>Evet, yönettiğimiz hesaplarda ölçüm kurulumu işin ilk adımı. Sitenize erişim gerektiren durumlarda, sitenizi yöneten kişiyle birlikte çalışıyor ve neyi neden kurduğumuzu size açıkça anlatıyoruz.</p>
+    <h3>Telefonla gelen satışları nasıl ölçerim?</h3>
+    <p>Telefon görüşmesinden sonra gerçekleşen satışları, çevrimdışı dönüşüm olarak Google Ads'e aktarmak mümkün. Bunun için reklam tıklamasına ait bir kimliğin form ya da kayıt sistemi üzerinden saklanması gerekiyor. Bu yöntem biraz daha teknik bir kurulum istiyor, ama satış süreci uzun olan işletmeler için çok değerli bir veri sağlıyor.</p>
+<!-- /derin-ek -->
   </div>
 </section>
 
