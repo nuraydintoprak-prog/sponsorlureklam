@@ -54,6 +54,9 @@ Aydın merkezliyiz; aşağıdaki illerde hem web tasarım hem Google Ads için a
 
 ## Blog (rehber yazılar)
 
+- [Arama Motoru Reklamlarının Yerel İşletmelerde Tüketici Kararına Etkisi: Konum, Sıra ve Tıklama Davranışı](https://sponsorlureklam.com.tr/blog/arama-reklamlari-yerel-tuketici-karari.html)
+- [Tıklama Sahtekarlığının Arama ve Görüntülü Reklam Ekonomisine Etkileri ve Tespit Yöntemleri](https://sponsorlureklam.com.tr/blog/tiklama-sahtekarligi-ekonomik-etkileri-tespit.html)
+- [Arama Reklamlarında Genelleştirilmiş İkinci Fiyat Açık Artırması ve Kalite Puanının Tıklama Maliyetine Etkisi](https://sponsorlureklam.com.tr/blog/arama-reklamlarinda-acik-artirma-ve-kalite-puani.html)
 - [Google Ads Reklam Zamanlaması: Hangi Gün ve Saatte Reklam Gösterilmeli?](https://sponsorlureklam.com.tr/blog/google-ads-reklam-zamanlamasi.html)
 - [TBM (Tıklama Başı Maliyet) Nedir, Nasıl Hesaplanır, Nasıl Düşürülür?](https://sponsorlureklam.com.tr/blog/tbm-nedir-nasil-dusurulur.html)
 - [Google Haritalar’da Reklam Verme: Yer Öğesi ve Yerel Reklam Rehberi](https://sponsorlureklam.com.tr/blog/google-haritalar-reklam-verme.html)
