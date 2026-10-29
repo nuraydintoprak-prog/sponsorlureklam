@@ -10,6 +10,7 @@
 
 ## Temel hizmetler
 
+- [Google Reklam Verme](https://sponsorlureklam.com.tr/google-reklam-verme.html): Google’da reklam vermenin adımları, ücretin nasıl hesaplandığı (TBM, günlük bütçe), reklamın nerede göründüğü ve sık yapılan hatalar.
 - [Google Ads Yönetimi](https://sponsorlureklam.com.tr/hizmetler/google-ads.html): Arama, görüntülü ve YouTube reklam kampanyalarının kurulumu, optimizasyonu ve aylık raporlaması. Aylık yönetim ücreti size özel teklifle belirlenir; reklam bütçesi ayrıdır ve müşteri tarafından doğrudan Google'a ödenir.
 - [Web Tasarım](https://sponsorlureklam.com.tr/hizmetler/web-tasarim.html): SEO uyumlu, mobile-first, hızlı yüklenen kurumsal web siteleri. Fiyat size özel teklifle belirlenir.
 
