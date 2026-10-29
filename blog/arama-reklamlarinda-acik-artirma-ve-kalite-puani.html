@@ -539,6 +539,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p><em>Not: Bu yazı bir literatür derlemesidir; özgün veri ya da yeni bir deney sonucu içermez. Aktarılan bulgular kaynakçada listelenen yayımlanmış çalışmalara aittir.</em></p>
 
     <h2>1. Giriş</h2>
+    <h3>1.1. Sınırlı alan, çok sayıda reklamveren</h3>
     <p>Arama motoru reklamcılığı, kullanıcının yazdığı sorguya göre gösterilen ve çoğunlukla tıklama başına ücretlendirilen reklamlardan oluşur. Bir arama sonuç sayfasında sınırlı sayıda reklam alanı bulunduğundan, bu alanların hangi reklamverene hangi sırayla ve hangi fiyattan verileceği bir tahsis sorunudur. Edelman, Ostrovsky ve Schwarz (2007), bu tahsisin her yıl milyarlarca dolarlık bir piyasayı yönettiğini ve kullanılan mekanizmanın iktisat literatüründeki klasik açık artırmalardan farklı olduğunu vurgulamıştır. Aynı dönemde Varian (2007), konum açık artırmaları (<em>position auctions</em>) adını verdiği modelle bu piyasanın dengesini ayrıntılı biçimde incelemiştir.</p>
 
     <h2>2. Kavramsal Çerçeve</h2>
@@ -550,11 +551,17 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p>Yalnızca teklife göre sıralama, platformun beklenen gelirini en üst düzeye çıkarmaz; çünkü yüksek teklif veren ama az tıklanan bir reklam, gösterim alanını verimsiz kullanır. Bu nedenle sıralama kuralları, teklifi reklamın tahmini tıklanma olasılığı gibi kalite ölçütleriyle ağırlıklandırır. Lahaie ve Pennock (2007), teklifin tıklanma oranının belirli bir kuvvetiyle çarpıldığı bir sıralama kuralları ailesini incelemiş ve ağırlıklandırma parametresinin gelir ile verimlilik arasında bir denge kurduğunu göstermiştir. Aggarwal, Goel ve Motwani (2006) de ağırlıklı sıralamada doğruyu söylemeyi teşvik eden fiyatlama kurallarını incelemiştir.</p>
 
     <h2>3. Kalite Puanının Tıklama Maliyetine Etkisi</h2>
+    <h3>3.1. Kalite ağırlıklı fiyatlama</h3>
     <p>Kalite ağırlıklı bir GİF'te reklamverenin ödediği tutar, sırasını korumak için gereken en düşük tekliftir. Bu tutar, bir alttaki rakibin “etkin teklifinin” (teklif × kalite) reklamverenin kendi kalite değerine bölünmesiyle bulunur. Dolayısıyla aynı sıradaki iki reklamverenden kalitesi yüksek olanı, tıklama başına daha az öder. Basit bir örnekle: alttaki rakibin etkin teklifi 20 birimse, kalite değeri 10 olan reklamveren tıklama başına yaklaşık 2 birim, kalite değeri 5 olan reklamveren ise yaklaşık 4 birim öder.</p>
+    <h3>3.2. Google’ın güncel uygulaması</h3>
     <p>Google, güncel uygulamasında reklam sıralamasının teklif, reklam kalitesi (beklenen tıklama oranı, reklamın alaka düzeyi ve açılış sayfası deneyimi), sıralama eşikleri, aramanın bağlamı ve reklam öğelerinin beklenen etkisiyle belirlendiğini; gerçek tıklama başı maliyetin ise sırayı korumak için gereken tutar olduğunu ve çoğu zaman en yüksek tekliften düşük kaldığını açıklamaktadır (Google, t.y.-a; Google, t.y.-b). Hesap arayüzünde görülen 1–10 arası Kalite Puanı ise Google'a göre bir tanı aracıdır; açık artırmada doğrudan bu sayı değil, her aramada anlık olarak hesaplanan kalite tahminleri kullanılır (Google, t.y.-b).</p>
 
     <h2>4. Ampirik Bulgulardan Seçmeler</h2>
-    <p>Teorik modellerin ötesinde, ampirik çalışmalar reklam sırasının sonuçlar üzerindeki etkisini ölçmeye çalışmıştır. Narayanan ve Kalyanam (2015), regresyon süreksizliği yaklaşımıyla üst sıralarda olmanın tıklamaları artırdığını, ancak bu etkinin anahtar kelimenin ve reklamverenin özelliklerine göre değiştiğini göstermiştir. Agarwal, Hosanagar ve Smith (2011) ise en üst sıranın her zaman en kârlı sıra olmadığını; daha alt sıralarda tıklama oranının düşmesine karşın dönüşüm oranının görece yüksek kalabildiğini bildirmiştir. Athey ve Nekipelov (2010), reklamverenlerin rakip teklifleri ve kalite tahminlerini belirsizlik altında gözlemlediğini dikkate alan yapısal bir model önermiş; bu belirsizliğin teorik dengeleri daha istikrarlı hâle getirebileceğini tartışmıştır.</p>
+    <p>Teorik modellerin ötesinde, ampirik çalışmalar reklam sırasının sonuçlar üzerindeki etkisini ölçmeye çalışmıştır.</p>
+    <h3>4.1. Sıra etkisi ve kârlılık</h3>
+    <p>Narayanan ve Kalyanam (2015), regresyon süreksizliği yaklaşımıyla üst sıralarda olmanın tıklamaları artırdığını, ancak bu etkinin anahtar kelimenin ve reklamverenin özelliklerine göre değiştiğini göstermiştir. Agarwal, Hosanagar ve Smith (2011) ise en üst sıranın her zaman en kârlı sıra olmadığını; daha alt sıralarda tıklama oranının düşmesine karşın dönüşüm oranının görece yüksek kalabildiğini bildirmiştir. </p>
+    <h3>4.2. Belirsizlik altında teklif</h3>
+    <p>Athey ve Nekipelov (2010), reklamverenlerin rakip teklifleri ve kalite tahminlerini belirsizlik altında gözlemlediğini dikkate alan yapısal bir model önermiş; bu belirsizliğin teorik dengeleri daha istikrarlı hâle getirebileceğini tartışmıştır.</p>
 
     <h2>5. Reklamverenler İçin Çıkarımlar</h2>
     <ul>
