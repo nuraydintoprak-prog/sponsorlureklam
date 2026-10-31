@@ -582,7 +582,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
       <div>
         <h2>Mesaj Gönderin</h2>
-        <p>Aşağıdaki formu doldurun, en geç 24 saat içinde size dönüş yapalım.</p>
+        <p>Aşağıdaki formu doldurun, mesajınız WhatsApp'ta hazır açılsın; göndermeniz yeterli.</p>
 
         <form id="contactForm" onsubmit="return submitContactForm(event)" style="margin-top:1.5rem;">
           <div class="form-group">
@@ -624,12 +624,12 @@ textarea.form-control { resize: vertical; min-height: 120px; }
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Mesajı Gönder</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">WhatsApp ile Gönder</button>
         </form>
 
         <div id="contactSuccess" class="alert alert-success" style="display:none;margin-top:1.25rem;">
-          <strong>Mesajınız iletildi!</strong>
-          En geç 24 saat içinde size dönüş yapacağız. Acil bir konuysa WhatsApp üzerinden de yazabilirsiniz.
+          <strong>WhatsApp açıldı.</strong>
+          Mesajınız hazır, WhatsApp'ta gönder tuşuna basmanız yeterli.
         </div>
       </div>
 
@@ -850,43 +850,18 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 function submitContactForm(e) {
   e.preventDefault();
   var form = document.getElementById('contactForm');
-  var btn = form.querySelector('button[type="submit"]');
-  var name = document.getElementById('cName').value.trim();
-  var phone = document.getElementById('cPhone').value.trim();
   var email = document.getElementById('cEmail').value.trim();
-  var subject = document.getElementById('cSubject').value;
-  var message = document.getElementById('cMessage').value.trim();
+  var text = 'Merhaba, iletişim formundan yazıyorum.'
+    + '\nAd Soyad: ' + document.getElementById('cName').value.trim()
+    + '\nTelefon: ' + document.getElementById('cPhone').value.trim()
+    + (email ? '\nE-posta: ' + email : '')
+    + '\nKonu: ' + document.getElementById('cSubject').value
+    + '\nMesaj: ' + document.getElementById('cMessage').value.trim();
+  var url = 'https://wa.me/905468445576?text=' + encodeURIComponent(text);
 
-  btn.disabled = true;
-  btn.textContent = 'Gönderiliyor...';
-
-  fetch('https://formsubmit.co/ajax/info@sponsorlureklam.com.tr', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      _subject: 'İletişim Formu — ' + subject,
-      _template: 'table',
-      _captcha: 'false',
-      Ad_Soyad: name,
-      Telefon: phone,
-      Eposta: email,
-      Konu: subject,
-      Mesaj: message,
-      Olusturulma: new Date().toLocaleString('tr-TR')
-    })
-  }).then(function (res) {
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return res.json().catch(function () { return {}; });
-  }).then(function (data) {
-    if (data && String(data.success) === 'false') throw new Error('FormSubmit reddetti');
-    form.style.display = 'none';
-    document.getElementById('contactSuccess').style.display = 'block';
-    window.scrollTo({ top: document.getElementById('contactSuccess').offsetTop - 100, behavior: 'smooth' });
-  }).catch(function () {
-    btn.disabled = false;
-    btn.textContent = 'Mesajı Gönder';
-    alert('Mesajınız gönderilemedi (bağlantı hatası). Lütfen tekrar deneyin ya da WhatsApp\'tan yazın: 0546 844 55 76');
-  });
+  form.style.display = 'none';
+  document.getElementById('contactSuccess').style.display = 'block';
+  if (!window.open(url, '_blank')) window.location.href = url;
 
   return false;
 }
