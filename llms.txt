@@ -54,6 +54,11 @@ Aydın merkezliyiz; aşağıdaki illerde hem web tasarım hem Google Ads için a
 
 ## Blog (rehber yazılar)
 
+- [Google Ads Hesap Denetimi: Adım Adım Kontrol Listesi](https://sponsorlureklam.com.tr/blog/google-ads-hesap-denetimi-kontrol-listesi.html)
+- [Google Ads Optimizasyon Puanı Nedir?](https://sponsorlureklam.com.tr/blog/google-ads-optimizasyon-puani.html)
+- [ROAS Nedir, Nasıl Hesaplanır?](https://sponsorlureklam.com.tr/blog/roas-nedir-nasil-hesaplanir.html)
+- [Google Alışveriş Reklamları ve Merchant Center Kurulumu](https://sponsorlureklam.com.tr/blog/google-alisveris-reklamlari-merchant-center.html)
+- [YouTube Reklamları Nasıl Verilir?](https://sponsorlureklam.com.tr/blog/youtube-reklamlari-nasil-verilir.html)
 - [Click Fraud Nedir? Sahte Tıklama Sistemi Nasıl İşler?](https://sponsorlureklam.com.tr/blog/click-fraud-nedir-nasil-calisir.html)
 - [Görüntülü Reklamlarda Bot Trafiği ve Yerleşim Hariç Tutma](https://sponsorlureklam.com.tr/blog/display-reklamlarda-bot-trafigi.html)
 - [Google Ads'ten Geçersiz Tıklama İadesi Nasıl Alınır?](https://sponsorlureklam.com.tr/blog/gecersiz-tiklama-iade-sureci.html)
