@@ -637,7 +637,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <li class="no">IP engelleme</li>
           <li class="no">Cloudflare kurulumu</li>
         </ul>
-        <a href="#siparis" class="btn btn-ghost" onclick="prefillPaket('Başlangıç Paketi')">Bu Paketi Seç</a>
+        <a href="#siparis" class="btn btn-ghost" data-paket="Başlangıç Paketi">Bu Paketi Seç</a>
       </div>
 
       <div id="orta" class="price-card featured">
@@ -657,7 +657,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <li>30 gün Ads desteği</li>
           <li class="no">Cloudflare kurulumu</li>
         </ul>
-        <a href="#siparis" class="btn btn-dark" onclick="prefillPaket('Orta Seviye Paket')">Bu Paketi Seç</a>
+        <a href="#siparis" class="btn btn-dark" data-paket="Orta Seviye Paket">Bu Paketi Seç</a>
       </div>
 
       <div id="ileri" class="price-card">
@@ -678,7 +678,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <li>Cloudflare kurulumu</li>
           <li>30 gün Ads desteği</li>
         </ul>
-        <a href="#siparis" class="btn btn-ghost" onclick="prefillPaket('İleri Seviye Paket')">Bu Paketi Seç</a>
+        <a href="#siparis" class="btn btn-ghost" data-paket="İleri Seviye Paket">Bu Paketi Seç</a>
       </div>
     </div>
 
@@ -713,7 +713,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
             <li>Kampanya kurulumu ve optimizasyon</li>
             <li>Web sitesi hızlandırma çalışmaları</li>
           </ul>
-          <a href="#siparis" class="btn btn-dark" onclick="prefillPaket('Aylık Yönetim (1. ay peşin)')">Aylık Yönetim Talep Et</a>
+          <a href="#siparis" class="btn btn-dark" data-paket="Aylık Yönetim (1. ay peşin)">Aylık Yönetim Talep Et</a>
           <p style="margin-top:.85rem;margin-bottom:0;font-size:.85rem;color:var(--gray-500);">
             <a href="aylik-yonetim-sozlesmesi.html" style="color:var(--navy);text-decoration:underline;">Aylık Yönetim Sözleşmesi'ni</a> önceden inceleyebilir veya online imzalayabilirsiniz.
           </p>
@@ -777,7 +777,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <li class="no">Uygulama / kampanya düzeltme dahil değildir</li>
           <li class="no">Sürekli takip veya yönetim dahil değildir</li>
         </ul>
-        <a href="#siparis" class="btn btn-dark" onclick="prefillPaket('Tek Defalık Google Ads Kontrolü')">Sipariş Vermek İçin Aşağı İnin</a>
+        <a href="#siparis" class="btn btn-dark" data-paket="Tek Defalık Google Ads Kontrolü">Sipariş Vermek İçin Aşağı İnin</a>
       </div>
     </div>
   </div>
@@ -788,17 +788,17 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <div class="section-header">
       <span class="eyebrow">Fiyat Al / Sipariş</span>
       <h2>Fiyat Teklifi ve Sipariş</h2>
-      <p>Hizmeti seçin, formu doldurun; size özel fiyat teklifimizi en geç 24 saat içinde WhatsApp ve e-postayla iletelim. Teklifi onaylarsanız ödeme ve başlangıç adımlarına geçiyoruz.</p>
+      <p>Hizmeti seçin, formu doldurun; mesajınız WhatsApp'ta hazır açılsın; size özel fiyat teklifimizi en geç 24 saat içinde WhatsApp'tan iletelim. Teklifi onaylarsanız ödeme ve başlangıç adımlarına geçiyoruz.</p>
     </div>
 
     <div class="grid grid-2" style="gap:2rem;">
       <div>
         <h3 style="margin-bottom:1rem;">1. Adım — Hizmet ve İletişim Bilgileri</h3>
 
-        <form id="siparisForm" onsubmit="return submitSiparis(event)">
+        <form id="siparisForm">
           <div class="form-group">
             <label for="sPaket">Hizmet Türü <span style="color:var(--danger);">*</span></label>
-            <select id="sPaket" name="paket" class="form-control" required onchange="updatePrice()">
+            <select id="sPaket" name="paket" class="form-control" required>
               <option value="">Lütfen seçin...</option>
               <option value="Başlangıç Paketi">Başlangıç Paketi</option>
               <option value="Orta Seviye Paket">Orta Seviye Paket</option>
@@ -848,7 +848,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-lg btn-block" id="siparisBtn">Fiyat Teklifi İste</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="siparisBtn">WhatsApp ile Fiyat İste</button>
           <p style="text-align:center;font-size:.85rem;color:var(--gray-500);margin-top:.85rem;margin-bottom:0;">
             Fiyat teklifimizi aldıktan sonra karar sizin; teklifi onaylamadan hiçbir ödeme yapmazsınız.<br>
             Aylık yönetim alacaklar için <a href="aylik-yonetim-sozlesmesi.html" style="color:var(--navy);text-decoration:underline;">sözleşmeyi online imzalama</a> sayfası hazır.
@@ -856,8 +856,8 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         </form>
 
         <div id="siparisSuccess" class="alert alert-success" style="display:none;margin-top:1.25rem;">
-          <strong>Talebiniz alındı!</strong>
-          <span id="siparisSuccessText"></span> Size özel fiyat teklifimizi en geç 24 saat içinde iletiyoruz. Teklifi onaylarsanız sağdaki hesap bilgileriyle ödeme yapabilirsiniz.
+          <strong>WhatsApp açıldı.</strong>
+          <span id="siparisSuccessText"></span> Mesaj bize ulaştıktan sonra size özel fiyat teklifimizi en geç 24 saat içinde iletiyoruz. Teklifi onaylarsanız sağdaki hesap bilgileriyle ödeme yapabilirsiniz.
         </div>
       </div>
 
@@ -882,7 +882,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
               <div style="padding:.55rem 0;">
                 <div style="font-size:.78rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem;">IBAN</div>
                 <div style="color:var(--white);font-weight:600;font-size:1.05rem;letter-spacing:.04em;font-family:'Inter',monospace;word-break:break-all;" id="ibanText">TR98 0004 6003 3288 8000 3208 88</div>
-                <button type="button" onclick="copyIban(this)" style="background:var(--gold);color:var(--navy);border:0;padding:.45rem 1rem;border-radius:6px;font-size:.85rem;font-weight:700;cursor:pointer;margin-top:.75rem;">IBAN'ı Kopyala</button>
+                <button type="button" id="ibanKopyala" style="background:var(--gold);color:var(--navy);border:0;padding:.45rem 1rem;border-radius:6px;font-size:.85rem;font-weight:700;cursor:pointer;margin-top:.75rem;">IBAN'ı Kopyala</button>
               </div>
             </div>
 
@@ -1092,120 +1092,6 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 </a>
 
 <script src="js/main.js" defer></script>
-<script>
-(function () {
-  var paketSel = document.getElementById('sPaket');
-  var uyari = document.getElementById('kontrolUyari');
-  var onayBox = document.getElementById('kontrolOnay');
-
-  window.updatePrice = function () {
-    var opt = paketSel.options[paketSel.selectedIndex];
-    var warn = opt && opt.getAttribute('data-warn');
-    if (warn === '1') {
-      uyari.style.display = 'block';
-    } else {
-      uyari.style.display = 'none';
-      if (onayBox) onayBox.checked = false;
-    }
-  };
-
-  window.prefillPaket = function (paketAdi) {
-    if (!paketSel) return;
-    for (var i = 0; i < paketSel.options.length; i++) {
-      if (paketSel.options[i].value === paketAdi) {
-        paketSel.selectedIndex = i;
-        window.updatePrice();
-        break;
-      }
-    }
-  };
-
-  window.submitSiparis = function (e) {
-    e.preventDefault();
-    var paket = paketSel.value;
-    var opt = paketSel.options[paketSel.selectedIndex];
-    var isKontrol = opt && opt.getAttribute('data-warn') === '1';
-
-    if (isKontrol && !document.getElementById('kontrolOnay').checked) {
-      alert('Tek Defalık Kontrol için kırmızı kutudaki şartları onaylamanız gerekir.');
-      return false;
-    }
-
-    var name = document.getElementById('sName').value.trim();
-    var phone = document.getElementById('sPhone').value.trim();
-    var email = document.getElementById('sEmail').value.trim();
-    var website = document.getElementById('sWebsite').value.trim();
-    var note = document.getElementById('sNote').value.trim();
-
-    var btn = document.getElementById('siparisBtn');
-    btn.disabled = true;
-    btn.textContent = 'Gönderiliyor...';
-
-    fetch('https://formsubmit.co/ajax/info@sponsorlureklam.com.tr', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _subject: 'Yeni Fiyat Teklifi Talebi — ' + paket + ' (' + name + ')',
-        _template: 'table',
-        _captcha: 'false',
-        Tip: 'Fiyat Teklifi Talebi',
-        Hizmet: paket,
-        Ad_Soyad_Firma: name,
-        Telefon: phone,
-        Eposta: email,
-        Web_Sitesi: website || '-',
-        Not: note || '-',
-        Kontrol_Sartlari_Onay: isKontrol ? 'Evet, onayladı' : '-',
-        Olusturulma: new Date().toLocaleString('tr-TR')
-      })
-    }).then(function (res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return res.json().catch(function () { return {}; });
-    }).then(function (data) {
-      if (data && String(data.success) === 'false') throw new Error('FormSubmit reddetti');
-      document.getElementById('siparisForm').style.display = 'none';
-      var successEl = document.getElementById('siparisSuccess');
-      document.getElementById('siparisSuccessText').textContent =
-        ' Sayın ' + name + ', ' + paket + ' için fiyat teklifi talebinizi aldık.';
-      successEl.style.display = 'block';
-      setTimeout(function () {
-        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    }).catch(function () {
-      btn.disabled = false;
-      btn.textContent = 'Fiyat Teklifi İste';
-      alert('Talebiniz gönderilemedi (bağlantı hatası). Lütfen tekrar deneyin ya da WhatsApp\'tan yazın: 0546 844 55 76');
-    });
-
-    return false;
-  };
-
-  window.copyIban = function (btn) {
-    var text = 'TR98 0004 6003 3288 8000 3208 88';
-    var original = btn.textContent;
-    var done = function () {
-      btn.textContent = 'Kopyalandı ✓';
-      btn.style.background = 'var(--success)';
-      btn.style.color = 'var(--white)';
-      setTimeout(function () {
-        btn.textContent = original;
-        btn.style.background = 'var(--gold)';
-        btn.style.color = 'var(--navy)';
-      }, 2000);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { fallback(); done(); });
-    } else {
-      fallback(); done();
-    }
-    function fallback() {
-      var ta = document.createElement('textarea');
-      ta.value = text; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch (e) {}
-      document.body.removeChild(ta);
-    }
-  };
-})();
-</script>
+<script src="js/paketler.js" defer></script>
 </body>
 </html>
